@@ -1,25 +1,40 @@
 {% extends "base.html" %}
-{% import "_item_card.html" as macros %}
+{% import "_card.html" as macros %}
 
 {% block content %}
+
 <section class="view-header">
-  <h2>Week of {{ week_start }} → {{ week_end }}</h2>
-  <p class="dim">Top items from the last 7 days, ranked. {{ items|length }} item{{ 's' if items|length != 1 else '' }}.</p>
-  <div class="quicknav">
-    <span class="dim">prior weeks: </span>
-    {% for d in ['2026-05-18','2026-05-11','2026-05-04','2026-04-27','2026-04-20','2026-04-13','2026-04-06','2026-03-30','2026-03-23','2026-03-16','2026-03-09','2026-03-02','2026-02-23'] %}
-      <a class="{% if d == week_end %}current{% endif %}" href="/week?ending={{ d }}">→ {{ d }}</a>
-    {% endfor %}
-  </div>
+  <h2>Week of {{ window_start }} → {{ window_end }}</h2>
+  <p class="dim small">
+    profile v{{ active_profile.version_hash }} · <a href="/weeks">← back to all weeks</a>
+  </p>
 </section>
 
-{% if items %}
-  <div class="cards">
-    {% for item in items %}
-      {{ macros.item_card(item) }}
-    {% endfor %}
-  </div>
+{% if not rows %}
+  <p class="empty">No ranked items in this week.</p>
 {% else %}
-  <p class="empty">No items in this week.</p>
+
+  {% set core_count = (rows | selectattr('1') | selectattr('1.bucket', 'equalto', 'core') | list | length) %}
+  {% set adjacent_count = (rows | selectattr('1') | selectattr('1.bucket', 'equalto', 'adjacent') | list | length) %}
+  {% set peripheral_count = (rows | selectattr('1') | selectattr('1.bucket', 'equalto', 'peripheral') | list | length) %}
+
+  <p class="dim small bucket-summary">
+    {{ core_count }} core · {{ adjacent_count }} adjacent · {{ peripheral_count }} peripheral
+  </p>
+
+  <div class="cards">
+    {% for item, ranking in rows %}{{ macros.card(item, ranking) }}{% endfor %}
+  </div>
+
+  <footer class="transparency">
+    <p class="dim small">
+      Considered {{ transparency.total_in_window }} items in this week.
+      Surfaced
+      {% for b, n in (transparency.by_bucket.items() | list) %}
+        {{ n }} {{ b }}{% if not loop.last %}, {% endif %}
+      {% endfor %}.
+    </p>
+  </footer>
+
 {% endif %}
 {% endblock %}

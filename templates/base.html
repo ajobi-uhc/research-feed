@@ -11,13 +11,9 @@
   <div class="bar">
     <h1><a href="/">Safety Feed</a></h1>
     <nav>
-      <a href="/month" class="{{ 'active' if view == 'month' else '' }}">Month</a>
       <a href="/weeks" class="{{ 'active' if view in ('weeks', 'week') else '' }}">Weeks</a>
       <a href="/profile" class="{{ 'active' if view == 'profile' else '' }}">Profile</a>
     </nav>
-    {% if active_name %}
-      <span class="who">{{ active_name }}</span>
-    {% endif %}
   </div>
 </header>
 

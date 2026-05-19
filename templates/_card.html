@@ -1,0 +1,29 @@
+{% macro card(item, ranking) %}
+<article class="card {{ 'starred' if item.is_starred else '' }}">
+  <header>
+    <a class="title" href="/item/{{ item.id }}">{{ item.title }}</a>
+    <div class="meta">
+      {% if ranking %}<span class="bucket bucket-{{ ranking.bucket }}">{{ ranking.bucket }}</span>{% endif %}
+      <span class="date">{{ item.date }}</span>
+      <span class="venue venue-{{ item.venue }}">{{ item.venue }}</span>
+      {% if item.publication_venue %}<span class="pub-venue">{{ item.publication_venue }}</span>{% endif %}
+      {% if item.extra_urls %}<span class="crosspost">+{{ item.extra_urls|length }}</span>{% endif %}
+      {% if item.af_karma %}<span class="karma">⬆ {{ item.af_karma }} ({{ item.af_comments or 0 }} cmts)</span>{% endif %}
+      {% if item.citation_count %}<span class="citecount">📚 {{ item.citation_count }} cites</span>{% endif %}
+      {% if item.arxiv_id %}<span class="arxiv-tag">arXiv</span>{% endif %}
+    </div>
+  </header>
+
+  {% if item.authors %}
+    <div class="authors">
+      {{ item.authors[:6] | join(', ') }}{% if item.authors|length > 6 %} +{{ item.authors|length - 6 }}{% endif %}
+    </div>
+  {% endif %}
+
+  {% if ranking and ranking.why %}
+    <p class="reason">{{ ranking.why }}</p>
+  {% elif item.description %}
+    <p class="description">{{ item.description[:200] }}{% if item.description|length > 200 %}…{% endif %}</p>
+  {% endif %}
+</article>
+{% endmacro %}

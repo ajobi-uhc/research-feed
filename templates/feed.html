@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="view-header">
+  <h2>Feed — last {{ days }} days</h2>
+  <p class="dim small">{{ window_start }} → {{ window_end }} · profile v{{ active_profile.version_hash }}</p>
+</section>
+
+{% if not rows %}
+  <p class="empty">No items yet. <a href="/profile">Set up your profile</a> first, or
+  <form method="post" action="/discover" style="display:inline">
+    <button class="link-btn" type="submit">run discovery now</button>
+  </form>.</p>
+{% else %}
+
+  {% set core_count = (rows | selectattr('1') | selectattr('1.bucket', 'equalto', 'core') | list | length) %}
+  {% set adjacent_count = (rows | selectattr('1') | selectattr('1.bucket', 'equalto', 'adjacent') | list | length) %}
+  {% set peripheral_count = (rows | selectattr('1') | selectattr('1.bucket', 'equalto', 'peripheral') | list | length) %}
+
+  <p class="dim small bucket-summary">
+    {{ core_count }} core · {{ adjacent_count }} adjacent · {{ peripheral_count }} peripheral
+  </p>
+
+  <div class="cards">
+    {% for item, ranking in rows %}
+      {% if not item.is_read %}
+        <article class="card {{ 'starred' if item.is_starred else '' }}">{# bucket is shown as a chip, not card-wide color #}
+          <header>
+            <a class="title" href="/item/{{ item.id }}">{{ item.title }}</a>
+            <div class="meta">
+              {% if ranking %}<span class="bucket bucket-{{ ranking.bucket }}">{{ ranking.bucket }}</span>{% endif %}
+              <span class="date">{{ item.date }}</span>
+              <span class="venue venue-{{ item.venue }}">{{ item.venue }}</span>
+              {% if item.publication_venue %}<span class="pub-venue">{{ item.publication_venue }}</span>{% endif %}
+              {% if item.extra_urls %}<span class="crosspost">+{{ item.extra_urls|length }}</span>{% endif %}
+              {% if item.af_karma %}<span class="karma">⬆ {{ item.af_karma }} ({{ item.af_comments or 0 }} cmts)</span>{% endif %}
+              {% if item.citation_count %}<span class="citecount">📚 {{ item.citation_count }} cites</span>{% endif %}
+              {% if item.arxiv_id %}<span class="arxiv-tag">arXiv</span>{% endif %}
+            </div>
+          </header>
+
+          {% if item.authors %}
+            <div class="authors">
+              {{ item.authors[:6] | join(', ') }}{% if item.authors|length > 6 %} +{{ item.authors|length - 6 }}{% endif %}
+            </div>
+          {% endif %}
+
+          {% if ranking and ranking.why %}
+            <p class="reason">{{ ranking.why }}</p>
+          {% elif item.description %}
+            <p class="description">{{ item.description[:200] }}{% if item.description|length > 200 %}…{% endif %}</p>
+          {% endif %}
+
+          <div class="card-actions">
+            <form method="post" action="/item/{{ item.id }}/relevant" class="inline-form">
+              <input type="text" name="reason" placeholder="why? (optional)" size="20">
+              <button type="submit" title="mark relevant">★</button>
+            </form>
+            <form method="post" action="/item/{{ item.id }}/hide" class="inline-form">
+              <input type="text" name="reason" placeholder="why not? (optional)" size="20">
+              <button type="submit" title="hide">✗</button>
+            </form>
+          </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <footer class="transparency">
+    <p class="dim small">
+      Considered {{ transparency.total_in_window }} items in window.
+      Surfaced
+      {% for b, n in (transparency.by_bucket.items() | list) %}
+        {{ n }} {{ b }}{% if not loop.last %}, {% endif %}
+      {% endfor %}.
+    </p>
+  </footer>
+
+{% endif %}
+{% endblock %}

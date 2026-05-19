@@ -1,25 +1,19 @@
-"""Dataclasses for everything that has a shape.
-
-These are the only data structures the rest of the code knows about. JSON
-files and SQLite rows are converted to/from these at the boundaries
-(store.py).
-"""
+"""Dataclasses. Profile, Item, Ranking, Source, Author."""
 
 from __future__ import annotations
 import hashlib
+import json
 from dataclasses import dataclass, field, asdict
 from typing import Optional
 
 
 @dataclass
 class Source:
-    """One place to crawl. Trust ∈ [0, 50]."""
+    """A pull-mode source (lab/org page). Static config-driven."""
     slug: str
     name: str
     url: str
-    trust: int = 25
-    rationale: str = ""
-    feed_url: Optional[str] = None  # discovered RSS/Atom — preferred over HTML parsing
+    feed: Optional[str] = None
 
 
 @dataclass
@@ -31,25 +25,22 @@ class Author:
 
 @dataclass
 class Profile:
-    """The user's context map. Single source of truth for personalization."""
+    """The user's research-discovery profile. Single artifact; drives everything."""
     user_summary: str = ""
+    tags: list[str] = field(default_factory=list)
     research_areas: list[str] = field(default_factory=list)
-    keywords: list[str] = field(default_factory=list)
-    trusted_authors: list[Author] = field(default_factory=list)
-    sources: list[Source] = field(default_factory=list)
-    subfield_weights: dict[str, int] = field(default_factory=dict)
-    dislikes: list[str] = field(default_factory=list)  # negative preferences (phrases)
-    hidden_with_reason: list[dict] = field(default_factory=list)
-    # ↑ [{"item_title": ..., "reason": ..., "venue": ..., "date": ...}]
-    # Feeds into the curation prompt so the agent learns what to avoid.
+    current_question: str = ""
+    filter_outs: list[str] = field(default_factory=list)
+    followed_authors: list[Author] = field(default_factory=list)
+    # Raw onboarding inputs (preserved so re-onboarding can use them)
+    seed_papers: list[str] = field(default_factory=list)
+    scholar_url: Optional[str] = None
     notes: str = ""
-    user_identity: dict = field(default_factory=dict)
-    research_notes: str = ""
+    version_hash: str = ""
 
     @classmethod
     def from_dict(cls, d: dict) -> "Profile":
-        # Tolerate either rich dicts or bare strings for authors
-        authors_raw = d.get("trusted_authors", [])
+        authors_raw = d.get("followed_authors", [])
         authors = []
         for a in authors_raw:
             if isinstance(a, dict):
@@ -60,73 +51,65 @@ class Profile:
                 ))
             elif isinstance(a, str):
                 authors.append(Author(name=a))
-
-        sources = []
-        for s in d.get("sources", []):
-            if not (s.get("slug") and s.get("url")):
-                continue
-            sources.append(Source(
-                slug=s["slug"], name=s.get("name", s["slug"]), url=s["url"],
-                trust=int(s.get("trust", 25)),
-                rationale=s.get("rationale", ""),
-                feed_url=s.get("feed_url"),
-            ))
-
         return cls(
             user_summary=d.get("user_summary", ""),
+            tags=list(d.get("tags", [])),
             research_areas=list(d.get("research_areas", [])),
-            keywords=list(d.get("keywords", [])),
-            trusted_authors=authors,
-            sources=sources,
-            subfield_weights=dict(d.get("subfield_weights", {})),
-            dislikes=list(d.get("dislikes", [])),
-            hidden_with_reason=list(d.get("hidden_with_reason", [])),
+            current_question=d.get("current_question", ""),
+            filter_outs=list(d.get("filter_outs", [])),
+            followed_authors=authors,
+            seed_papers=list(d.get("seed_papers", [])),
+            scholar_url=d.get("scholar_url"),
             notes=d.get("notes", ""),
-            user_identity=dict(d.get("user_identity", {})),
-            research_notes=d.get("research_notes", ""),
+            version_hash=d.get("version_hash", ""),
         )
 
     def to_dict(self) -> dict:
         return asdict(self)
 
-    # Convenience views used by scoring + UI
-    def trusted_author_names(self) -> list[str]:
-        return [a.name for a in self.trusted_authors if a.name]
+    def compute_hash(self) -> str:
+        """Hash of the parts that affect query generation + ranking."""
+        key = json.dumps({
+            "tags": sorted(self.tags),
+            "areas": sorted(self.research_areas),
+            "authors": sorted(a.name for a in self.followed_authors),
+            "filter_outs": sorted(self.filter_outs),
+            "question": self.current_question.strip(),
+        }, sort_keys=True)
+        return hashlib.sha1(key.encode()).hexdigest()[:12]
 
-    def venue_trust(self, slug: str) -> int:
-        for s in self.sources:
-            if s.slug == slug:
-                return s.trust
-        return 15  # unknown source gets a floor
-
-
-# ScoreBreakdown is gone — the curation agent is the single source of truth
-# for "is this relevant" and ordering. Each Item carries its curation_rank
-# and the agent's free-text relevance_reason.
+    def followed_author_names(self) -> list[str]:
+        return [a.name for a in self.followed_authors if a.name]
 
 
 @dataclass
 class Item:
-    """One piece of work. Cross-posts collapse to a single Item with extra_venues."""
+    """One piece of work. Cross-posts merge into one Item via dedup."""
     id: str
     title: str
-    url: str            # canonical (primary) URL
-    venue: str          # canonical source slug
-    date: str           # YYYY-MM-DD
+    url: str
+    venue: str           # source slug ("arxiv_standalone", "alignment_forum", or a PULL source slug)
+    date: str            # YYYY-MM-DD
     authors: list[str]
-    description: str
-    subfield: str = "other"
+    description: str     # abstract or summary
+
+    # Activity / quality signals
+    citation_count: Optional[int] = None
     af_karma: Optional[int] = None
     af_comments: Optional[int] = None
-    af_url: Optional[str] = None
+    recent_comment_count: Optional[int] = None  # AF/LW: comments in last N days
+
+    # IDs and venue metadata
     arxiv_id: Optional[str] = None
     arxiv_url: Optional[str] = None
+    publication_venue: Optional[str] = None   # "NeurIPS 2026" etc. from S2
     affiliations: list[str] = field(default_factory=list)
-    extra_venues: list[dict] = field(default_factory=list)  # [{"venue", "url", "date"}]
-    publication_venue: Optional[str] = None  # e.g. "NeurIPS 2026" — quality signal from S2
-    curation_rank: Optional[int] = None      # 1-based; set by the curation agent
-    relevance_reason: Optional[str] = None   # the agent's text rationale
-    score: float = 0.0                       # derived from curation_rank (for SQL ordering)
+
+    # Provenance
+    discovered_via: Optional[str] = None      # "kw:sparse_autoencoder", "author:Nanda", "feed:goodfire"
+    extra_urls: list[dict] = field(default_factory=list)  # cross-post URLs
+
+    # Per-item user state
     is_read: bool = False
     is_starred: bool = False
 
@@ -134,27 +117,18 @@ class Item:
     def make_id(url: str) -> str:
         return "i_" + hashlib.sha1(url.encode()).hexdigest()[:12]
 
-    @classmethod
-    def from_raw(cls, raw: dict) -> "Item":
-        """Build from a gatherer-emitted dict (loose shape)."""
-        url = raw.get("url") or raw.get("primary_url") or ""
-        return cls(
-            id=cls.make_id(url),
-            title=raw["title"],
-            url=url,
-            venue=raw.get("venue") or raw.get("primary_venue") or "other",
-            date=raw.get("date") or raw.get("primary_date") or "",
-            authors=list(raw.get("authors", [])),
-            description=raw.get("description", ""),
-            subfield=raw.get("subfield", "other"),
-            af_karma=raw.get("af_karma") or raw.get("karma"),
-            af_comments=raw.get("af_comments") or raw.get("comments"),
-            af_url=raw.get("af_url"),
-            arxiv_id=raw.get("arxiv_id"),
-            arxiv_url=raw.get("arxiv_url"),
-            affiliations=list(raw.get("affiliations", [])),
-            extra_venues=list(raw.get("all_other_venues") or raw.get("extra_venues") or []),
-            publication_venue=raw.get("publication_venue"),
-            curation_rank=raw.get("curation_rank"),
-            relevance_reason=raw.get("relevance_reason"),
-        )
+
+@dataclass
+class Ranking:
+    """The ranker's per-item opinion. Re-generated whenever profile changes."""
+    item_id: str
+    profile_version: str
+    bucket: str           # core / adjacent / peripheral / off-topic
+    reasons: list[str] = field(default_factory=list)
+    why: str = ""
+    novelty: Optional[str] = None
+    ranked_at: str = ""
+
+    def bucket_priority(self) -> int:
+        """0 = most important. Used for sort order in the UI."""
+        return {"core": 0, "adjacent": 1, "peripheral": 2, "off-topic": 3}.get(self.bucket, 4)

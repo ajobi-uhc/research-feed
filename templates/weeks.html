@@ -1,25 +1,27 @@
 {% extends "base.html" %}
-{% import "_item_card.html" as macros %}
+{% import "_card.html" as macros %}
 
 {% block content %}
-<section class="view-header">
-  <h2>Last 4 weeks</h2>
-  <p class="dim">Each week, top items by your profile.</p>
-</section>
 
 {% for wk in weeks %}
   <section class="week-block">
-    <h3><a href="/week?ending={{ wk.end }}">Week of {{ wk.start }} → {{ wk.end }}</a> <span class="dim">· {{ wk.cards|length }}</span></h3>
-    {% if wk.cards %}
+    <h3>
+      <a href="/week?ending={{ wk.end }}">{{ wk.label }}</a>
+      <span class="dim small">· {{ wk.range }} · {{ wk.total }}</span>
+    </h3>
+    {% if wk.rows %}
       <div class="cards">
-        {% for item in wk.cards[:5] %}{{ macros.item_card(item) }}{% endfor %}
-        {% if wk.cards|length > 5 %}
-          <p class="dim"><a href="/week?ending={{ wk.end }}">view all {{ wk.cards|length }} →</a></p>
-        {% endif %}
+        {% for item, ranking in wk.rows %}
+          {{ macros.card(item, ranking) }}
+        {% endfor %}
       </div>
+      {% if wk.total > wk.rows|length %}
+        <p class="more-link"><a href="/week?ending={{ wk.end }}">view all {{ wk.total }} →</a></p>
+      {% endif %}
     {% else %}
-      <p class="dim empty">no items</p>
+      <p class="dim empty">—</p>
     {% endif %}
   </section>
 {% endfor %}
+
 {% endblock %}

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-
 {% block content %}
+
 <section class="view-header">
-  <h2 id="task-title">Working…</h2>
-  <p class="dim" id="task-message">Starting…</p>
+  <h2 id="title">Working…</h2>
+  <p class="dim" id="message">Starting…</p>
   <p class="dim small" id="elapsed">0s elapsed</p>
 </section>
 
@@ -12,29 +12,28 @@
 </section>
 
 <script>
-const startTime = Date.now();
+const start = Date.now();
 async function tick() {
   try {
     const r = await fetch("/api/progress");
     const s = await r.json();
-    document.getElementById("task-title").textContent = (
-      s.task === "onboarding+discovery" ? "Setting up your feed…"
-      : s.task === "discovery"          ? "Discovering items…"
-      : s.task === "re-onboard"         ? "Rebuilding your profile…"
+    document.getElementById("title").textContent = (
+      s.task === "onboard+discover" ? "Setting up your feed…"
+      : s.task === "discover"        ? "Discovering items…"
+      : s.task === "rerank"          ? "Re-ranking with your edits…"
       : "Working…"
     );
-    document.getElementById("task-message").textContent = s.message || "…";
+    document.getElementById("message").textContent = s.message || "…";
     document.getElementById("log").textContent = (s.log || []).slice(-300).join("\n");
     document.getElementById("log").scrollTop = 1e9;
-    document.getElementById("elapsed").textContent = Math.round((Date.now() - startTime)/1000) + "s elapsed";
-
+    document.getElementById("elapsed").textContent = Math.round((Date.now()-start)/1000) + "s elapsed";
     if (s.status === "done") {
-      setTimeout(() => { window.location.href = s.redirect_to || "/"; }, 600);
+      setTimeout(() => { window.location.href = s.redirect_to || "/feed"; }, 600);
       return;
     }
     if (s.status === "error") {
-      document.getElementById("task-title").textContent = "Error";
-      document.getElementById("task-message").textContent = s.message;
+      document.getElementById("title").textContent = "Error";
+      document.getElementById("message").textContent = s.message;
       return;
     }
   } catch (e) {}
