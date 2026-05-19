@@ -1,0 +1,51 @@
+{
+  "user_summary": "Test profile: mechanistic interpretability researcher focused on SAEs and feature visualization, follows the Anthropic interp team and Neel Nanda's GDM group.",
+  "user_identity": {
+    "name": "Test User (mech-interp)",
+    "affiliations": ["Test University"],
+    "scholar_url": null
+  },
+  "research_areas": [
+    "mechanistic interpretability",
+    "sparse autoencoders",
+    "feature visualization",
+    "circuit analysis",
+    "feature steering"
+  ],
+  "keywords": [
+    "sparse autoencoder",
+    "feature steering",
+    "circuit analysis",
+    "mechanistic interpretability",
+    "activation patching",
+    "polysemanticity",
+    "superposition"
+  ],
+  "trusted_authors": [
+    {"name": "Neel Nanda", "affiliation": "Google DeepMind", "why": "explicit"},
+    {"name": "Sam Marks", "affiliation": "Anthropic", "why": "explicit"},
+    {"name": "Jack Lindsey", "affiliation": "Anthropic", "why": "interp team"},
+    {"name": "Christopher Olah", "affiliation": "Anthropic", "why": "interp founder"},
+    {"name": "Joshua Batson", "affiliation": "Anthropic", "why": "interp team"},
+    {"name": "Arthur Conmy", "affiliation": "Google DeepMind", "why": "Nanda team"},
+    {"name": "Lucius Bushnaq", "affiliation": "Apollo", "why": "interp"},
+    {"name": "Lee Sharkey", "affiliation": "Apollo", "why": "interp"}
+  ],
+  "sources": [
+    {"slug": "anthropic_alignment_science", "name": "Anthropic Alignment Science", "url": "https://alignment.anthropic.com/", "trust": 45, "rationale": "test", "feed_url": null},
+    {"slug": "transformer_circuits", "name": "Transformer Circuits Thread", "url": "https://transformer-circuits.pub/", "trust": 50, "rationale": "test", "feed_url": null},
+    {"slug": "goodfire", "name": "Goodfire Research", "url": "https://www.goodfire.ai/research", "trust": 40, "rationale": "test", "feed_url": null},
+    {"slug": "anthropic_research", "name": "Anthropic Research", "url": "https://www.anthropic.com/research", "trust": 35, "rationale": "test", "feed_url": null},
+    {"slug": "metr", "name": "METR", "url": "https://metr.org/blog", "trust": 25, "rationale": "adjacent", "feed_url": null}
+  ],
+  "subfield_weights": {
+    "mech_interp": 20, "evals": 10, "alignment_training": 8,
+    "scalable_oversight": 6, "deceptive_alignment": 6,
+    "control": 5, "agent_safety": 5, "model_organisms": 8,
+    "governance": 3, "strategy": 3, "other": 5
+  },
+  "dislikes": ["product launch", "hiring announcement"],
+  "hidden_with_reason": [],
+  "notes": "test profile",
+  "research_notes": "fixture for evals"
+}

@@ -1,0 +1,30 @@
+{% macro item_card(item, show_score=false, show_description=true) %}
+<article class="card {{ 'read' if item.is_read else '' }} {{ 'starred' if item.is_starred else '' }}">
+  <header>
+    <a class="title" href="/item/{{ item.id }}">{{ item.title }}</a>
+    <div class="meta">
+      <span class="date">{{ item.date }}</span>
+      <span class="venue venue-{{ item.venue }}">{{ item.venue }}</span>
+      {% if item.subfield %}<span class="subfield">{{ item.subfield }}</span>{% endif %}
+      {% if item.extra_venues %}
+        <span class="crosspost">+{{ item.extra_venues|length }} venue{{ 's' if item.extra_venues|length > 1 else '' }}</span>
+      {% endif %}
+      {% if item.af_karma %}<span class="karma">⬆ {{ item.af_karma }} ({{ item.af_comments or 0 }} cmts)</span>{% endif %}
+      {% if item.arxiv_id %}<span class="arxiv-tag">arXiv</span>{% endif %}
+      {% if item.publication_venue %}<span class="pub-venue">{{ item.publication_venue }}</span>{% endif %}
+      {% if item.curation_rank %}<span class="rank">#{{ item.curation_rank }}</span>{% endif %}
+      <form method="post" action="/item/{{ item.id }}/hide" class="card-action inline">
+        <button type="submit" title="not relevant — hides + feeds back to next curation">✗</button>
+      </form>
+    </div>
+  </header>
+  {% if item.authors %}
+    <div class="authors">{{ ', '.join(item.authors[:6]) }}{% if item.authors|length > 6 %} +{{ item.authors|length - 6 }}{% endif %}</div>
+  {% endif %}
+  {% if item.relevance_reason %}
+    <p class="reason">{{ item.relevance_reason }}</p>
+  {% elif show_description and item.description %}
+    <p class="description">{{ item.description }}</p>
+  {% endif %}
+</article>
+{% endmacro %}
