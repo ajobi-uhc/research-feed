@@ -1,6 +1,7 @@
-# Secrets — never commit
+# Secrets — never commit (but keep the template)
 .env
 .env.*
+!.env.example
 
 # Python
 .venv/
