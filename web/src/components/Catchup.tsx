@@ -3,7 +3,7 @@ import { Digest } from "../api";
 import { followedLastNames, sourceMix, weekBuckets } from "../util";
 import ItemCard from "./ItemCard";
 
-// One catch-up: a ranked list, sliceable by week. "Most important" shows the
+// One digest: a ranked list, sliceable by week. "Most important" shows the
 // full month best-first; each week tab filters to items dated that week.
 export default function Catchup({ digest }: { digest: Digest }) {
   const followed = followedLastNames((digest as any).profile_snapshot?.authors || []);

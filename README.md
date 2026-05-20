@@ -2,7 +2,7 @@
 
 ## What this is
 
-Research Feed is a personalized research-discovery tool for AI-safety researchers who are too busy to track every channel work shows up on — arXiv, the Alignment Forum / LessWrong, and the dozens of lab and org blogs. You invest some time up front building a profile; after that you open it each morning (or every few days) to **catch up** on the most important new work in *your* subfield, and trust that you're not missing things.
+Research Feed is a personalized research-discovery tool for AI-safety researchers who are too busy to track every channel work shows up on — arXiv, the Alignment Forum / LessWrong, and the dozens of lab and org blogs. You invest some time up front building a profile; after that you open it each morning (or every few days) to read a fresh **digest** of the most important new work in *your* subfield, and trust that you're not missing things.
 
 It optimizes for four things, **in order of importance**:
 
@@ -11,14 +11,14 @@ It optimizes for four things, **in order of importance**:
 3. **Transparent** — visible reasoning, traceable decisions, and clear source coverage.
 4. **Adapts to you** — a steerable profile that learns from your feedback.
 
-**Who it's for:** a researcher who keeps up by word of mouth, occasional Twitter, and skimming LessWrong, but is overwhelmed by how spread out research is. The usage pattern is a daily/weekly catch-up; in production, feeds regenerate on a schedule so you never wait on them.
+**Who it's for:** a researcher who keeps up by word of mouth, occasional Twitter, and skimming LessWrong, but is overwhelmed by how spread out research is. The usage pattern is reading a daily/weekly digest; in production, digests regenerate on a schedule so you never wait on them.
 
 ## How to run it
 
-**Prerequisites:** [`uv`](https://docs.astral.sh/uv/), Node + npm, and an Anthropic API key in `.env` at the repo root:
+**Prerequisites:** [`uv`](https://docs.astral.sh/uv/) and Node 18+ (with npm). Create your `.env` from the template and add your Anthropic API key:
 
 ```sh
-echo 'ANTHROPIC_API_KEY=sk-ant-...' > .env
+cp .env.example .env   # then edit it and set ANTHROPIC_API_KEY
 ```
 
 Start the backend (FastAPI, port 8000) and frontend (React + Vite) in two terminals:

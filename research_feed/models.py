@@ -2,7 +2,6 @@
 from __future__ import annotations
 import hashlib
 from dataclasses import dataclass, field, asdict
-from typing import Any
 
 
 def hash12(s: str) -> str:
