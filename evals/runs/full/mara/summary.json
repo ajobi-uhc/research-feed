@@ -1,0 +1,15 @@
+{
+  "persona": "mara",
+  "sources": 8,
+  "interests": 14,
+  "authors": 15,
+  "kept": 15,
+  "oracle_total": 12,
+  "recalled": 5,
+  "critical": "2/3",
+  "important": "2/5",
+  "extras": 10,
+  "elapsed_min": 21.6,
+  "error": null,
+  "mode": "onboard"
+}

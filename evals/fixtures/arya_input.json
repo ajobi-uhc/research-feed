@@ -1,0 +1,16 @@
+{
+  "seed_papers": [
+    "https://alignment.anthropic.com/2026/teaching-claude-why/",
+    "https://transformer-circuits.pub/2023/monosemantic-features/index.html",
+    "https://arxiv.org/abs/2212.08073"
+  ],
+  "scholar_url": "",
+  "followed_authors": [
+    "Neel Nanda",
+    "Sara Price",
+    "Jack Lindsey"
+  ],
+  "current_question": "How character training works in LLMs — what training interventions actually instill values vs. surface behaviors — and how to evaluate model character rigorously (spec compliance evals, red-teaming, statistical methodology).",
+  "filter_outs": "AI governance, policy-focused safety work, vague existential risk narratives without empirical grounding",
+  "freeform": "Empirically-oriented alignment researcher at the intersection of mechanistic interpretability and character/values training. Anthropic-empirical style — care about statistical rigor (SEM, power analysis), OOD generalization of alignment training data, and what activations actually encode. Work closely with Neel Nanda and Samuel Marks."
+}

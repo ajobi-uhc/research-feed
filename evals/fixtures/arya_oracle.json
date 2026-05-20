@@ -1,0 +1,12 @@
+{
+  "profile": "arya",
+  "window": {"start": "2026-04-19", "end": "2026-05-19"},
+  "items": [
+    {"title": "Teaching Claude Why: Improving Model Behavior with Reasoning About Principles", "url": "https://alignment.anthropic.com/2026/teaching-claude-why/", "source": "lab_blog_anthropic_alignment", "date": "2026-05-08", "importance": "critical", "authors": ["Jonathan Kutasov", "Adam Jermyn", "Samuel Marks", "Sara Price", "Samuel R. Bowman", "Jan Leike", "Amanda Askell", "Chris Olah", "Evan Hubinger"]},
+    {"title": "Model Spec Midtraining (MSM): Shaping Generalization of Alignment Training", "url": "https://alignment.anthropic.com/2026/msm/", "source": "lab_blog_anthropic_alignment", "date": "2026-05-05", "importance": "critical", "authors": ["Chloe Li", "Sara Price", "Samuel Marks", "Jonathan Kutasov"]},
+    {"title": "Introspection Adapters: Eliciting Self-Reports of Fine-Tuning-Induced Behaviors", "url": "https://alignment.anthropic.com/2026/introspection-adapters/", "source": "lab_blog_anthropic_alignment", "date": "2026-04-28", "importance": "critical", "authors": ["Keshav Shenoy", "Andy Yang", "Abhay Sheshadri", "Andreas Mindermann", "Jack Lindsey", "Samuel Marks", "Rowan Wang"]},
+    {"title": "Natural Language Autoencoders: Unsupervised Translation of Activations into Text", "url": "https://transformer-circuits.pub/2026/nla/index.html", "source": "lab_blog_transformer_circuits", "date": "2026-05-07", "importance": "critical", "authors": ["Tom Fraser-Taliente", "Subhash Kantamneni", "Iván Arcuschin Ong", "Jack Lindsey", "Samuel Marks"]},
+    {"title": "HeadVis: An Interactive Tool for Interpreting Attention Heads", "url": "https://transformer-circuits.pub/2026/headvis/index.html", "source": "lab_blog_transformer_circuits", "date": "2026-05-04", "importance": "important", "authors": ["Luger", "Kamath", "Finkbeiner", "Goel", "Adam Jermyn", "Zimmerman", "Joshua Batson", "Tom Conerly"]},
+    {"title": "AI Organizations Can Be More Effective but Less Aligned than Individual Agents", "url": "https://alignment.anthropic.com/2026/ai-organizations/", "source": "lab_blog_anthropic_alignment", "date": "2026-04-25", "importance": "worth-including", "authors": ["Judy Hanwen Shen", "Daniel Zhu", "Siddarth Srinivasan", "Henry Sleight", "Lawrence T. Wagner III", "Morgan Jane Matthews", "Erik Jones", "Jascha Sohl-Dickstein"]}
+  ]
+}

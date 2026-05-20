@@ -1,0 +1,186 @@
+{
+  "user_summary": "Senior AI safety researcher with an empirical, practical orientation spanning alignment, evaluations, and governance. Their seed papers \u2014 AI Control (Greenblatt et al. 2023), Scalable Oversight (Bowman et al. 2022), and Constitutional AI (Bai et al. 2022) \u2014 point to a specific cluster: concrete alignment mechanisms for models that may resist supervision, oversight methods that scale beyond human ability, and AI-feedback training as an RLHF successor. All three papers sit squarely in the Anthropic-empirical and Redwood Research traditions, and the followed-author list reinforces this: control, scalable oversight, deception evals, model organisms, and the governance layer that wraps them (RSPs, frontier safety frameworks, policy). Their current question is governance-grounded \u2014 how are RSPs actually being operationalized, and where do dangerous capability evals stand for frontier models \u2014 but the substrate is always empirical safety work. They want signal across the full portfolio (scalable oversight, AI control, model organisms of misalignment, deception evaluations, red-teaming, and AI governance and policy) and explicitly filter out pure capabilities benchmarking without safety framing, speculative long-horizon philosophy, and ungrounded ML theory.",
+  "current_question": "How are leading labs operationalizing their RSPs/safety frameworks in practice? What's the state of dangerous capability evals for current frontier models?",
+  "interests": [
+    "responsible scaling policy operationalization",
+    "dangerous capability evaluations frontier models",
+    "AI control scheming and subversion protocols",
+    "scalable oversight beyond human supervision",
+    "weak-to-strong generalization alignment",
+    "reinforcement learning from AI feedback",
+    "model organisms of misalignment",
+    "deceptive alignment evaluations",
+    "adversarial red teaming language models",
+    "AI sabotage detection and safety protocols",
+    "autonomous AI capability benchmarking",
+    "frontier AI safety frameworks governance",
+    "debate methods for scalable oversight",
+    "AI security and cyber capability evaluation",
+    "lab safety commitments and if-then policies"
+  ],
+  "authors": [
+    {
+      "name": "Paul Christiano",
+      "affiliation": "Alignment Research Center (ARC)",
+      "why": "Originator of scalable oversight, debate, and IDA \u2014 the conceptual foundations underlying all three seed papers; continues publishing on oversight and control."
+    },
+    {
+      "name": "Jan Leike",
+      "affiliation": "Anthropic (Alignment Science team lead)",
+      "why": "Heads Anthropic's alignment science team; works directly on scalable oversight, weak-to-strong generalization, and robustness \u2014 overlaps all three seed topics."
+    },
+    {
+      "name": "Beth Barnes",
+      "affiliation": "METR (CEO and founder)",
+      "why": "Founded METR; leads dangerous capability evaluations and model-organism work that directly addresses the user's current question on evals."
+    },
+    {
+      "name": "Ajeya Cotra",
+      "affiliation": "METR (formerly Open Philanthropy)",
+      "why": "Former lead on OP AI safety grantmaking, now at METR; known for timelines analysis and thinking about RSP-style safety commitments and crunch-time dynamics."
+    },
+    {
+      "name": "Yoshua Bengio",
+      "affiliation": "Mila / Universit\u00e9 de Montr\u00e9al",
+      "why": "Chairs the International AI Safety Report 2026; bridges technical AI safety and high-level policy \u2014 key signal for the governance dimension."
+    },
+    {
+      "name": "Dan Hendrycks",
+      "affiliation": "Center for AI Safety (CAIS)",
+      "why": "Directs CAIS; publishes safety benchmarks and evaluations that bridge empirical safety research and governance advocacy."
+    },
+    {
+      "name": "Buck Shlegeris",
+      "affiliation": "Redwood Research",
+      "why": "Co-originated the AI control research agenda (seed paper #1); central figure on scheming threat models and control evaluation design."
+    },
+    {
+      "name": "Ryan Greenblatt",
+      "affiliation": "Redwood Research",
+      "why": "Lead author on the AI Control paper (seed paper #1); developing control evaluations for scheming and research-sabotage threat models."
+    },
+    {
+      "name": "Holden Karnofsky",
+      "affiliation": "Anthropic (technical staff, RSP and safety planning)",
+      "why": "Works on Anthropic's RSPs and safety planning; Cold Takes blog bridges safety strategy and governance practice at the frontier."
+    },
+    {
+      "name": "Helen Toner",
+      "affiliation": "Georgetown CSET (Interim Executive Director)",
+      "why": "Leads CSET; expert on geopolitics of AI, frontier AI governance, and international safety frameworks \u2014 core to the user's policy coverage."
+    },
+    {
+      "name": "Evan Hubinger",
+      "affiliation": "Anthropic",
+      "why": "Key theorist of deceptive alignment and model organisms of misalignment; provides theoretical foundations for the deception eval agenda the user tracks."
+    },
+    {
+      "name": "Sam Bowman",
+      "affiliation": "NYU / Anthropic-affiliated",
+      "why": "Lead author on the Scalable Oversight paper (seed paper #2); driving the empirical program for measuring scalable oversight progress."
+    },
+    {
+      "name": "Fabien Roger",
+      "affiliation": "Redwood Research",
+      "why": "Co-author on the AI Control paper (seed paper #1); works on control evaluation methodology, trusted monitoring, and anti-collusion protocols."
+    },
+    {
+      "name": "Kshitij Sachan",
+      "affiliation": "Redwood Research",
+      "why": "Co-author on the AI Control paper (seed paper #1); works on untrusted monitoring and multi-instance verification in control protocols."
+    },
+    {
+      "name": "Victoria Krakovna",
+      "affiliation": "Google DeepMind",
+      "why": "Leads specification gaming and reward hacking research at DeepMind \u2014 practical failure modes directly relevant to scalable oversight and control."
+    },
+    {
+      "name": "Jacob Steinhardt",
+      "affiliation": "UC Berkeley",
+      "why": "Publishes broadly on robustness, distributional shift, and emergent capabilities; empirical safety work that spans the user's eval and oversight interests."
+    },
+    {
+      "name": "Deep Ganguli",
+      "affiliation": "Anthropic",
+      "why": "Leads red-teaming and evaluations research at Anthropic; directly relevant to the adversarial evaluation dimension of the user's portfolio."
+    },
+    {
+      "name": "Owain Evans",
+      "affiliation": "UC Berkeley / ARC-affiliated",
+      "why": "Works on situational awareness, deceptive alignment, and model beliefs \u2014 empirical angle on model organisms and deception evals."
+    }
+  ],
+  "sources": [
+    {
+      "name": "METR Blog",
+      "url": "https://metr.org/blog",
+      "why": "Primary source for dangerous capability evaluations and autonomy evals \u2014 posts from May 2026 include reviews of Anthropic's risk reports and RSP operationalization; directly answers the current question."
+    },
+    {
+      "name": "METR Evaluation Reports",
+      "url": "https://metr.org/evaluations",
+      "why": "Index of METR's per-model dangerous capability evaluation reports (o3, o4-mini, DeepSeek-R1, Claude 3.7 etc.) \u2014 the most current empirical state of the eval art."
+    },
+    {
+      "name": "Anthropic Alignment Science",
+      "url": "https://alignment.anthropic.com",
+      "why": "Active monthly blog (multiple posts per month in 2026) covering scalable oversight, AI control, model organisms, and weak-to-strong generalization \u2014 core to all three seed papers."
+    },
+    {
+      "name": "Redwood Research Blog",
+      "url": "https://blog.redwoodresearch.org",
+      "why": "Primary outlet for AI control and scheming research by Shlegeris, Greenblatt et al.; posts in 2026 cover deployment-time misalignment and research sabotage in ML codebases."
+    },
+    {
+      "name": "Apollo Research Blog",
+      "url": "https://apolloresearch.ai/blog",
+      "why": "Confirmed active through May 2026; the go-to lab for empirical deception evaluations and in-context scheming research \u2014 model organisms agenda in practice."
+    },
+    {
+      "name": "Anthropic Research",
+      "url": "https://www.anthropic.com/research",
+      "why": "Covers Constitutional AI successors, RSP updates, alignment science, and policy \u2014 broad primary source across all three seed topics and the governance angle."
+    },
+    {
+      "name": "Anthropic Responsible Scaling Policy",
+      "url": "https://www.anthropic.com/responsible-scaling-policy",
+      "why": "Canonical primary source for RSP operationalization; v3.0 published February 2026 with Frontier Safety Roadmaps and public Risk Reports every 3\u20136 months."
+    },
+    {
+      "name": "UK AI Safety Institute (AISI)",
+      "url": "https://www.aisi.gov.uk/work",
+      "why": "Confirmed active through May 2026; publishes independent dangerous capability evals (cyber, autonomy) and frontier model assessments separate from the labs themselves."
+    },
+    {
+      "name": "FAR.AI",
+      "url": "https://far.ai",
+      "why": "Active in 2026 with upcoming events; portfolio covers robustness, deception, red-teaming, and model evaluation \u2014 complements the control and eval work in the user's brief."
+    },
+    {
+      "name": "Center for AI Safety",
+      "url": "https://safe.ai",
+      "why": "Dan Hendrycks-led org publishing technical safety benchmarks and multi-disciplinary safety research bridging empirical evals and broader governance advocacy."
+    },
+    {
+      "name": "Georgetown CSET",
+      "url": "https://cset.georgetown.edu/research",
+      "why": "Annual report through 2026; premier policy research on frontier AI governance, export controls, and CyberAI \u2014 matches the governance and security dimension of the user's portfolio."
+    },
+    {
+      "name": "Google DeepMind Research",
+      "url": "https://deepmind.google/research/publications",
+      "why": "Active through April 2026; source for specification gaming, reward hacking, and scalable oversight work from Krakovna, Shah, and the DeepMind safety team."
+    }
+  ],
+  "filter_outs": [
+    "Pure capabilities work with no safety angle",
+    "Speculative long-term alignment philosophy with no near-term connection",
+    "ML theory unconnected to safety"
+  ],
+  "seed_papers": [
+    "https://arxiv.org/abs/2312.06942",
+    "https://arxiv.org/abs/2211.03540",
+    "https://arxiv.org/abs/2212.08073"
+  ],
+  "notes": "All three seed papers come from the Anthropic-empirical and Redwood Research traditions and cluster around a specific program: building oversight and control mechanisms that remain reliable as models become more capable or actively subversive. The user's current question about RSP operationalization and dangerous capability evals adds a governance layer that is already present in their followed-author list (Toner, Karnofsky, Bengio). Sources were verified live: METR, Anthropic Alignment Science, Apollo Research, Redwood, AISI, and FAR.AI all confirmed posts in 2025\u20132026 by direct page fetch. The author list was expanded from 10 to 18 by surfacing frequent seed-paper coauthors (Sachan, Roger, Bowman), the deceptive alignment adjacent cluster (Hubinger, Evans), the empirical robustness cluster (Steinhardt, Krakovna), and Anthropic red-teaming leads (Ganguli) \u2014 all traceable to the exact sub-areas the seeds and freeform identify."
+}

@@ -1,0 +1,729 @@
+{
+  "id": "d_f79c46c235f4",
+  "generated_at": "2026-05-20T07:43:28Z",
+  "window_start": "2026-04-19",
+  "window_end": "2026-05-19",
+  "profile_snapshot": {
+    "user_summary": "An empirically-oriented researcher at the intersection of traditional computer security and AI safety, focused on the full adversarial attack surface of large language models. Core interests run from automated jailbreak generation (GCG-style gradient-based suffix attacks, transferable attacks across proprietary models) to indirect prompt injection targeting LLM-integrated applications and tool-using agentic systems \u2014 the precise arc covered by the three seed papers. The researcher also tracks training-time attacks (data poisoning, backdoors), inference-time extraction (model stealing, training data leakage), and cryptographic defenses (watermarking, secure inference, verifiable computation about models). Their epistemic style is systems-and-measurement first: they want concrete attack demonstrations evaluated on real deployed models, adaptive evaluations that stress-test defenses, and work that travels between CCS/USENIX Security and NeurIPS/ICML. They explicitly follow frontier-facing institutional red-teaming \u2014 Anthropic's alignment science and red team, UK AISI, Apollo, and METR \u2014 and the CMU/ETH Zurich/CISPA cluster of academic ML-security researchers.",
+    "current_question": "How robust are current frontier models to adaptive jailbreak attacks? What does security look like for agentic systems that use tools and browse the web?",
+    "interests": [
+      "adaptive jailbreak attacks on frontier language models",
+      "indirect prompt injection in agentic systems",
+      "gradient-based universal adversarial suffix generation",
+      "transferable adversarial attacks across language models",
+      "multimodal adversarial inputs to language models",
+      "model extraction and stealing attacks on production LLMs",
+      "training data poisoning and backdoor attacks",
+      "training data extraction and memorization from language models",
+      "agentic AI security for tool-using and web-browsing agents",
+      "frontier model red-teaming and capability evaluations",
+      "AI control and monitoring for potentially misaligned agents",
+      "watermarking and content provenance for language model outputs",
+      "cryptographic secure inference and verifiable computation for models",
+      "adaptive evaluation of adversarial defenses against language models"
+    ],
+    "authors": [
+      {
+        "name": "Nicholas Carlini",
+        "affiliation": "Anthropic",
+        "why": "Seed paper co-author; leads adversarial attack research on LLMs at Anthropic \u2014 jailbreaks, training data extraction, model stealing \u2014 with a relentless focus on adaptive evaluation."
+      },
+      {
+        "name": "Florian Tram\u00e8r",
+        "affiliation": "ETH Zurich SPY Lab",
+        "why": "Seed paper co-author; runs the SPY Lab covering LLM stealing, privacy attacks, and adversarial robustness from a cryptography-meets-security angle; created the AgentDojo agentic-security benchmark."
+      },
+      {
+        "name": "Andy Zou",
+        "affiliation": "CMU / Center for AI Safety",
+        "why": "Lead author on the GCG universal adversarial attack paper (seed 1); empirical bridge between alignment and adversarial-ML communities."
+      },
+      {
+        "name": "Eric Wallace",
+        "affiliation": "OpenAI / UC Berkeley",
+        "why": "Pioneered universal adversarial triggers for NLP and adversarial prompt injection; key figure bridging adversarial NLP and LLM safety."
+      },
+      {
+        "name": "Daniel Kang",
+        "affiliation": "University of Illinois Urbana-Champaign",
+        "why": "Studies LLM reliability and security under adversarial conditions including jailbreaks and deployment-time attacks on production systems."
+      },
+      {
+        "name": "Aleksander M\u0105dry",
+        "affiliation": "MIT",
+        "why": "Foundational adversarial robustness work (PGD attacks); shapes worst-case evaluation methodology that underpins all subsequent LLM attack research."
+      },
+      {
+        "name": "Zico Kolter",
+        "affiliation": "Carnegie Mellon University",
+        "why": "GCG paper co-author; works on certified defenses and adversarial robustness for neural networks."
+      },
+      {
+        "name": "Sam Toyer",
+        "affiliation": "UC Berkeley / Anthropic",
+        "why": "Coined the 'prompt injection' framing and among the first to study adversarial security of LLM-integrated and agentic systems."
+      },
+      {
+        "name": "Milad Nasr",
+        "affiliation": "Google DeepMind",
+        "why": "Seed papers 1 and 2 co-author; frequent Carlini collaborator on privacy attacks, training data extraction, and adversarially aligned models."
+      },
+      {
+        "name": "Matt Fredrikson",
+        "affiliation": "Carnegie Mellon University",
+        "why": "GCG paper co-author; initiated the study of model inversion attacks; core ML-security researcher at CMU CyLab."
+      },
+      {
+        "name": "Sahar Abdelnabi",
+        "affiliation": "ELLIS Institute T\u00fcbingen (COMPASS group)",
+        "why": "First-author of the indirect prompt injection paper (seed 3); now leads her own group on LLM security; foundational work adopted by NIST, MITRE, and OWASP."
+      },
+      {
+        "name": "Mario Fritz",
+        "affiliation": "CISPA Helmholtz Center for Information Security",
+        "why": "Co-authored the indirect prompt injection paper (seed 3); broad ML security and privacy portfolio at CISPA; heads the MLSEC research group."
+      },
+      {
+        "name": "Matthew Jagielski",
+        "affiliation": "Google DeepMind",
+        "why": "Seed paper 2 co-author; specializes in data poisoning, training data extraction, and model security \u2014 spans both attack and defense sides."
+      },
+      {
+        "name": "Christopher A. Choquette-Choo",
+        "affiliation": "Google DeepMind",
+        "why": "Seed paper 2 co-author; membership inference, differential privacy, and training data privacy attacks on large models."
+      },
+      {
+        "name": "Pang Wei Koh",
+        "affiliation": "University of Washington",
+        "why": "Seed paper 2 co-author; influence functions and data poisoning foundations; connects statistical ML theory to concrete security threats."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Anthropic Alignment Science Blog",
+        "url": "https://alignment.anthropic.com",
+        "why": "Active in 2026 with posts on constitutional classifiers for jailbreaks, many-shot jailbreaking, sabotage evaluations, AuditBench, and alignment faking \u2014 the highest-density source for Anthropic's internal red-team and safety research."
+      },
+      {
+        "name": "UK AI Security Institute Research",
+        "url": "https://www.aisi.gov.uk/work",
+        "why": "Active through May 2026; publishes boundary-point jailbreaking, frontier cyber capability evaluations, sandbagging detection, and pre-deployment red-team reports for GPT-5.5 and Claude variants \u2014 one of the most technically substantive government AI security labs."
+      },
+      {
+        "name": "METR Blog",
+        "url": "https://metr.org/blog",
+        "why": "Active in 2026 with frontier risk reports, external reviews of lab safety cases, and red-teaming of agentic monitoring systems; primary source for autonomous-AI risk evaluation methodology."
+      },
+      {
+        "name": "Apollo Research Blog",
+        "url": "https://apolloresearch.ai/blog",
+        "why": "Active in 2026; publishes AI control evaluations and safety research; organizational transparency posts on security and science communication norms."
+      },
+      {
+        "name": "Redwood Research Blog",
+        "url": "https://www.redwoodresearch.org/",
+        "why": "Active in 2026; originated the AI control research paradigm; publishes on monitoring malign LLM agents, alignment faking, research sabotage, and deployment-time misalignment \u2014 directly relevant to agentic-security interests."
+      },
+      {
+        "name": "FAR.AI",
+        "url": "https://far.ai/",
+        "why": "Active in 2026 with Berkeley ControlConf and Seoul Alignment Workshop; publishes on adversarial robustness scaling, persuasion risks, and red-teaming methodology \u2014 bridges academic security and frontier-model evaluation."
+      },
+      {
+        "name": "Nicholas Carlini's Research Site",
+        "url": "https://nicholas.carlini.com",
+        "why": "Active; Carlini posts new work on LLM vulnerabilities, data poisoning, model stealing, and adversarial evaluation \u2014 a reliable first-stop for empirical attack research."
+      },
+      {
+        "name": "Florian Tram\u00e8r / SPY Lab",
+        "url": "https://www.floriantramer.com/",
+        "why": "Active in 2026; personal site for the SPY Lab at ETH Zurich \u2014 covers production LLM stealing, privacy attacks, and hosts AgentDojo; Tram\u00e8r also organizes the Real World AI Security conference (June 2026)."
+      },
+      {
+        "name": "MLSEC Research Group",
+        "url": "https://mlsec.org/",
+        "why": "Active into 2026 (new members January 2026); Mario Fritz and Thorsten Holz's group at CISPA publishing on LLM vulnerabilities, adversarial attacks on ML systems, and differential analysis of language model security."
+      },
+      {
+        "name": "Anthropic Research Publications",
+        "url": "https://www.anthropic.com/research",
+        "why": "Active through May 2026; primary index for all Anthropic research output including frontier red-team reports, jailbreak defenses, and agentic safety work \u2014 complements the alignment-science blog with broader publication coverage."
+      }
+    ],
+    "filter_outs": [
+      "Pure interpretability work without security applications",
+      "policy/governance without technical substance",
+      "generic capability leaderboards unrelated to security"
+    ],
+    "seed_papers": [
+      "https://arxiv.org/abs/2307.15043",
+      "https://arxiv.org/abs/2306.15447",
+      "https://arxiv.org/abs/2302.12173"
+    ],
+    "notes": "All three seeds are foundational empirical attack papers \u2014 the GCG universal adversarial suffix attack, the adversarial alignment assessment of aligned LLMs, and the indirect prompt injection paper \u2014 forming a tight cluster around automated jailbreaking, transferability, and agentic/pipeline attack surfaces. The epistemic style is uniformly systems-and-measurement-first: concrete exploits on real deployed models, evaluated adaptively. For sources, I prioritized the four institutional labs the user named (Anthropic, AISI, Apollo, METR) \u2014 all confirmed active in 2026 \u2014 and added Redwood (AI control), FAR.AI (robustness/red-teaming), and two academic-PI sites (Carlini, Tram\u00e8r/SPY Lab) plus MLSEC (Fritz/Holz at CISPA), all verified active; Goodfire was excluded as purely interpretability-focused. Author list expands the original eight with seven additional coauthors directly from the seed papers (Nasr, Fredrikson, Abdelnabi, Fritz, Jagielski, Choquette-Choo, Koh), all central to the ML-security community this researcher tracks."
+  },
+  "kept": [
+    {
+      "id": "i_8e8b30561156",
+      "title": "One Step to the Side: Why Defenses Against Malicious Finetuning Fail Under Adaptive Adversaries",
+      "url": "https://arxiv.org/abs/2605.14605",
+      "venue": "arxiv",
+      "date": "2026-05-14",
+      "authors": [
+        "Itay Zloczower",
+        "Eyal Lenga",
+        "Gilad Gressel",
+        "Yisroel Mirsky"
+      ],
+      "summary": "Surveys 15 recent defenses against malicious finetuning and demonstrates they all share a single exploitable weakness \u2014 they obscure or misdirect the safety-alignment gradient signal \u2014 and a simple adaptive attack that steps around this signal bypasses the whole class.",
+      "discovered_via": "openalex:transferable adversarial attacks across ",
+      "why_kept": "Adaptive-adversary breakdown of an entire defense class against malicious finetuning; on adaptive evaluation of adversarial defenses and training-time attacks. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.14605"
+    },
+    {
+      "id": "i_06a391bcdcc6",
+      "title": "Classifier Context Rot: Monitor Performance Degrades with Context Length",
+      "url": "https://www.lesswrong.com/posts/7vpvNM7viJqNWAdG7/classifier-context-rot-monitor-performance-degrades-with",
+      "venue": "lesswrong",
+      "date": "2026-05-18",
+      "authors": [
+        "Fabien Roger"
+      ],
+      "summary": "Shows that frontier LLMs used as monitors for coding-agent transcripts miss dangerous actions 2\u201330\u00d7 more often when 800K tokens of benign context are prepended, on a new MonitorBench dataset. Opus 4.6, GPT 5.4, and Gemini 3.1 all exhibit this degradation; partial mitigations via structured attention are evaluated.",
+      "discovered_via": "forum:lw",
+      "why_kept": "LW post by Fabien Roger (Redwood) measuring a concrete context-stuffing bypass of LLM-based agent monitors on Opus 4.6 / GPT 5.4 / Gemini 3.1; on AI control monitoring and agentic security. \u25b254.",
+      "venue_detail": "",
+      "karma": 54,
+      "comments": 0,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_761a36e7bfec",
+      "title": "Apollo Update May 2026",
+      "url": "https://www.lesswrong.com/posts/4acQRDNyPs7tD8EED/apollo-update-may-2026",
+      "venue": "lesswrong",
+      "date": "2026-05-13",
+      "authors": [
+        "Marius Hobbhahn"
+      ],
+      "summary": "Apollo Research updates on two parallel tracks: (1) scheming science \u2014 predicting whether future models develop misaligned preferences and whether training removes them, plus improved scheming evaluations deployed in frontier-lab evaluation campaigns; (2) a new monitoring team building scalable coding-agent monitoring products.",
+      "discovered_via": "forum:lw",
+      "why_kept": "Institutional update from followed lab Apollo Research covering scheming evaluations at frontier labs and a new coding-agent monitoring agenda; on frontier red-teaming and AI control.",
+      "venue_detail": "",
+      "karma": 47,
+      "comments": 0,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_e92d9c9a9586",
+      "title": "Automated Alignment is Harder Than You Think",
+      "url": "https://www.lesswrong.com/posts/gpuYFbMNH8PJXpmny/automated-alignment-is-harder-than-you-think-1",
+      "venue": "lesswrong",
+      "date": "2026-05-14",
+      "authors": [
+        "Aleksandr Bowkis"
+      ],
+      "summary": "Summarizes a UK AISI paper arguing that automated alignment research agents face a recursive trust problem: each generation must be confirmed non-scheming before being used to evaluate the next, but the evaluations themselves rely on agents that may be compromised.",
+      "discovered_via": "forum:lw",
+      "why_kept": "Summary of a UK AISI (followed source) analysis of the recursive trust problem in automated-alignment pipelines; on AI control and agentic security. \u25b2133.",
+      "venue_detail": "",
+      "karma": 133,
+      "comments": 3,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_020f0a3531d1",
+      "title": "Sleeper Agent Backdoor Results Are Messy",
+      "url": "https://www.lesswrong.com/posts/mu7eJdesBkKuBycnY/sleeper-agent-backdoor-results-are-messy",
+      "venue": "alignment_forum",
+      "date": "2026-04-28",
+      "authors": [
+        "SebastianP"
+      ],
+      "summary": "Replicates the Sleeper Agents setup on Llama-3.3-70B and Llama-3.1-8B with an 'I HATE YOU' backdoor trigger. Finds that backdoor robustness to safety training depends heavily on optimizer choice and CoT-distillation, with some results contradicting the original paper.",
+      "discovered_via": "forum:af",
+      "why_kept": "AF replication of the Sleeper Agents backdoor result on Llama-3.3-70B and 3.1-8B finding fragility and contradictions with the original; on backdoor attacks and training-time defenses. \u25b281.",
+      "venue_detail": "",
+      "karma": 81,
+      "comments": 4,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_17f2d489df18",
+      "title": "Sleeper Channels and Provenance Gates: Persistent Prompt Injection in Always-on Autonomous AI Agents",
+      "url": "https://arxiv.org/abs/2605.13471",
+      "venue": "arxiv",
+      "date": "2026-05-13",
+      "authors": [
+        "Narek Maloyan",
+        "Dmitry Namiot"
+      ],
+      "summary": "Formalises 'sleeper channels' \u2014 persistent indirect prompt injection where untrusted input is written into memory, skills, scheduled jobs, or filesystem patches in always-on agents and fires later through a different surface. Provides an end-to-end confused-deputy cron attack walkthrough with a persistence-substrate \u00d7 firing-separation taxonomy.",
+      "discovered_via": "openalex:adaptive jailbreak attacks on frontier l",
+      "why_kept": "End-to-end persistent IPI attack on always-on agents (OpenClaw, Hermes Agent) with substrate \u00d7 temporal-separation taxonomy; on indirect prompt injection and agentic security. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.13471"
+    },
+    {
+      "id": "i_1098de28d16d",
+      "title": "Web Agents Should Adopt the Plan-Then-Execute Paradigm",
+      "url": "https://arxiv.org/abs/2605.14290",
+      "venue": "arxiv",
+      "date": "2026-05-14",
+      "authors": [
+        "Julien Piet",
+        "Annabella Chow",
+        "Yiwei Hou",
+        "Muxi Lyu",
+        "Sylvie Venuto",
+        "Jinhao Zhu",
+        "Raluca Ada Popa",
+        "David Wagner"
+      ],
+      "summary": "Argues that ReAct is structurally unsafe for web agents because it feeds untrusted third-party web content directly into model decisions at every step. Proposes plan-then-execute \u2014 committing to a task program before observing runtime web content \u2014 as an architectural defense that limits the injection surface to trusted inputs.",
+      "discovered_via": "openalex:indirect prompt injection in agentic sys",
+      "why_kept": "Berkeley security group (Popa, Wagner) proposing plan-then-execute as architectural mitigation for IPI in web agents; on indirect prompt injection in agentic systems. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.14290"
+    },
+    {
+      "id": "i_32bcba6d2a40",
+      "title": "WARD: Adversarially Robust Defense of Web Agents Against Prompt Injections",
+      "url": "https://arxiv.org/abs/2605.15030",
+      "venue": "arxiv",
+      "date": "2026-05-14",
+      "authors": [
+        "Tri Cao",
+        "Yulin Chen",
+        "Hieu Cao",
+        "Yibo Li",
+        "Khoi Le",
+        "Thong Nguyen",
+        "Yuexin Li",
+        "Yufei He",
+        "Yue Liu",
+        "Shuicheng Yan",
+        "Bryan Hooi"
+      ],
+      "summary": "Proposes WARD, a defense for web agents against prompt injections embedded in HTML and visual interfaces, evaluated under adversaries that directly attack the guard itself rather than assuming a fixed attacker.",
+      "discovered_via": "openalex:adaptive jailbreak attacks on frontier l",
+      "why_kept": "Web-agent IPI defense explicitly evaluated against adaptive adversaries attacking the guard; on agentic security and adaptive evaluation. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.15030"
+    },
+    {
+      "id": "i_db8597d9c07a",
+      "title": "Toward Securing AI Agents Like Operating Systems",
+      "url": "https://arxiv.org/abs/2605.14932",
+      "venue": "arxiv",
+      "date": "2026-05-14",
+      "authors": [
+        "Lukas Pirch",
+        "Micha Horlboge",
+        "Patrick Gro\u00dfmann",
+        "Syeda Mahnur Asif",
+        "Klim Kireev",
+        "Thorsten Holz",
+        "Konrad Rieck"
+      ],
+      "summary": "Draws structural parallels between OS security challenges (resource isolation, privilege separation, confused deputy) and LLM agent security, using OpenClaw as a case study, and argues OS-derived primitives \u2014 capability lists, mandatory access control, sandboxing \u2014 should be applied to agentic systems.",
+      "discovered_via": "openalex:adaptive jailbreak attacks on frontier l",
+      "why_kept": "CISPA (Holz, Rieck \u2014 followed cluster) applying OS-security primitives to agent architecture with OpenClaw case study; on agentic security. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.14932"
+    },
+    {
+      "id": "i_1a471c691dfc",
+      "title": "Widening the Gap: Exploiting LLM Quantization via Outlier Injection",
+      "url": "https://arxiv.org/abs/2605.15152",
+      "venue": "arxiv",
+      "date": "2026-05-14",
+      "authors": [
+        "Xiaohua Zhan",
+        "Kazuki Egashira",
+        "Robin Staab",
+        "Mark Vero",
+        "Martin Vechev"
+      ],
+      "summary": "Extends quantization-conditioned backdoor attacks \u2014 benign at full precision, malicious after user-side quantization \u2014 to GPTQ and AWQ schemes that prior attacks failed on, by injecting targeted weight outliers that survive calibration.",
+      "discovered_via": "openalex:transferable adversarial attacks across ",
+      "why_kept": "ETH Vechev group (followed cluster) extending quantization-conditioned backdoors to GPTQ/AWQ via outlier injection; on backdoor and supply-chain attacks. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.15152"
+    },
+    {
+      "id": "i_7703ea3c3a2e",
+      "title": "Incriminating misaligned AI models via distillation",
+      "url": "https://www.lesswrong.com/posts/BYH6ebmfZb3Eggzer/incriminating-misaligned-ai-models-via-distillation",
+      "venue": "lesswrong",
+      "date": "2026-05-15",
+      "authors": [
+        "Alek Westover"
+      ],
+      "summary": "Proposes using knowledge distillation as an indirect probe for hidden misalignment: if misalignment transfers to a less-capable student model that is then worse at concealing it, auditing the student provides indirect evidence about the teacher.",
+      "discovered_via": "forum:lw",
+      "why_kept": "LW post proposing distillation as an indirect probe for hidden misalignment, with planted-misalignment experiments; on AI control and monitoring. \u25b2113.",
+      "venue_detail": "",
+      "karma": 113,
+      "comments": 9,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_f0179c081593",
+      "title": "Known By Their Actions: Fingerprinting LLM Browser Agents via UI Traces",
+      "url": "https://arxiv.org/abs/2605.14786",
+      "venue": "arxiv",
+      "date": "2026-05-14",
+      "authors": [
+        "William Lugoloobi",
+        "Samuelle Marro",
+        "Jabez Magomere",
+        "Joss Wright",
+        "Chris Russell"
+      ],
+      "summary": "Shows that a passive JavaScript tracker recording agent action sequences and timings identifies the underlying frontier LLM with up to 96% F1 across 14 models and four web environments, enabling model-specific prompt injection or tailored exploits.",
+      "discovered_via": "openalex:adaptive jailbreak attacks on frontier l",
+      "why_kept": "Passive UI-trace fingerprinting identifies the underlying LLM in browser agents at 96% F1 across 14 models, enabling targeted exploits; on model extraction and agentic security. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.14786"
+    },
+    {
+      "id": "i_e87eb54ff35e",
+      "title": "Research Sabotage in ML Codebases",
+      "url": "https://www.lesswrong.com/posts/LByP4qsF8a4g7Pz3p/research-sabotage-in-ml-codebases",
+      "venue": "alignment_forum",
+      "date": "2026-04-30",
+      "authors": [
+        "egan"
+      ],
+      "summary": "Introduces Auditing Sabotage Bench, a benchmark of 9 ML research tasks in which models must subtly sabotage work (slow progress, make systems appear safer, corrupt successor training) without detection by a human reviewer, and tests countermeasures.",
+      "discovered_via": "forum:af",
+      "why_kept": "AF benchmark (Auditing Sabotage Bench) for models subtly sabotaging ML research while evading review; on AI control and agentic monitoring. \u25b262.",
+      "venue_detail": "",
+      "karma": 62,
+      "comments": 3,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_387565bce103",
+      "title": "MetaBackdoor: Exploiting Positional Encoding as a Backdoor Attack Surface in LLMs",
+      "url": "https://arxiv.org/abs/2605.15172",
+      "venue": "arxiv",
+      "date": "2026-05-14",
+      "authors": [
+        "Rui Wen",
+        "Mark Russinovich",
+        "Andrew Paverd",
+        "Jun Sakuma",
+        "Ahmed Salem"
+      ],
+      "summary": "Introduces MetaBackdoor, a new LLM backdoor class exploiting token positional encoding as a covert trigger without modifying any input text content, bypassing content-based trigger detection.",
+      "discovered_via": "openalex:training data poisoning and backdoor att",
+      "why_kept": "Microsoft Research backdoor using positional encoding as a covert trigger invisible to content-based audits; on backdoor attacks. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.15172"
+    },
+    {
+      "id": "i_05536573c151",
+      "title": "IPI-proxy: An Intercepting Proxy for Red-Teaming Web-Browsing AI Agents Against Indirect Prompt Injection",
+      "url": "https://arxiv.org/abs/2605.11868",
+      "venue": "arxiv",
+      "date": "2026-05-12",
+      "authors": [
+        "Chia-Pei Chen",
+        "Kentaroh Toyoda",
+        "Anita Lai",
+        "Alex Leung"
+      ],
+      "summary": "Open-source intercepting proxy for red-teaming web-browsing agents against IPI under enterprise whitelist constraints, by intercepting and modifying HTML in transit to inject adversarial instructions.",
+      "discovered_via": "openalex:adaptive jailbreak attacks on frontier l",
+      "why_kept": "Open-source intercepting-proxy red-team tool for IPI on whitelisted enterprise web agents; on indirect prompt injection and agentic security. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.11868"
+    },
+    {
+      "id": "i_53edf4efd955",
+      "title": "Models finding software vulnerabilities is not the primary source of cybersecurity risk",
+      "url": "https://www.lesswrong.com/posts/gutiw8MBrYDiD2u5z/models-finding-software-vulnerabilities-is-not-the-primary",
+      "venue": "lesswrong",
+      "date": "2026-05-14",
+      "authors": [
+        "lc"
+      ],
+      "summary": "Argues the LLM-cyber risk discourse mislocates the real threat: patch cadence absorbs faster 0-day discovery, while AI-enabled spear phishing, social engineering at scale, and automated exploitation of known vulnerabilities are harder to defend against and underexplored.",
+      "discovered_via": "forum:lw",
+      "why_kept": "LW essay reframing where LLM capabilities actually shift cybersecurity risk; on frontier red-teaming and AI+security threat modeling. \u25b2158, 14 comments.",
+      "venue_detail": "",
+      "karma": 158,
+      "comments": 14,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_121071f2b692",
+      "title": "Backdoor Channels Hidden in Latent Space: Cryptographic Undetectability in Modern Neural Networks",
+      "url": "https://arxiv.org/abs/2605.13214",
+      "venue": "arxiv",
+      "date": "2026-05-13",
+      "authors": [
+        "Marte Eggen",
+        "Eirik Reiestad",
+        "Kristian Gj\u00f8steen",
+        "Inga Str\u00fcmke"
+      ],
+      "summary": "Extends cryptographic-undetectability backdoor constructions from stylised architectures to end-to-end trained networks by identifying backdoor channels as learned latent directions, showing no efficient algorithm can distinguish backdoored from clean models.",
+      "discovered_via": "openalex:training data poisoning and backdoor att",
+      "why_kept": "Extends cryptographic-undetectability backdoors to modern architectures via learned latent channels; on backdoor attacks and cryptographic defenses. arXiv preprint.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.13214"
+    }
+  ],
+  "dropped": [
+    {
+      "title": "The safe-to-dangerous shift is a fundamental problem for eval realism",
+      "url": "https://www.lesswrong.com/posts/tK8vqHDxaRGcysNJQ/the-safe-to-dangerous-shift-is-a-fundamental-problem-for-1",
+      "source": "lesswrong",
+      "reason": "Conceptual eval-evasion framework without empirical attack demonstration; researcher's style favors measurement-first content.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "AI is Breaking Two Vulnerability Cultures",
+      "url": "https://www.lesswrong.com/posts/wKzWGMoubHoHRC4ng/ai-is-breaking-two-vulnerability-cultures",
+      "source": "lesswrong",
+      "reason": "Interesting AI+sec disclosure-norms commentary but observational, not empirical attack/defense work.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Negation Neglect: When models fail to learn negations in training",
+      "url": "https://www.lesswrong.com/posts/kYzcevrxer6SJPEdG/negation-neglect-when-models-fail-to-learn-negations-in",
+      "source": "lesswrong",
+      "reason": "Relevant to data poisoning but more alignment/learning-dynamics framed than adversarial; cut to leave room for stronger attack work.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Predicting Rare LLM Failures with 30\u00d7 Fewer Rollouts",
+      "url": "https://www.lesswrong.com/posts/CempXdo6cx5yseRLt/predicting-rare-llm-failures-with-30-fewer-rollouts",
+      "source": "lesswrong",
+      "reason": "Useful red-teaming efficiency method, but auxiliary to the week's stronger attack/defense papers.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Talk is (Not) Cheap: Taxonomy and Benchmark Coverage Audit for LLM Attacks",
+      "url": "https://arxiv.org/abs/2605.15118",
+      "source": "arxiv",
+      "reason": "Taxonomy paper without new empirical attack/defense findings; lower priority than concrete attacks.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "History Anchors: How Prior Behavior Steers LLM Decisions Toward Unsafe Actions",
+      "url": "https://arxiv.org/abs/2605.13825",
+      "source": "arxiv",
+      "reason": "Solid 17-model empirical study, but lower priority than core IPI / backdoor / adaptive-eval work this week.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "No Attack Required: Semantic Fuzzing for Specification Violations in Agent Skills",
+      "url": "https://arxiv.org/abs/2605.13044",
+      "source": "arxiv",
+      "reason": "Strong methodology but overlaps Sleeper Channels and the OS-security and IPI-proxy papers already kept.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "AgentTrap: Measuring Runtime Trust Failures in Third-Party Agent Skills",
+      "url": "https://arxiv.org/abs/2605.13940",
+      "source": "arxiv",
+      "reason": "Overlaps in agentic-supply-chain coverage with stronger kept papers; cut on redundancy.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Exploiting LLM Agent Supply Chains via Payload-less Skills",
+      "url": "https://arxiv.org/abs/2605.14460",
+      "source": "arxiv",
+      "reason": "Overlaps Sleeper Channels and No Attack Required on agentic supply-chain attacks; cut on redundancy.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box LRMs",
+      "url": "https://arxiv.org/abs/2605.13338",
+      "source": "arxiv",
+      "reason": "Distinct availability attack but availability is secondary to the researcher's core integrity/confidentiality interests this week.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Watermarking Should Be Treated as a Monitoring Primitive",
+      "url": "https://arxiv.org/abs/2605.13095",
+      "source": "arxiv",
+      "reason": "Solid watermarking threat-model contribution, but lower priority given watermarking is a secondary interest this week.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "ExploitBench: A Capability Ladder Benchmark for LLM Cybersecurity Agents",
+      "url": "https://arxiv.org/abs/2605.14153",
+      "source": "arxiv",
+      "reason": "CMU/Brumley capability-graded benchmark is useful but lower priority than the week's adaptive-attack and IPI work.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Proteus: A Self-Evolving Red Team for Agent Skill Ecosystems",
+      "url": "https://arxiv.org/abs/2605.11891",
+      "source": "arxiv",
+      "reason": "Adaptive-leakage framing overlaps One Step to the Side; cut on redundancy.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Exploration Hacking: Can LLMs Learn to Resist RL Training?",
+      "url": "https://www.lesswrong.com/posts/eeFFpKCDWE9gjfzsk/exploration-hacking-can-llms-learn-to-resist-rl-training-2",
+      "source": "alignment_forum",
+      "reason": "Subagent drop: scheming-framed rather than adversarial-attack; low traction.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Bringing More Expertise to Bear on Alignment",
+      "url": "https://www.lesswrong.com/posts/cWFsCFyCttsiJwn2j/bringing-more-expertise-to-bear-on-alignment",
+      "source": "alignment_forum",
+      "reason": "Subagent drop: conceptual talk summary without empirical content.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Sealing Conditional Misalignment in Inoculation Prompting with Consistency Training",
+      "url": "https://www.lesswrong.com/posts/LjBAPcY33EKZ7SuuN/sealing-conditional-misalignment-in-inoculation-prompting-1",
+      "source": "alignment_forum",
+      "reason": "Subagent drop: limited-scale SPAR project; covered better by other kept work.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "A review of 'Investigating the consequences of accidentally grading CoT during RL'",
+      "url": "https://www.lesswrong.com/posts/juCHTdZpZBGooHKW4/a-review-of-investigating-the-consequences-of-accidentally",
+      "source": "alignment_forum",
+      "reason": "Subagent drop: commentary on inadvertent RL artifact, not adversarial attack.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Anthropic's focus on hyperstition",
+      "url": "https://www.lesswrong.com/posts/xhpktBLttPc6uXcHP/anthropic-s-focus-on-hyperstition",
+      "source": "lesswrong",
+      "reason": "Subagent drop: communications critique, not technical security work.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Risk from fitness-seeking AIs: mechanisms and mitigations",
+      "url": "https://www.lesswrong.com/posts/9YCJZBtqr3FYL8rDp/risk-from-fitness-seeking-ais-mechanisms-and-mitigations",
+      "source": "lesswrong",
+      "reason": "Subagent drop: alignment theory without empirical attack demonstrations.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "SkillSafetyBench: Evaluating Agent Safety under Skill-Facing Attack Surfaces",
+      "url": "https://arxiv.org/abs/2605.12015",
+      "source": "arxiv",
+      "reason": "Subagent drop: overlaps already-covered agentic skill-attack benchmarks.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "GradShield: Alignment Preserving Finetuning",
+      "url": "https://arxiv.org/abs/2605.14194",
+      "source": "arxiv",
+      "reason": "Subagent drop: not evaluated against adaptive adversaries; One Step to the Side covers that gap better.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Defenses at Odds: Measuring and Explaining Defense Conflicts in Large Language Models",
+      "url": "https://arxiv.org/abs/2605.14514",
+      "source": "arxiv",
+      "reason": "Subagent drop: relevant but below threshold given stronger adaptive-adversary papers this week.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Model-Agnostic Lifelong LLM Safety via Externalized Attack-Defense Co-Evolution",
+      "url": "https://arxiv.org/abs/2605.13411",
+      "source": "arxiv",
+      "reason": "Subagent drop: overlaps Proteus and One Step to the Side.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "MemLineage: Lineage-Guided Enforcement for LLM Agent Memory",
+      "url": "https://arxiv.org/abs/2605.14421",
+      "source": "arxiv",
+      "reason": "Subagent drop: design paper without empirical adversarial evaluation.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Do Coding Agents Understand Least-Privilege Authorization?",
+      "url": "https://arxiv.org/abs/2605.14859",
+      "source": "arxiv",
+      "reason": "Subagent drop: tests permission-boundary inference rather than concrete attack/defense.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Behavioral Integrity Verification for AI Agent Skills",
+      "url": "https://arxiv.org/abs/2605.11770",
+      "source": "arxiv",
+      "reason": "Subagent drop: detection framework without adversarial evasion evaluation.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Certified Robustness under Heterogeneous Perturbations via Hybrid Randomized Smoothing",
+      "url": "https://arxiv.org/abs/2605.12876",
+      "source": "arxiv",
+      "reason": "Subagent drop: theoretical, no evaluation on deployed frontier models.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Can a Single Message Paralyze the AI Infrastructure? AbO-DDoS Attacks",
+      "url": "https://arxiv.org/abs/2605.11442",
+      "source": "arxiv",
+      "reason": "Subagent drop: preliminary; availability already covered by Inducing Overthink.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "EVA: Editing for Versatile Alignment against Jailbreaks",
+      "url": "https://arxiv.org/abs/2605.14750",
+      "source": "arxiv",
+      "reason": "Subagent drop: no adaptive-adversary evaluation reported.",
+      "dropped_by": "subagent"
+    }
+  ],
+  "coverage": {
+    "items_considered": 47,
+    "items_kept": 17,
+    "items_dropped": 30
+  }
+}

@@ -1,0 +1,79 @@
+
+=== Eval: priya ===
+Our feed: 17 items   Oracle: 17 items
+
+  Critical:        0/4 recalled
+  Important:       1/8 recalled
+  Worth-including: 0/5 recalled
+  Total recall:    1/17 = 6%
+  Extras in ours:  16  (not in oracle — may be valid finds)
+
+MISSED (in oracle, not in our feed):
+  [critical        ] Claude Mythos Preview — Frontier Red Team technical writeup on autonomous vulnerability discovery and exploitation
+                     https://red.anthropic.com/2026/mythos-preview/
+  [critical        ] Project Glasswing: Securing critical software for the AI era
+                     https://www.anthropic.com/glasswing
+  [critical        ] AI Agents May Always Fall for Prompt Injections
+                     https://arxiv.org/abs/2605.17634
+  [critical        ] ExploitGym: Can AI Agents Turn Security Vulnerabilities into Real Attacks?
+                     https://arxiv.org/abs/2605.11086
+  [important       ] SoK: Robustness in Large Language Models against Jailbreak Attacks
+                     https://arxiv.org/abs/2605.05058
+  [important       ] Poisoning Fine-tuning Datasets of Constitutional Classifiers
+                     https://alignment.anthropic.com/2026/backdooring-classifiers/
+  [important       ] A Systematic Survey of Security Threats and Defenses in LLM-Based AI Agents: A Layered Attack Surface Framework
+                     https://arxiv.org/abs/2604.23338
+  [important       ] VOW: Verifiable and Oblivious Watermark Detection for Large Language Models
+                     https://arxiv.org/abs/2604.27666
+  [important       ] Dataset Watermarking for Closed LLMs with Provable Detection
+                     https://arxiv.org/abs/2605.06865
+  [important       ] Watermarking LLM Agent Trajectories (ActHook, v2)
+                     https://arxiv.org/abs/2602.18700
+  [important       ] Our evaluation of Claude Mythos Preview's cyber capabilities
+                     https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities
+  [worth-including ] Exposing LLM Safety Gaps Through Mathematical Encoding: New Attacks and Systematic Analysis
+                     https://arxiv.org/abs/2605.03441
+  [worth-including ] Adversarial Attacks Against MLLMs via Progressive Resolution Processing and Adaptive Feature Alignment (PRAF-Attack)
+                     https://arxiv.org/abs/2605.09902
+  [worth-including ] Preference Redirection via Attention Concentration: An Attack on Computer Use Agents (PRAC)
+                     https://arxiv.org/abs/2604.08005
+  [worth-including ] NCSC + AISI: Why cyber defenders need to be ready for frontier AI
+                     https://www.ncsc.gov.uk/blogs/why-cyber-defenders-need-to-be-ready-for-frontier-ai
+  [worth-including ] Logit Suppression Vulnerabilities in LLM Safety Alignment (SSAG / VulMine, v4)
+                     https://arxiv.org/abs/2405.13068
+
+EXTRAS (in our feed, not in oracle):
+  One Step to the Side: Why Defenses Against Malicious Finetuning Fail Under Adaptive Adversaries
+      https://arxiv.org/abs/2605.14605
+  Classifier Context Rot: Monitor Performance Degrades with Context Length
+      https://www.lesswrong.com/posts/7vpvNM7viJqNWAdG7/classifier-context-rot-monitor-performance-degrades-with
+  Automated Alignment is Harder Than You Think
+      https://www.lesswrong.com/posts/gpuYFbMNH8PJXpmny/automated-alignment-is-harder-than-you-think-1
+  Sleeper Agent Backdoor Results Are Messy
+      https://www.lesswrong.com/posts/mu7eJdesBkKuBycnY/sleeper-agent-backdoor-results-are-messy
+  Sleeper Channels and Provenance Gates: Persistent Prompt Injection in Always-on Autonomous AI Agents
+      https://arxiv.org/abs/2605.13471
+  Web Agents Should Adopt the Plan-Then-Execute Paradigm
+      https://arxiv.org/abs/2605.14290
+  WARD: Adversarially Robust Defense of Web Agents Against Prompt Injections
+      https://arxiv.org/abs/2605.15030
+  Toward Securing AI Agents Like Operating Systems
+      https://arxiv.org/abs/2605.14932
+  Widening the Gap: Exploiting LLM Quantization via Outlier Injection
+      https://arxiv.org/abs/2605.15152
+  Incriminating misaligned AI models via distillation
+      https://www.lesswrong.com/posts/BYH6ebmfZb3Eggzer/incriminating-misaligned-ai-models-via-distillation
+  Known By Their Actions: Fingerprinting LLM Browser Agents via UI Traces
+      https://arxiv.org/abs/2605.14786
+  Research Sabotage in ML Codebases
+      https://www.lesswrong.com/posts/LByP4qsF8a4g7Pz3p/research-sabotage-in-ml-codebases
+  MetaBackdoor: Exploiting Positional Encoding as a Backdoor Attack Surface in LLMs
+      https://arxiv.org/abs/2605.15172
+  IPI-proxy: An Intercepting Proxy for Red-Teaming Web-Browsing AI Agents Against Indirect Prompt Injection
+      https://arxiv.org/abs/2605.11868
+  Models finding software vulnerabilities is not the primary source of cybersecurity risk
+      https://www.lesswrong.com/posts/gutiw8MBrYDiD2u5z/models-finding-software-vulnerabilities-is-not-the-primary
+  ... and 1 more
+
+RECALLED:
+  [important       ] Apollo Update — May 2026

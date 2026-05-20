@@ -1,0 +1,23 @@
+{
+  "profile": "priya",
+  "window": {"start": "2026-04-19", "end": "2026-05-19"},
+  "items": [
+    {"title": "Claude Mythos Preview — Frontier Red Team technical writeup on autonomous vulnerability discovery and exploitation", "url": "https://red.anthropic.com/2026/mythos-preview/", "source": "lab_blog_anthropic_red_team", "date": "2026-04-07", "importance": "critical", "authors": ["Anthropic Frontier Red Team", "Nicholas Carlini"]},
+    {"title": "Project Glasswing: Securing critical software for the AI era", "url": "https://www.anthropic.com/glasswing", "source": "lab_blog_anthropic", "date": "2026-04-07", "importance": "critical", "authors": ["Anthropic"]},
+    {"title": "AI Agents May Always Fall for Prompt Injections", "url": "https://arxiv.org/abs/2605.17634", "source": "arxiv", "date": "2026-05-17", "importance": "critical", "authors": ["Sahar Abdelnabi", "Eugene Bagdasarian"]},
+    {"title": "ExploitGym: Can AI Agents Turn Security Vulnerabilities into Real Attacks?", "url": "https://arxiv.org/abs/2605.11086", "source": "arxiv", "date": "2026-05-11", "importance": "critical", "authors": ["Zhun Wang", "Nico Schiller", "Hongwei Li", "Milad Nasr", "Nicholas Carlini", "Xiangyu Qi", "Eric Wallace", "Elie Bursztein", "Yan Shoshitaishvili", "Wenbo Guo", "Thorsten Holz", "Dawn Song"]},
+    {"title": "SoK: Robustness in Large Language Models against Jailbreak Attacks", "url": "https://arxiv.org/abs/2605.05058", "source": "arxiv", "date": "2026-05-06", "importance": "important", "authors": ["Feiyue Xu", "Hongsheng Hu"]},
+    {"title": "Poisoning Fine-tuning Datasets of Constitutional Classifiers", "url": "https://alignment.anthropic.com/2026/backdooring-classifiers/", "source": "lab_blog_anthropic_alignment", "date": "2026-04-01", "importance": "important", "authors": ["Fabien Roger"]},
+    {"title": "Apollo Update — May 2026", "url": "https://www.apolloresearch.ai/blog/apollo-update-may-2026/", "source": "lab_blog_apollo", "date": "2026-05-13", "importance": "important", "authors": ["Apollo Research"]},
+    {"title": "A Systematic Survey of Security Threats and Defenses in LLM-Based AI Agents: A Layered Attack Surface Framework", "url": "https://arxiv.org/abs/2604.23338", "source": "arxiv", "date": "2026-04-25", "importance": "important", "authors": ["Kexin Chu"]},
+    {"title": "VOW: Verifiable and Oblivious Watermark Detection for Large Language Models", "url": "https://arxiv.org/abs/2604.27666", "source": "arxiv", "date": "2026-04-30", "importance": "important", "authors": ["Xiaokun Luan"]},
+    {"title": "Dataset Watermarking for Closed LLMs with Provable Detection", "url": "https://arxiv.org/abs/2605.06865", "source": "arxiv", "date": "2026-05-07", "importance": "important", "authors": ["Pengrun Huang"]},
+    {"title": "Watermarking LLM Agent Trajectories (ActHook, v2)", "url": "https://arxiv.org/abs/2602.18700", "source": "arxiv", "date": "2026-05-04", "importance": "important", "authors": ["Wenlong Meng"]},
+    {"title": "Our evaluation of Claude Mythos Preview's cyber capabilities", "url": "https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities", "source": "lab_blog_aisi", "date": "2026-04-13", "importance": "important", "authors": ["UK AISI"]},
+    {"title": "Exposing LLM Safety Gaps Through Mathematical Encoding: New Attacks and Systematic Analysis", "url": "https://arxiv.org/abs/2605.03441", "source": "arxiv", "date": "2026-05-04", "importance": "worth-including", "authors": []},
+    {"title": "Adversarial Attacks Against MLLMs via Progressive Resolution Processing and Adaptive Feature Alignment (PRAF-Attack)", "url": "https://arxiv.org/abs/2605.09902", "source": "arxiv", "date": "2026-05-11", "importance": "worth-including", "authors": ["Haobo Wang"]},
+    {"title": "Preference Redirection via Attention Concentration: An Attack on Computer Use Agents (PRAC)", "url": "https://arxiv.org/abs/2604.08005", "source": "arxiv", "date": "2026-04-10", "importance": "worth-including", "authors": []},
+    {"title": "NCSC + AISI: Why cyber defenders need to be ready for frontier AI", "url": "https://www.ncsc.gov.uk/blogs/why-cyber-defenders-need-to-be-ready-for-frontier-ai", "source": "lab_blog_ncsc", "date": "2026-03-30", "importance": "worth-including", "authors": ["NCSC", "AISI"]},
+    {"title": "Logit Suppression Vulnerabilities in LLM Safety Alignment (SSAG / VulMine, v4)", "url": "https://arxiv.org/abs/2405.13068", "source": "arxiv", "date": "2026-04-18", "importance": "worth-including", "authors": ["Yuxi Li", "Yi Liu", "Yuekang Li", "Ling Shi", "Gelei Deng", "Shengquan Chen", "Kailong Wang"]}
+  ]
+}

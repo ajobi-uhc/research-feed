@@ -1,0 +1,15 @@
+{
+  "persona": "david",
+  "sources": 12,
+  "interests": 15,
+  "authors": 18,
+  "kept": 20,
+  "oracle_total": 20,
+  "recalled": 8,
+  "critical": "5/7",
+  "important": "2/10",
+  "extras": 12,
+  "elapsed_min": 17.7,
+  "error": null,
+  "mode": "onboard"
+}

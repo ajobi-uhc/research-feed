@@ -1,0 +1,52 @@
+
+=== Eval: arya ===
+Our feed: 17 items   Oracle: 6 items
+
+  Critical:        3/4 recalled
+  Important:       0/1 recalled
+  Worth-including: 0/1 recalled
+  Total recall:    3/6 = 50%
+  Extras in ours:  14  (not in oracle — may be valid finds)
+
+MISSED (in oracle, not in our feed):
+  [critical        ] Teaching Claude Why: Improving Model Behavior with Reasoning About Principles
+                     https://alignment.anthropic.com/2026/teaching-claude-why/
+  [important       ] HeadVis: An Interactive Tool for Interpreting Attention Heads
+                     https://transformer-circuits.pub/2026/headvis/index.html
+  [worth-including ] AI Organizations Can Be More Effective but Less Aligned than Individual Agents
+                     https://alignment.anthropic.com/2026/ai-organizations/
+
+EXTRAS (in our feed, not in oracle):
+  Negation Neglect: When models fail to learn negations in training
+      https://arxiv.org/abs/2605.13829
+  A Mechanistic Investigation of Supervised Fine Tuning
+      https://arxiv.org/abs/2605.11426
+  Interpreting Language Model Parameters
+      https://www.goodfire.ai/research/interpreting-lm-parameters
+  Poisoning Fine-tuning Datasets of Constitutional Classifiers
+      https://alignment.anthropic.com/2026/backdooring-classifiers/
+  The World Inside Neural Networks
+      https://www.goodfire.ai/research/the-world-inside-neural-networks
+  A Geometric Calculator Inside a Neural Network
+      https://www.goodfire.ai/research/a-geometric-calculator
+  Overtrained, Not Misaligned
+      https://arxiv.org/abs/2605.12199
+  Investigating the Consequences of Accidentally Grading CoT During RL
+      https://alignment.openai.com/accidental-cot-grading/
+  Open Sourcing Monitorability Evaluations
+      https://alignment.openai.com/monitorability-evals/
+  Classifier Context Rot: Monitor Performance Degrades with Context Length
+      https://www.lesswrong.com/posts/7vpvNM7viJqNWAdG7/classifier-context-rot-monitor-performance-degrades-with
+  Incriminating misaligned AI models via distillation
+      https://www.lesswrong.com/posts/BYH6ebmfZb3Eggzer/incriminating-misaligned-ai-models-via-distillation
+  Persona-Model Collapse in Emergent Misalignment
+      https://arxiv.org/abs/2605.12850
+  Sleeper Agent Backdoor Results Are Messy
+      https://www.lesswrong.com/posts/mu7eJdesBkKuBycnY/sleeper-agent-backdoor-results-are-messy
+  Anthropic's strange fixation on hyperstition
+      https://www.lesswrong.com/posts/xhpktBLttPc6uXcHP/anthropic-s-strange-fixation-on-hyperstition
+
+RECALLED:
+  [critical        ] Model Spec Midtraining (MSM): Shaping Generalization of Alignment Training
+  [critical        ] Introspection Adapters: Eliciting Self-Reports of Fine-Tuning-Induced Behaviors
+  [critical        ] Natural Language Autoencoders: Unsupervised Translation of Activations into Text

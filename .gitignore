@@ -8,9 +8,14 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Runtime data — never commit user data, DB, scratch agent outputs
-data/*.db
-data/*.json
+# Runtime data — DB, live server logs, per-run traces (all regenerated at runtime)
+data/
 
 # OS
 .DS_Store
+
+# Harness runtime
+.claude/
+
+web/node_modules/
+web/dist/

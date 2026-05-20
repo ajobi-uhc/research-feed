@@ -1,0 +1,71 @@
+
+=== Eval: david ===
+Our feed: 20 items   Oracle: 20 items
+
+  Critical:        5/7 recalled
+  Important:       2/10 recalled
+  Worth-including: 1/3 recalled
+  Total recall:    8/20 = 40%
+  Extras in ours:  12  (not in oracle — may be valid finds)
+
+MISSED (in oracle, not in our feed):
+  [critical        ] Teaching Claude Why (and accompanying paper: Model Spec Midtraining)
+                     https://alignment.anthropic.com/2026/teaching-claude-why/
+  [critical        ] Evaluating whether AI models would sabotage AI safety research
+                     https://www.aisi.gov.uk/research/evaluating-whether-ai-models-would-sabotage-ai-safety-research
+  [important       ] Risk from fitness-seeking AIs: mechanisms
+                     https://blog.redwoodresearch.org/p/risk-from-fitness-seeking-ais-mechanisms
+  [important       ] Task Substitution and Uplift
+                     https://metr.org/blog/2026-05-08-task-substitution-and-uplift/
+  [important       ] Ask don't tell: Reducing sycophancy in large language models
+                     https://www.aisi.gov.uk/research/ask-dont-tell-reducing-sycophancy-in-large-language-models
+  [important       ] Propensity Inference: Environmental Contributors to LLM Behaviour
+                     https://www.aisi.gov.uk/research/propensity-inference-environmental-contributors-to-llm-behaviour
+  [important       ] Yoshua Bengio thinks he knows how to build safe superintelligence (80,000 Hours podcast)
+                     https://80000hours.org/podcast/episodes/yoshua-bengio-scientist-ai/
+  [important       ] Measuring the Self-Reported Impact of Early-2026 AI on Technical Worker Productivity
+                     https://metr.org/blog/2026-05-11-ai-usage-survey/
+  [important       ] Evidence on AI R&D Progress from NanoGPT
+                     https://metr.org/notes/2026-04-21-ai-rd-nanogpt-progress/
+  [important       ] Partnering with Microsoft to strengthen frontier AI safety
+                     https://www.aisi.gov.uk/blog/partnering-with-microsoft-to-strengthen-frontier-ai-safety
+  [worth-including ] A review of "Investigating the consequences of accidentally grading CoT during RL"
+                     https://blog.redwoodresearch.org/p/openai-cot
+  [worth-including ] How useful is the information you get from being a frontier AI insider?
+                     https://blog.redwoodresearch.org/p/how-useful-is-the-information-you
+
+EXTRAS (in our feed, not in oracle):
+  Frontier Risk Report (February to March 2026)
+      https://metr.org/blog/2026-05-19-frontier-risk-report/
+  Anthropic Responsible Scaling Policy Version 3.2
+      https://www.anthropic.com/responsible-scaling-policy
+  How fast is autonomous AI cyber capability advancing?
+      https://www.aisi.gov.uk/blog/how-fast-autonomous-ai-cyber-capability-advancing
+  Teaching Claude Why
+      https://www.anthropic.com/research/teaching-claude-why
+  Natural Language Autoencoders: Turning Claude's Thoughts into Text
+      https://www.anthropic.com/research/natural-language-autoencoders
+  Incriminating misaligned AI models via distillation
+      https://blog.redwoodresearch.org/p/incriminating-misaligned-ai-models
+  Open Sourcing Monitorability Evaluations
+      https://alignment.openai.com/monitorability-evals/
+  AI companies should publish security assessments
+      https://blog.redwoodresearch.org/p/ai-companies-should-publish-security
+  Model Spec Midtraining: Improving How Alignment Training Generalizes
+      https://alignment.anthropic.com/2026/msm/
+  Classifier Context Rot: Monitor Performance Degrades with Context Length
+      https://arxiv.org/abs/2605.12366
+  Position: Behavioural Assurance Cannot Verify the Safety Claims Governance Now Demands
+      https://arxiv.org/abs/2605.15164
+  Unsteady Metrics and Benchmarking Cultures of AI Model Builders
+      https://arxiv.org/abs/2605.14164
+
+RECALLED:
+  [critical        ] Review of the "Risks from automated R&D" section in the Anthropic Risk Report (February 2026)
+  [critical        ] Apollo Update May 2026
+  [critical        ] Investigating the consequences of accidentally grading CoT during RL
+  [critical        ] Our evaluation of OpenAI's GPT-5.5 cyber capabilities
+  [critical        ] Introspection Adapters: Training LLMs to report their learned behaviors
+  [important       ] Risk reports need to address deployment-time spread of misalignment
+  [important       ] Automated Weak-to-Strong Researcher
+  [worth-including ] Eliciting long-term forecasts from myopic fitness-seekers

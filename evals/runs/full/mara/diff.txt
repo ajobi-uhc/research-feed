@@ -1,0 +1,54 @@
+
+=== Eval: mara ===
+Our feed: 15 items   Oracle: 12 items
+
+  Critical:        2/3 recalled
+  Important:       2/5 recalled
+  Worth-including: 1/4 recalled
+  Total recall:    5/12 = 42%
+  Extras in ours:  10  (not in oracle — may be valid finds)
+
+MISSED (in oracle, not in our feed):
+  [important       ] HeadVis: An Interactive Tool For Investigating Attention Heads
+                     https://transformer-circuits.pub/2026/headvis/index.html
+  [critical        ] MoRFI: Monotonic Sparse Autoencoder Feature Identification
+                     https://arxiv.org/abs/2604.26866
+  [important       ] SoftSAE: Dynamic Top-K Selection for Adaptive Sparse Autoencoders
+                     https://arxiv.org/abs/2605.06610
+  [important       ] Pairwise matrices for sparse autoencoders: single-feature inspection mislabels causal axes
+                     https://arxiv.org/abs/2605.03160
+  [worth-including ] Prune, Interpret, Evaluate: A Cross-Layer Transcoder-Native Framework for Efficient Circuit Discovery via Feature Attribution
+                     https://arxiv.org/abs/2604.16889
+  [worth-including ] Automated Interpretability and Feature Discovery in Language Models with Agents
+                     https://arxiv.org/abs/2605.01555
+  [worth-including ] A scalable monitoring research agenda
+                     https://www.apolloresearch.ai/products/a-scalable-monitoring-research-agenda/
+
+EXTRAS (in our feed, not in oracle):
+  A Mechanistic Investigation of Supervised Fine Tuning
+      https://arxiv.org/abs/2605.11426
+  Qwen-Scope: Turning Sparse Features into Development Tools for Large Language Models
+      https://arxiv.org/abs/2605.11887
+  Negation Neglect: When models fail to learn negations in training
+      https://www.lesswrong.com/posts/kYzcevrxer6SJPEdG/negation-neglect-when-models-fail-to-learn-negations-in
+  The Rate-Distortion-Polysemanticity Tradeoff in SAEs
+      https://arxiv.org/abs/2605.14694
+  Tree SAE: Learning Hierarchical Feature Structures in Sparse Autoencoders
+      https://arxiv.org/abs/2605.07922
+  Bilinear autoencoders find interpretable manifolds
+      https://arxiv.org/abs/2605.08891
+  Activation Differences Reveal Backdoors: A Comparison of SAE Architectures
+      https://arxiv.org/abs/2605.07324
+  The World Inside Neural Networks: How neural geometry will unlock understanding and control of AI
+      https://www.goodfire.ai/research/the-world-inside-neural-networks
+  The Geometric Wall: Manifold Structure Predicts Layerwise Sparse Autoencoder Scaling Laws
+      https://arxiv.org/abs/2605.09887
+  An Introduction to Exemplar Partitioning for Mechanistic Interpretability
+      https://www.lesswrong.com/posts/RroeHBSkBXXDsrryq/an-introduction-to-exemplar-partitioning-for-mechanistic-1
+
+RECALLED:
+  [critical        ] Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations
+  [critical        ] Interpreting Language Model Parameters (adVersarial Parameter Decomposition, VPD)
+  [important       ] fmxcoders: Factorized Masked Crosscoders for Cross-Layer Feature Discovery
+  [important       ] Descriptive Collision in Sparse Autoencoder Auto-Interpretability: When One Explanation Describes Many Features
+  [worth-including ] Causal Dimensionality of Transformer Representations: Measurement, Scaling, and Layer Structure

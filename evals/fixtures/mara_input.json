@@ -1,0 +1,19 @@
+{
+  "seed_papers": [
+    "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html",
+    "https://arxiv.org/abs/2309.08600",
+    "https://transformer-circuits.pub/2023/monosemantic-features/index.html"
+  ],
+  "scholar_url": "",
+  "followed_authors": [
+    "Chris Olah",
+    "Neel Nanda",
+    "Trenton Bricken",
+    "Adam Jermyn",
+    "Hoagy Cunningham",
+    "Lee Sharkey"
+  ],
+  "current_question": "How well do SAE features transfer across model scales and fine-tunes? Are there better SAE training objectives than L1?",
+  "filter_outs": "Pure theory papers with no empirical evaluation, capabilities work that doesn't bear on interpretation, RLHF methodology papers, AI policy/governance",
+  "freeform": "Research engineer in mechanistic interpretability, focused on sparse autoencoders and feature-based analysis. Strongly prefer empirical work with concrete results on real models over frameworks or pure math. Care about feature splitting, dictionary learning at scale, SAE evaluation methods, and circuit-level explanations using SAE features."
+}

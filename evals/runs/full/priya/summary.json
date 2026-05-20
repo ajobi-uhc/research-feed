@@ -1,0 +1,15 @@
+{
+  "persona": "priya",
+  "sources": 10,
+  "interests": 14,
+  "authors": 15,
+  "kept": 17,
+  "oracle_total": 17,
+  "recalled": 1,
+  "critical": "0/4",
+  "important": "1/8",
+  "extras": 16,
+  "elapsed_min": 16.5,
+  "error": null,
+  "mode": "onboard"
+}

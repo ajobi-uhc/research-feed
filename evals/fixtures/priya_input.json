@@ -1,0 +1,21 @@
+{
+  "seed_papers": [
+    "https://arxiv.org/abs/2307.15043",
+    "https://arxiv.org/abs/2306.15447",
+    "https://arxiv.org/abs/2302.12173"
+  ],
+  "scholar_url": "",
+  "followed_authors": [
+    "Nicholas Carlini",
+    "Florian Tramèr",
+    "Eric Wallace",
+    "Andy Zou",
+    "Daniel Kang",
+    "Aleksander Mądry",
+    "Zico Kolter",
+    "Sam Toyer"
+  ],
+  "current_question": "How robust are current frontier models to adaptive jailbreak attacks? What does security look like for agentic systems that use tools and browse the web?",
+  "filter_outs": "Pure interpretability work without security applications, policy/governance without technical substance, generic capability leaderboards unrelated to security",
+  "freeform": "Researcher at the intersection of AI safety and traditional security. Focus on adversarial robustness, jailbreaks and prompt injection, model extraction, data poisoning, agentic AI security, and cryptographic approaches to AI safety (secure inference, watermarking, proofs about models). I also closely track frontier-model security evaluations and red-teaming from the major labs and institutes — e.g. the Anthropic frontier red team, UK AISI, Apollo, and METR. Want work that bridges the safety and security communities."
+}

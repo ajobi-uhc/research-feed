@@ -1,0 +1,635 @@
+{
+  "id": "d_dbaecf34a01e",
+  "generated_at": "2026-05-20T06:09:37Z",
+  "window_start": "2026-04-19",
+  "window_end": "2026-05-19",
+  "profile_snapshot": {
+    "user_summary": "A research engineer in mechanistic interpretability whose core focus is sparse autoencoders (SAEs) as a practical tool for decomposing superposition in transformer activations. Their three seed papers \u2014 Towards Monosemanticity, Scaling Monosemanticity, and Cunningham et al. 2023 \u2014 place them squarely in the Anthropic-empirical tradition of dictionary learning for interpretability. They prioritize concrete, empirical results on real models: feature splitting behavior across SAE scales, alternative training objectives (Gated, TopK, JumpReLU, end-to-end KL+MSE) to replace L1, rigorous multi-metric evaluation of learned features (SAEBench-style), and downstream use of SAE features for circuit-level attribution. Their open question \u2014 feature transfer across model scales and fine-tunes \u2014 sits at a current empirical frontier addressed by only a handful of 2025\u20132026 papers. They explicitly don't want pure theory, RLHF methodology, capabilities-only work, or policy content.",
+    "current_question": "How well do SAE features transfer across model scales and fine-tunes? Are there better SAE training objectives than L1?",
+    "interests": [
+      "sparse autoencoder feature splitting at scale",
+      "SAE training objectives beyond L1 sparsity",
+      "gated TopK JumpReLU sparse autoencoder architectures",
+      "dictionary learning for language model interpretability",
+      "SAE evaluation benchmarks and proxy metrics",
+      "circuit-level attribution using SAE features",
+      "feature geometry in transformer residual stream",
+      "SAE feature transfer across model scales",
+      "end-to-end sparse dictionary learning",
+      "automated SAE feature interpretation",
+      "superposition and polysemanticity in transformers",
+      "SAE features for fine-tuned model analysis",
+      "sparse feature circuits for mechanistic explanation",
+      "scaling dictionary learning to frontier models"
+    ],
+    "authors": [
+      {
+        "name": "Chris Olah",
+        "affiliation": "Anthropic",
+        "why": "Pioneer of transformer circuits and mechanistic interpretability; primary architect of the research tradition these seed papers belong to."
+      },
+      {
+        "name": "Neel Nanda",
+        "affiliation": "Google DeepMind",
+        "why": "Leads DeepMind mech interp team; SAEBench co-author; most prolific empirical SAE researcher with broad output on features, circuits, and evaluation."
+      },
+      {
+        "name": "Trenton Bricken",
+        "affiliation": "Anthropic",
+        "why": "Lead author on Towards Monosemanticity; foundational empirical SAE work showing dictionary learning recovers monosemantic features."
+      },
+      {
+        "name": "Adly Templeton",
+        "affiliation": "Anthropic",
+        "why": "Lead author on Scaling Monosemanticity; key empirical work extracting millions of features from Claude 3 Sonnet at production scale."
+      },
+      {
+        "name": "Adam Jermyn",
+        "affiliation": "Anthropic",
+        "why": "Core Anthropic circuits team; co-authored Scaling Monosemanticity and attention-layer mechanistic work."
+      },
+      {
+        "name": "Hoagy Cunningham",
+        "affiliation": "Independent",
+        "why": "Lead author on the foundational SAE-interpretability paper (arXiv:2309.08600); early empirical proof that SAEs recover interpretable features."
+      },
+      {
+        "name": "Lee Sharkey",
+        "affiliation": "Goodfire",
+        "why": "Co-authored foundational SAE paper; ongoing work on SAE geometry, canonical units critique, and training objectives at Goodfire."
+      },
+      {
+        "name": "Joshua Batson",
+        "affiliation": "Anthropic",
+        "why": "Co-authored Towards Monosemanticity; interpretability team lead; featured in multiple transformer-circuits updates through 2025."
+      },
+      {
+        "name": "Callum McDougall",
+        "affiliation": "Anthropic",
+        "why": "Co-authored the 2025 circuit tracing paper using attribution graphs; key figure bridging SAE features to circuit-level explanations."
+      },
+      {
+        "name": "Adam Karvonen",
+        "affiliation": "Independent (MATS alumni)",
+        "why": "Lead author of SAEBench; most comprehensive empirical evaluation of SAE training objectives, architectures, and proxy metric reliability."
+      },
+      {
+        "name": "Sam Marks",
+        "affiliation": "Anthropic",
+        "why": "SAEBench co-author; empirical work on SAE feature quality, evaluation methodology, and downstream task performance."
+      },
+      {
+        "name": "Nora Belrose",
+        "affiliation": "EleutherAI",
+        "why": "Key research on SAE feature inconsistency across training runs and open-source automated interpretability for SAE features."
+      },
+      {
+        "name": "Dan Braun",
+        "affiliation": "Apollo Research",
+        "why": "End-to-end SAE training and attribution-based parameter decomposition; directly relevant to L1 alternatives and functional feature identification."
+      },
+      {
+        "name": "Stefan Heimersheim",
+        "affiliation": "Apollo Research",
+        "why": "Empirical work on identifying functionally important SAE features using e2e training; alternative dictionary learning objectives."
+      },
+      {
+        "name": "Tom Lieberum",
+        "affiliation": "Google DeepMind",
+        "why": "SAE research at scale on Gemma models; circuit tracing work from DeepMind mech interp team; relevant to feature transfer questions."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Transformer Circuits Thread",
+        "url": "https://transformer-circuits.pub",
+        "why": "Anthropic's primary publication venue for mechanistic interpretability; verified active through May 2026 with circuit tracing, attention, and SAE-adjacent posts."
+      },
+      {
+        "name": "Goodfire Research",
+        "url": "https://www.goodfire.ai/research",
+        "why": "SAE-focused interpretability lab with papers published through May 2026 on feature geometry, manifold steering, and parameter-space interpretation."
+      },
+      {
+        "name": "Apollo Research Publications",
+        "url": "https://apolloresearch.ai/research",
+        "why": "Key source for end-to-end SAE training, functionally important feature identification, and mechanistic description length work; verified active March 2026."
+      },
+      {
+        "name": "EleutherAI Blog",
+        "url": "https://blog.eleuther.ai",
+        "why": "Active through April 2026; posts on SAE feature consistency across training runs, automated interpretability, and alternative sparse coding architectures."
+      },
+      {
+        "name": "Neuronpedia",
+        "url": "https://www.neuronpedia.org",
+        "why": "Open interpretability platform hosting 50M+ SAE latents, SAEBench comparisons, and SAE releases from Anthropic, DeepMind, and OpenAI \u2014 essential empirical workspace."
+      },
+      {
+        "name": "DeepMind Safety Research Blog",
+        "url": "https://deepmindsafetyresearch.medium.com",
+        "why": "DeepMind mech interp team updates including SAE negative results and the pivot to pragmatic interpretability \u2014 important critical counterpoint on SAE limitations."
+      },
+      {
+        "name": "MATS Research",
+        "url": "https://www.matsprogram.org/research",
+        "why": "Outputs from MATS scholars; origin of SAEBench and several SAE evaluation papers from the independent mech interp community."
+      },
+      {
+        "name": "Neel Nanda's Website",
+        "url": "https://www.neelnanda.io/mechanistic-interpretability",
+        "why": "Research index and explainers from the most prolific active SAE researcher; canonical reference and pointer to his team's ongoing work."
+      }
+    ],
+    "filter_outs": [
+      "Pure theory papers with no empirical evaluation",
+      "capabilities work that doesn't bear on interpretation",
+      "RLHF methodology papers",
+      "AI policy/governance"
+    ],
+    "seed_papers": [
+      "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html",
+      "https://arxiv.org/abs/2309.08600",
+      "https://transformer-circuits.pub/2023/monosemantic-features/index.html"
+    ],
+    "notes": "The three seed papers form a tight cluster \u2014 all empirical SAE-for-interpretability work in the Anthropic tradition, spanning a one-layer proof-of-concept (Cunningham et al.), the canonical large-scale SAE paper (Towards Monosemanticity), and the frontier scale-up to Claude 3 Sonnet (Scaling Monosemanticity) \u2014 confirming a dictionary-learning-first, empiricism-first style. The current question about feature transfer and L1 alternatives is well-supported by active 2025\u20132026 literature (SAEBench, JumpReLU, e2e SAE, MetaSAEs, the canonical-units critique), so the interests list was tuned to retrieve both the mainstream and the critical/evaluative work. Sources were chosen to cover four active poles of this community: Anthropic-empirical (transformer-circuits.pub), commercial interpretability labs (Goodfire), mechanistic-safety labs (Apollo), and open-source community (EleutherAI blog, Neuronpedia, MATS); all URLs were fetched and confirmed active in 2025\u20132026."
+  },
+  "kept": [
+    {
+      "id": "i_6d96b80534f7",
+      "title": "Interpreting Language Model Parameters (adVersarial Parameter Decomposition / VPD)",
+      "url": "https://www.goodfire.ai/research/interpreting-lm-parameters",
+      "venue": "goodfire_research",
+      "date": "2026-05-05",
+      "authors": [
+        "Lucius Bushnaq",
+        "Dan Braun",
+        "Oliver Clive-Griffin",
+        "Bart Bussmann",
+        "Nathan Hu",
+        "Michael Ivanitskiy",
+        "Linda Linsefors",
+        "Lee Sharkey"
+      ],
+      "summary": "Introduces VPD, which decomposes weight matrices into rank-one parameter subcomponents that are causally ablatable in isolation on a 67M-parameter transformer. The approach is activation-agnostic, claims to avoid SAE feature splitting by construction, and now handles attention layers.",
+      "discovered_via": "sources:goodfire_research",
+      "why_kept": "Parameter-decomposition method that decomposes a 67M transformer into causally ablatable rank-one subcomponents and claims to avoid SAE feature splitting by construction; Goodfire/Apollo paper by followed authors Lee Sharkey and Dan Braun; on SAE training objectives beyond L1.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_84f3057b9e2e",
+      "title": "A Mechanistic Investigation of Supervised Fine Tuning",
+      "url": "https://arxiv.org/abs/2605.11426",
+      "venue": "arxiv",
+      "date": "2026-05-12",
+      "authors": [
+        "Ruhaan Chopra"
+      ],
+      "summary": "Finds that SFT leaves residual-stream cosine similarity very high but reveals significant divergence when activations are projected through a base-model SAE, with sparse latents diverging substantially. Introduces a pipeline attributing which SAE features change most during SFT.",
+      "discovered_via": "openalex:dictionary learning for language model i",
+      "why_kept": "Uses base-model SAEs to show that SFT leaves residual-stream cosine similarity high while sparse latents diverge substantially, and attributes which features shift most; arXiv preprint directly on the user's current question of SAE features under fine-tuning.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.11426"
+    },
+    {
+      "id": "i_2668f3ec652c",
+      "title": "Qwen-Scope: Turning Sparse Features into Development Tools for Large Language Models",
+      "url": "https://arxiv.org/abs/2605.11887",
+      "venue": "arxiv",
+      "date": "2026-05-12",
+      "authors": [
+        "Boyi Deng",
+        "Xu Wang",
+        "Yao Wang",
+        "Yu Wan",
+        "Yubo Ma",
+        "Baosong Yang",
+        "Haoran Wei",
+        "Jialong Tang",
+        "Huan Lin",
+        "Ruize Gao",
+        "Tianhao Li",
+        "Qian Cao"
+      ],
+      "summary": "Releases Qwen-Scope, an open-source suite of 14 SAE groups across 7 Qwen model scales, with tools for feature visualization, steering, and cross-version comparison.",
+      "discovered_via": "openalex:SAE features for fine-tuned model analys",
+      "why_kept": "Open-source release of matched SAEs across 7 Qwen model scales with cross-version comparison tooling; arXiv preprint and community resource directly enabling SAE feature transfer studies across model scales.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.11887"
+    },
+    {
+      "id": "i_36ce42354de0",
+      "title": "Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations",
+      "url": "https://transformer-circuits.pub/2026/nla/index.html",
+      "venue": "transformer_circuits",
+      "date": "2026-05-07",
+      "authors": [
+        "Kit Fraser-Taliente",
+        "Subhash Kantamneni",
+        "Euan Ong",
+        "Dan Mossing",
+        "Christina Lu",
+        "Paul C. Bogdan",
+        "et al. (Anthropic)"
+      ],
+      "summary": "Trains two coupled Claude models \u2014 one to compress an activation into natural-language text, another to reconstruct the activation from the text \u2014 jointly optimized via RL. The resulting NLAs produce unsupervised, vocabulary-free explanations of activations and detected covert evaluation awareness in Claude Opus 4.6. Explicitly contrasted with SAEs as a fixed-dictionary alternative.",
+      "discovered_via": "sources:transformer_circuits",
+      "why_kept": "Anthropic paper training paired Claude models to verbalize and reconstruct activations via RL, replacing fixed sparse dictionaries with natural language and detecting safety-relevant states in Opus 4.6; on transformer-circuits.pub; on automated SAE feature interpretation.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_0440e04ba478",
+      "title": "Causal Dimensionality of Transformer Representations: Measurement, Scaling, and Layer Structure",
+      "url": "https://arxiv.org/abs/2605.08740",
+      "venue": "arxiv",
+      "date": "2026-05-09",
+      "authors": [
+        "Nilesh Sarkar",
+        "Dawar Jyoti Deka"
+      ],
+      "summary": "Introduces causal dimensionality \u03ba(L,M,T) as the effective rank of the expected Jacobian outer product, estimated via SAE width sweeps with attribution patching. Across 7 SAE widths (16K\u20131M) on Gemma-2-2B, representational capacity grows 15.6\u00d7 while causal capacity grows only 4\u00d7.",
+      "discovered_via": "openalex:sparse autoencoder feature splitting at",
+      "why_kept": "Measures effective causal rank across 7 SAE widths (16K\u20131M) on Gemma-2-2B and finds representational capacity grows 15.6\u00d7 while causal capacity grows only 4\u00d7; arXiv preprint on SAE evaluation benchmarks and proxy metrics.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.08740"
+    },
+    {
+      "id": "i_9102ba91e044",
+      "title": "Negation Neglect: When models fail to learn negations in training",
+      "url": "https://www.lesswrong.com/posts/kYzcevrxer6SJPEdG/negation-neglect-when-models-fail-to-learn-negations-in",
+      "venue": "lesswrong",
+      "date": "2026-05-18",
+      "authors": [
+        "harrymayne",
+        "Lev McKinney",
+        "Jan Dubi\u0144ski",
+        "Adam Karvonen",
+        "James Chua",
+        "Owain Evans"
+      ],
+      "summary": "Shows that fine-tuning on documents that flag a claim as false makes models more likely to believe the claim is true, a consistent phenomenon across negation, epistemic qualifiers, and misalignment warnings in all tested models.",
+      "discovered_via": "forum:lw",
+      "why_kept": "Reports that fine-tuning on documents flagging a claim as false can systematically make the claim more believed across all tested models; LW post \u25b296/27 comments co-authored by followed author Adam Karvonen; relevant to SAE features for fine-tuned model analysis.",
+      "venue_detail": "",
+      "karma": 96,
+      "comments": 27,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_08d60fcec2a7",
+      "title": "The Rate-Distortion-Polysemanticity Tradeoff in SAEs",
+      "url": "https://arxiv.org/abs/2605.14694",
+      "venue": "arxiv",
+      "date": "2026-05-14",
+      "authors": [
+        "Tommaso Mencattini",
+        "Francesco Montagna",
+        "Francesco Locatello"
+      ],
+      "summary": "Formalizes a three-way tension between reconstruction fidelity, rate, and monosemantic representations in SAEs; proves and empirically confirms in toy models that forcing monosemanticity incurs reconstruction cost.",
+      "discovered_via": "openalex:sparse autoencoder feature splitting at",
+      "why_kept": "Formalizes and empirically confirms a three-way tradeoff between reconstruction, rate, and monosemanticity in SAEs; arXiv preprint quantifying the limit any L1-style sparsity objective faces.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.14694"
+    },
+    {
+      "id": "i_1174a824ed48",
+      "title": "Tree SAE: Learning Hierarchical Feature Structures in Sparse Autoencoders",
+      "url": "https://arxiv.org/abs/2605.07922",
+      "venue": "arxiv",
+      "date": "2026-05-08",
+      "authors": [
+        "Tue M. Cao",
+        "Hoang X. Nhat",
+        "Raed Alharbi",
+        "Phi Le Nguyen",
+        "My T. Thai"
+      ],
+      "summary": "Proposes Tree SAE, which learns parent\u2013child feature hierarchies during training by combining an activation-coverage condition with a semantic consistency constraint, showing the coverage condition alone produces semantically unrelated false-positive parents.",
+      "discovered_via": "openalex:sparse autoencoder feature splitting at",
+      "why_kept": "Builds parent\u2013child feature hierarchies into the SAE objective via a semantic consistency constraint added to activation coverage; arXiv preprint on feature splitting and SAE training objectives beyond L1.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.07922"
+    },
+    {
+      "id": "i_430e31cde1fb",
+      "title": "Bilinear autoencoders find interpretable manifolds",
+      "url": "https://arxiv.org/abs/2605.08891",
+      "venue": "arxiv",
+      "date": "2026-05-09",
+      "authors": [
+        "Thomas Dooms",
+        "Ward Gauderis",
+        "Geraint Wiggins",
+        "Jos\u00e9 Oramas"
+      ],
+      "summary": "Replaces linear SAE latents with quadratic (bilinear) forms that decompose activations into low-rank quadratic components, compose linearly in weight space, and admit input-independent geometric analysis; finds qualitatively different concepts than linear SAEs.",
+      "discovered_via": "openalex:sparse autoencoder feature splitting at",
+      "why_kept": "Replaces linear SAE latents with bilinear quadratic forms that admit input-independent geometric analysis and detect qualitatively different concepts than linear SAEs; arXiv preprint on SAE training objectives beyond L1 and feature geometry.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.08891"
+    },
+    {
+      "id": "i_48b05c217970",
+      "title": "Descriptive Collision in Sparse Autoencoder Auto-Interpretability: When One Explanation Describes Many Features",
+      "url": "https://arxiv.org/abs/2605.12874",
+      "venue": "arxiv",
+      "date": "2026-05-13",
+      "authors": [
+        "Jordan F. McCann"
+      ],
+      "summary": "Identifies 'descriptive collision' \u2014 many distinct SAE features receiving the same auto-generated explanation \u2014 as a systematic failure mode, structurally distinct from polysemanticity. Reanalyzes the largest public human-annotated SAE feature dataset to quantify prevalence.",
+      "discovered_via": "openalex:sparse autoencoder feature splitting at",
+      "why_kept": "Identifies and quantifies 'descriptive collision' (many distinct SAE features sharing one auto-generated explanation) on the largest public human-annotated SAE feature dataset; arXiv preprint on SAE evaluation benchmarks and automated feature interpretation.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.12874"
+    },
+    {
+      "id": "i_ebcbd8d0fe8f",
+      "title": "Activation Differences Reveal Backdoors: A Comparison of SAE Architectures",
+      "url": "https://arxiv.org/abs/2605.07324",
+      "venue": "arxiv",
+      "date": "2026-05-08",
+      "authors": [
+        "Sachin Kumar"
+      ],
+      "summary": "Compares Crosscoders and Differential SAEs (Diff-SAE) on their ability to isolate backdoor-related features in fine-tuned models, using a controlled SQL-injection backdoor as the testbed.",
+      "discovered_via": "openalex:dictionary learning for language model i",
+      "why_kept": "Head-to-head empirical comparison of Crosscoders and Differential SAEs on localizing features that change between base and fine-tuned models using a controlled SQL-injection backdoor; arXiv preprint on SAE features for fine-tuned model analysis.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.07324"
+    },
+    {
+      "id": "i_87a242dfffb0",
+      "title": "The World Inside Neural Networks: How neural geometry will unlock understanding and control of AI",
+      "url": "https://www.goodfire.ai/research/the-world-inside-neural-networks",
+      "venue": "goodfire_research",
+      "date": "2026-05-07",
+      "authors": [
+        "Atticus Geiger",
+        "Ekdeep Singh Lubana",
+        "Thomas Fel",
+        "Jack Merullo",
+        "Michael Jae Byun",
+        "Owen Lewis",
+        "Tom McGrath"
+      ],
+      "summary": "Argues NNs develop internal geometric structures mirroring real-world relational structure (circular months, smooth spatial curves) and that SAE features 'shatter manifolds into many small and apparently-unrelated pieces.' Proposes manifold-based interpretability as a complement/alternative to feature-direction approaches. Companion repo 'sae-manifold' updated May 1 2026.",
+      "discovered_via": "sources:goodfire_research",
+      "why_kept": "Goodfire programmatic essay arguing SAE features shatter the manifold structure NNs actually learn, proposing manifold-based interpretability instead; backed by a companion sae-manifold GitHub repo; on feature geometry in transformer residual stream.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_58c98a04c0f9",
+      "title": "The Geometric Wall: Manifold Structure Predicts Layerwise Sparse Autoencoder Scaling Laws",
+      "url": "https://arxiv.org/abs/2605.09887",
+      "venue": "arxiv",
+      "date": "2026-05-11",
+      "authors": [
+        "Eslam Zaher",
+        "Maciej Trzaskowski",
+        "Quan Nguyen",
+        "Fred Roosta"
+      ],
+      "summary": "Argues layer-to-layer variation in SAE reconstruction error is explained by geometric mismatch between the activation manifold's curvature/intrinsic dimensionality and the linear dictionary assumption; introduces a per-layer geometric diagnostic predicting where SAE scaling saturates.",
+      "discovered_via": "openalex:dictionary learning for language model i",
+      "why_kept": "Introduces a per-layer geometric diagnostic that predicts where SAE reconstruction error saturates, attributing scaling variation to activation-manifold curvature; arXiv preprint on SAE evaluation and feature geometry.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.09887"
+    },
+    {
+      "id": "i_a7a762606a5b",
+      "title": "An Introduction to Exemplar Partitioning for Mechanistic Interpretability",
+      "url": "https://www.lesswrong.com/posts/RroeHBSkBXXDsrryq/an-introduction-to-exemplar-partitioning-for-mechanistic-1",
+      "venue": "lesswrong",
+      "date": "2026-05-16",
+      "authors": [
+        "Jessica Rumbelow"
+      ],
+      "summary": "Argues SAEs bundle two distinct commitments \u2014 reconstruction fidelity and L1 sparsity over a fixed dictionary \u2014 that are appropriate for reconstructive decomposition but not for finding interpretable structure. Proposes exemplar partitioning, grouping activations by behavioral similarity instead.",
+      "discovered_via": "forum:lw",
+      "why_kept": "Argues SAEs conflate reconstruction with L1 sparsity over a fixed dictionary and sketches exemplar partitioning by behavioral similarity as an alternative; LW post \u25b263/6 comments on SAE training objectives beyond L1.",
+      "venue_detail": "",
+      "karma": 63,
+      "comments": 6,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_2f45112472f8",
+      "title": "fmxcoders: Factorized Masked Crosscoders for Cross-Layer Feature Discovery",
+      "url": "https://arxiv.org/abs/2605.09438",
+      "venue": "arxiv",
+      "date": "2026-05-10",
+      "authors": [
+        "Andreas D. Demou",
+        "Panagiotis Koromilas",
+        "James Oldfield",
+        "Yannis Panagakis",
+        "Mihalis A. Nicolaou"
+      ],
+      "summary": "Shows standard crosscoders largely fail to recover genuinely cross-layer features \u2014 despite evenly distributed decoder weight norms, each latent is effectively driven by only 1\u20132 layers \u2014 and proposes factorized masked crosscoders that enforce cross-layer coherence.",
+      "discovered_via": "openalex:dictionary learning for language model i",
+      "why_kept": "Shows standard crosscoder latents are effectively driven by 1\u20132 layers despite even decoder norms and proposes a factorized masked variant enforcing cross-layer coherence; arXiv preprint on dictionary learning for language model interpretability.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.09438"
+    }
+  ],
+  "dropped": [
+    {
+      "title": "Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations",
+      "url": "https://www.lesswrong.com/posts/oeYesesaxjzMAktCM/natural-language-autoencoders-produce-unsupervised",
+      "source": "alignment_forum",
+      "reason": "Duplicate of the transformer-circuits.pub primary publication already kept; LW linkpost adds karma signal but same content.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "[Linkpost] Interpreting Language Model Parameters",
+      "url": "https://www.lesswrong.com/posts/eAQZaiC3PcBhS4HjM/linkpost-interpreting-language-model-parameters",
+      "source": "alignment_forum",
+      "reason": "Duplicate of the Goodfire VPD paper already kept.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "HeadVis",
+      "url": "https://transformer-circuits.pub/2026/headvis/index.html",
+      "source": "transformer_circuits",
+      "reason": "Interactive viz tool with no substantive description recoverable (fetch truncated); low information value relative to other Anthropic in-window content.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Steering Along Manifolds to Control Neural Networks",
+      "url": "https://www.goodfire.ai/research/manifold-steering",
+      "source": "goodfire_research",
+      "reason": "Companion piece to 'The World Inside Neural Networks' (overlapping author set, same Goodfire manifold agenda); kept the canonical critique and drop the steering follow-on to avoid bundle redundancy.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "A Geometric Calculator Inside a Neural Network",
+      "url": "https://www.goodfire.ai/research/a-geometric-calculator",
+      "source": "goodfire_research",
+      "reason": "Solid circuit/geometry case study but not SAE or dictionary-learning work; off the user's central tool axis.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "SMIXAE: Towards Unsupervised Manifold Discovery in Language Models",
+      "url": "https://arxiv.org/abs/2605.09224",
+      "source": "arxiv",
+      "reason": "Single-author mixture-of-autoencoders proposal with limited empirical scope; redundant with stronger architectural alternatives kept (Bilinear, Tree SAE).",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "WriteSAE: Sparse Autoencoders for Recurrent State",
+      "url": "https://arxiv.org/abs/2605.12770",
+      "source": "arxiv",
+      "reason": "Niche to SSM/hybrid recurrent models (Gated DeltaNet, Mamba-2, RWKV-7); user's focus is transformer residual-stream SAEs.",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Introspection Adapters: Training LLMs to Report Their Learned Behaviors",
+      "url": "https://alignment.anthropic.com/2026/introspection-adapters/",
+      "source": "sources",
+      "reason": "Behavioral-level self-reporting via LoRA adapters with no mechanistic or activation-level analysis; off-profile despite Sam Marks authorship.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Probing Persona-Dependent Preferences in Language Models",
+      "url": "https://www.matsprogram.org/research/probing-persona-dependent-preferences-in-language-models",
+      "source": "sources",
+      "reason": "Preference/alignment focus rather than SAE or superposition; off-profile.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Removing Sandbagging in LLMs by Training with Weak Supervision",
+      "url": "https://www.matsprogram.org/research/removing-sandbagging-in-llms-by-training-with-weak-supervision",
+      "source": "sources",
+      "reason": "RLHF/training methodology; matches filter_outs.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Paper Summary: Interpreting Language Model Parameters (Goodfire explainer)",
+      "url": "https://www.goodfire.ai/research/vpd-explainer",
+      "source": "sources",
+      "reason": "Blog-post explainer for the VPD paper already kept; same content.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "A 'Lay' Introduction to 'On the Complexity of Neural Computation in Superposition'",
+      "url": "https://www.lesswrong.com/posts/kYkbcEo6YyjQiztpi/a-lay-introduction-to-on-the-complexity-of-neural",
+      "source": "forum",
+      "reason": "Lay summary of a pure theoretical CS paper with no empirical results on real models; matches the pure-theory filter.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Convergent Abstraction Hypothesis",
+      "url": "https://www.lesswrong.com/posts/fYF8v2ukZmsNvmkkX/convergent-abstraction-hypothesis",
+      "source": "forum",
+      "reason": "Theoretical/philosophical framing post on cross-model abstraction with no empirical SAE evidence.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Neural Networks learn Bloom Filters",
+      "url": "https://www.lesswrong.com/posts/buxBdp8NtHGgBwabv/neural-networks-learn-bloom-filters",
+      "source": "forum",
+      "reason": "Toy 1-layer ReLU result rather than SAEs on real transformers.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Mechanistic estimation for wide random MLPs",
+      "url": "https://www.lesswrong.com/posts/fsG4m6sRMpomd7Rk6/mechanistic-estimation-for-wide-random-mlps",
+      "source": "forum",
+      "reason": "ARC mechanistic-estimation agenda on random synthetic MLPs; pure theory, no SAE connection.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Sparse Autoencoders enable Robust and Interpretable Fine-tuning of CLIP models",
+      "url": "https://arxiv.org/abs/2605.15961",
+      "source": "arxiv",
+      "reason": "Operates on CLIP vision encoders rather than text transformers; relevance to LLM SAE practice uncertain.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "HH-SAE: Discovering and Steering Hierarchical Knowledge of Complex Manifolds",
+      "url": "https://arxiv.org/abs/2605.10536",
+      "source": "arxiv",
+      "reason": "Hierarchical SAE evaluated on clinical/EHR data without LLM evaluation; transfer to transformer residual streams unclear.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Steering Without Breaking: Mechanistically Informed Interventions for Discrete Diffusion Language Models",
+      "url": "https://arxiv.org/abs/2605.10971",
+      "source": "arxiv",
+      "reason": "Diffusion LM architecture is niche relative to the user's autoregressive transformer focus.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Interpretability Can Be Actionable",
+      "url": "https://arxiv.org/abs/2605.11161",
+      "source": "arxiv",
+      "reason": "Position paper with no empirical SAE contribution; user prefers empirical work.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs",
+      "url": "https://arxiv.org/abs/2605.12671",
+      "source": "arxiv",
+      "reason": "Uses sheaf methods rather than SAEs and contributes no dictionary-learning advance.",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Mechanistic Interpretability of EEG Foundation Models via Sparse Autoencoders",
+      "url": "https://arxiv.org/abs/2605.13930",
+      "source": "arxiv",
+      "reason": "EEG/clinical domain; findings hard to transfer to LLM residual-stream SAE practice.",
+      "dropped_by": "subagent"
+    }
+  ],
+  "coverage": {
+    "items_considered": 36,
+    "items_kept": 15,
+    "items_dropped": 21
+  }
+}

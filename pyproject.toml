@@ -1,16 +1,12 @@
 [project]
-name = "safety-feed"
+name = "research-feed"
 version = "0.1.0"
 description = "Research-discovery prototype for AI safety researchers"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.111",
     "uvicorn[standard]>=0.30",
-    "jinja2>=3.1",
-    "python-multipart>=0.0.9",
     "httpx>=0.27",
-    "feedparser>=6.0",
-    "beautifulsoup4>=4.12",
     "rapidfuzz>=3.9",
     "claude-agent-sdk>=0.2.82",
     "anthropic>=0.40",

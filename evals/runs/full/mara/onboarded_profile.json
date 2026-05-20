@@ -1,0 +1,151 @@
+{
+  "user_summary": "A research engineer in mechanistic interpretability whose core focus is sparse autoencoders (SAEs) as a practical tool for decomposing superposition in transformer activations. Their three seed papers \u2014 Towards Monosemanticity, Scaling Monosemanticity, and Cunningham et al. 2023 \u2014 place them squarely in the Anthropic-empirical tradition of dictionary learning for interpretability. They prioritize concrete, empirical results on real models: feature splitting behavior across SAE scales, alternative training objectives (Gated, TopK, JumpReLU, end-to-end KL+MSE) to replace L1, rigorous multi-metric evaluation of learned features (SAEBench-style), and downstream use of SAE features for circuit-level attribution. Their open question \u2014 feature transfer across model scales and fine-tunes \u2014 sits at a current empirical frontier addressed by only a handful of 2025\u20132026 papers. They explicitly don't want pure theory, RLHF methodology, capabilities-only work, or policy content.",
+  "current_question": "How well do SAE features transfer across model scales and fine-tunes? Are there better SAE training objectives than L1?",
+  "interests": [
+    "sparse autoencoder feature splitting at scale",
+    "SAE training objectives beyond L1 sparsity",
+    "gated TopK JumpReLU sparse autoencoder architectures",
+    "dictionary learning for language model interpretability",
+    "SAE evaluation benchmarks and proxy metrics",
+    "circuit-level attribution using SAE features",
+    "feature geometry in transformer residual stream",
+    "SAE feature transfer across model scales",
+    "end-to-end sparse dictionary learning",
+    "automated SAE feature interpretation",
+    "superposition and polysemanticity in transformers",
+    "SAE features for fine-tuned model analysis",
+    "sparse feature circuits for mechanistic explanation",
+    "scaling dictionary learning to frontier models"
+  ],
+  "authors": [
+    {
+      "name": "Chris Olah",
+      "affiliation": "Anthropic",
+      "why": "Pioneer of transformer circuits and mechanistic interpretability; primary architect of the research tradition these seed papers belong to."
+    },
+    {
+      "name": "Neel Nanda",
+      "affiliation": "Google DeepMind",
+      "why": "Leads DeepMind mech interp team; SAEBench co-author; most prolific empirical SAE researcher with broad output on features, circuits, and evaluation."
+    },
+    {
+      "name": "Trenton Bricken",
+      "affiliation": "Anthropic",
+      "why": "Lead author on Towards Monosemanticity; foundational empirical SAE work showing dictionary learning recovers monosemantic features."
+    },
+    {
+      "name": "Adly Templeton",
+      "affiliation": "Anthropic",
+      "why": "Lead author on Scaling Monosemanticity; key empirical work extracting millions of features from Claude 3 Sonnet at production scale."
+    },
+    {
+      "name": "Adam Jermyn",
+      "affiliation": "Anthropic",
+      "why": "Core Anthropic circuits team; co-authored Scaling Monosemanticity and attention-layer mechanistic work."
+    },
+    {
+      "name": "Hoagy Cunningham",
+      "affiliation": "Independent",
+      "why": "Lead author on the foundational SAE-interpretability paper (arXiv:2309.08600); early empirical proof that SAEs recover interpretable features."
+    },
+    {
+      "name": "Lee Sharkey",
+      "affiliation": "Goodfire",
+      "why": "Co-authored foundational SAE paper; ongoing work on SAE geometry, canonical units critique, and training objectives at Goodfire."
+    },
+    {
+      "name": "Joshua Batson",
+      "affiliation": "Anthropic",
+      "why": "Co-authored Towards Monosemanticity; interpretability team lead; featured in multiple transformer-circuits updates through 2025."
+    },
+    {
+      "name": "Callum McDougall",
+      "affiliation": "Anthropic",
+      "why": "Co-authored the 2025 circuit tracing paper using attribution graphs; key figure bridging SAE features to circuit-level explanations."
+    },
+    {
+      "name": "Adam Karvonen",
+      "affiliation": "Independent (MATS alumni)",
+      "why": "Lead author of SAEBench; most comprehensive empirical evaluation of SAE training objectives, architectures, and proxy metric reliability."
+    },
+    {
+      "name": "Sam Marks",
+      "affiliation": "Anthropic",
+      "why": "SAEBench co-author; empirical work on SAE feature quality, evaluation methodology, and downstream task performance."
+    },
+    {
+      "name": "Nora Belrose",
+      "affiliation": "EleutherAI",
+      "why": "Key research on SAE feature inconsistency across training runs and open-source automated interpretability for SAE features."
+    },
+    {
+      "name": "Dan Braun",
+      "affiliation": "Apollo Research",
+      "why": "End-to-end SAE training and attribution-based parameter decomposition; directly relevant to L1 alternatives and functional feature identification."
+    },
+    {
+      "name": "Stefan Heimersheim",
+      "affiliation": "Apollo Research",
+      "why": "Empirical work on identifying functionally important SAE features using e2e training; alternative dictionary learning objectives."
+    },
+    {
+      "name": "Tom Lieberum",
+      "affiliation": "Google DeepMind",
+      "why": "SAE research at scale on Gemma models; circuit tracing work from DeepMind mech interp team; relevant to feature transfer questions."
+    }
+  ],
+  "sources": [
+    {
+      "name": "Transformer Circuits Thread",
+      "url": "https://transformer-circuits.pub",
+      "why": "Anthropic's primary publication venue for mechanistic interpretability; verified active through May 2026 with circuit tracing, attention, and SAE-adjacent posts."
+    },
+    {
+      "name": "Goodfire Research",
+      "url": "https://www.goodfire.ai/research",
+      "why": "SAE-focused interpretability lab with papers published through May 2026 on feature geometry, manifold steering, and parameter-space interpretation."
+    },
+    {
+      "name": "Apollo Research Publications",
+      "url": "https://apolloresearch.ai/research",
+      "why": "Key source for end-to-end SAE training, functionally important feature identification, and mechanistic description length work; verified active March 2026."
+    },
+    {
+      "name": "EleutherAI Blog",
+      "url": "https://blog.eleuther.ai",
+      "why": "Active through April 2026; posts on SAE feature consistency across training runs, automated interpretability, and alternative sparse coding architectures."
+    },
+    {
+      "name": "Neuronpedia",
+      "url": "https://www.neuronpedia.org",
+      "why": "Open interpretability platform hosting 50M+ SAE latents, SAEBench comparisons, and SAE releases from Anthropic, DeepMind, and OpenAI \u2014 essential empirical workspace."
+    },
+    {
+      "name": "DeepMind Safety Research Blog",
+      "url": "https://deepmindsafetyresearch.medium.com",
+      "why": "DeepMind mech interp team updates including SAE negative results and the pivot to pragmatic interpretability \u2014 important critical counterpoint on SAE limitations."
+    },
+    {
+      "name": "MATS Research",
+      "url": "https://www.matsprogram.org/research",
+      "why": "Outputs from MATS scholars; origin of SAEBench and several SAE evaluation papers from the independent mech interp community."
+    },
+    {
+      "name": "Neel Nanda's Website",
+      "url": "https://www.neelnanda.io/mechanistic-interpretability",
+      "why": "Research index and explainers from the most prolific active SAE researcher; canonical reference and pointer to his team's ongoing work."
+    }
+  ],
+  "filter_outs": [
+    "Pure theory papers with no empirical evaluation",
+    "capabilities work that doesn't bear on interpretation",
+    "RLHF methodology papers",
+    "AI policy/governance"
+  ],
+  "seed_papers": [
+    "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html",
+    "https://arxiv.org/abs/2309.08600",
+    "https://transformer-circuits.pub/2023/monosemantic-features/index.html"
+  ],
+  "notes": "The three seed papers form a tight cluster \u2014 all empirical SAE-for-interpretability work in the Anthropic tradition, spanning a one-layer proof-of-concept (Cunningham et al.), the canonical large-scale SAE paper (Towards Monosemanticity), and the frontier scale-up to Claude 3 Sonnet (Scaling Monosemanticity) \u2014 confirming a dictionary-learning-first, empiricism-first style. The current question about feature transfer and L1 alternatives is well-supported by active 2025\u20132026 literature (SAEBench, JumpReLU, e2e SAE, MetaSAEs, the canonical-units critique), so the interests list was tuned to retrieve both the mainstream and the critical/evaluative work. Sources were chosen to cover four active poles of this community: Anthropic-empirical (transformer-circuits.pub), commercial interpretability labs (Goodfire), mechanistic-safety labs (Apollo), and open-source community (EleutherAI blog, Neuronpedia, MATS); all URLs were fetched and confirmed active in 2025\u20132026."
+}

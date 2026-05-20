@@ -1,0 +1,160 @@
+{
+  "user_summary": "An empirically-oriented researcher at the intersection of traditional computer security and AI safety, focused on the full adversarial attack surface of large language models. Core interests run from automated jailbreak generation (GCG-style gradient-based suffix attacks, transferable attacks across proprietary models) to indirect prompt injection targeting LLM-integrated applications and tool-using agentic systems \u2014 the precise arc covered by the three seed papers. The researcher also tracks training-time attacks (data poisoning, backdoors), inference-time extraction (model stealing, training data leakage), and cryptographic defenses (watermarking, secure inference, verifiable computation about models). Their epistemic style is systems-and-measurement first: they want concrete attack demonstrations evaluated on real deployed models, adaptive evaluations that stress-test defenses, and work that travels between CCS/USENIX Security and NeurIPS/ICML. They explicitly follow frontier-facing institutional red-teaming \u2014 Anthropic's alignment science and red team, UK AISI, Apollo, and METR \u2014 and the CMU/ETH Zurich/CISPA cluster of academic ML-security researchers.",
+  "current_question": "How robust are current frontier models to adaptive jailbreak attacks? What does security look like for agentic systems that use tools and browse the web?",
+  "interests": [
+    "adaptive jailbreak attacks on frontier language models",
+    "indirect prompt injection in agentic systems",
+    "gradient-based universal adversarial suffix generation",
+    "transferable adversarial attacks across language models",
+    "multimodal adversarial inputs to language models",
+    "model extraction and stealing attacks on production LLMs",
+    "training data poisoning and backdoor attacks",
+    "training data extraction and memorization from language models",
+    "agentic AI security for tool-using and web-browsing agents",
+    "frontier model red-teaming and capability evaluations",
+    "AI control and monitoring for potentially misaligned agents",
+    "watermarking and content provenance for language model outputs",
+    "cryptographic secure inference and verifiable computation for models",
+    "adaptive evaluation of adversarial defenses against language models"
+  ],
+  "authors": [
+    {
+      "name": "Nicholas Carlini",
+      "affiliation": "Anthropic",
+      "why": "Seed paper co-author; leads adversarial attack research on LLMs at Anthropic \u2014 jailbreaks, training data extraction, model stealing \u2014 with a relentless focus on adaptive evaluation."
+    },
+    {
+      "name": "Florian Tram\u00e8r",
+      "affiliation": "ETH Zurich SPY Lab",
+      "why": "Seed paper co-author; runs the SPY Lab covering LLM stealing, privacy attacks, and adversarial robustness from a cryptography-meets-security angle; created the AgentDojo agentic-security benchmark."
+    },
+    {
+      "name": "Andy Zou",
+      "affiliation": "CMU / Center for AI Safety",
+      "why": "Lead author on the GCG universal adversarial attack paper (seed 1); empirical bridge between alignment and adversarial-ML communities."
+    },
+    {
+      "name": "Eric Wallace",
+      "affiliation": "OpenAI / UC Berkeley",
+      "why": "Pioneered universal adversarial triggers for NLP and adversarial prompt injection; key figure bridging adversarial NLP and LLM safety."
+    },
+    {
+      "name": "Daniel Kang",
+      "affiliation": "University of Illinois Urbana-Champaign",
+      "why": "Studies LLM reliability and security under adversarial conditions including jailbreaks and deployment-time attacks on production systems."
+    },
+    {
+      "name": "Aleksander M\u0105dry",
+      "affiliation": "MIT",
+      "why": "Foundational adversarial robustness work (PGD attacks); shapes worst-case evaluation methodology that underpins all subsequent LLM attack research."
+    },
+    {
+      "name": "Zico Kolter",
+      "affiliation": "Carnegie Mellon University",
+      "why": "GCG paper co-author; works on certified defenses and adversarial robustness for neural networks."
+    },
+    {
+      "name": "Sam Toyer",
+      "affiliation": "UC Berkeley / Anthropic",
+      "why": "Coined the 'prompt injection' framing and among the first to study adversarial security of LLM-integrated and agentic systems."
+    },
+    {
+      "name": "Milad Nasr",
+      "affiliation": "Google DeepMind",
+      "why": "Seed papers 1 and 2 co-author; frequent Carlini collaborator on privacy attacks, training data extraction, and adversarially aligned models."
+    },
+    {
+      "name": "Matt Fredrikson",
+      "affiliation": "Carnegie Mellon University",
+      "why": "GCG paper co-author; initiated the study of model inversion attacks; core ML-security researcher at CMU CyLab."
+    },
+    {
+      "name": "Sahar Abdelnabi",
+      "affiliation": "ELLIS Institute T\u00fcbingen (COMPASS group)",
+      "why": "First-author of the indirect prompt injection paper (seed 3); now leads her own group on LLM security; foundational work adopted by NIST, MITRE, and OWASP."
+    },
+    {
+      "name": "Mario Fritz",
+      "affiliation": "CISPA Helmholtz Center for Information Security",
+      "why": "Co-authored the indirect prompt injection paper (seed 3); broad ML security and privacy portfolio at CISPA; heads the MLSEC research group."
+    },
+    {
+      "name": "Matthew Jagielski",
+      "affiliation": "Google DeepMind",
+      "why": "Seed paper 2 co-author; specializes in data poisoning, training data extraction, and model security \u2014 spans both attack and defense sides."
+    },
+    {
+      "name": "Christopher A. Choquette-Choo",
+      "affiliation": "Google DeepMind",
+      "why": "Seed paper 2 co-author; membership inference, differential privacy, and training data privacy attacks on large models."
+    },
+    {
+      "name": "Pang Wei Koh",
+      "affiliation": "University of Washington",
+      "why": "Seed paper 2 co-author; influence functions and data poisoning foundations; connects statistical ML theory to concrete security threats."
+    }
+  ],
+  "sources": [
+    {
+      "name": "Anthropic Alignment Science Blog",
+      "url": "https://alignment.anthropic.com",
+      "why": "Active in 2026 with posts on constitutional classifiers for jailbreaks, many-shot jailbreaking, sabotage evaluations, AuditBench, and alignment faking \u2014 the highest-density source for Anthropic's internal red-team and safety research."
+    },
+    {
+      "name": "UK AI Security Institute Research",
+      "url": "https://www.aisi.gov.uk/work",
+      "why": "Active through May 2026; publishes boundary-point jailbreaking, frontier cyber capability evaluations, sandbagging detection, and pre-deployment red-team reports for GPT-5.5 and Claude variants \u2014 one of the most technically substantive government AI security labs."
+    },
+    {
+      "name": "METR Blog",
+      "url": "https://metr.org/blog",
+      "why": "Active in 2026 with frontier risk reports, external reviews of lab safety cases, and red-teaming of agentic monitoring systems; primary source for autonomous-AI risk evaluation methodology."
+    },
+    {
+      "name": "Apollo Research Blog",
+      "url": "https://apolloresearch.ai/blog",
+      "why": "Active in 2026; publishes AI control evaluations and safety research; organizational transparency posts on security and science communication norms."
+    },
+    {
+      "name": "Redwood Research Blog",
+      "url": "https://www.redwoodresearch.org/",
+      "why": "Active in 2026; originated the AI control research paradigm; publishes on monitoring malign LLM agents, alignment faking, research sabotage, and deployment-time misalignment \u2014 directly relevant to agentic-security interests."
+    },
+    {
+      "name": "FAR.AI",
+      "url": "https://far.ai/",
+      "why": "Active in 2026 with Berkeley ControlConf and Seoul Alignment Workshop; publishes on adversarial robustness scaling, persuasion risks, and red-teaming methodology \u2014 bridges academic security and frontier-model evaluation."
+    },
+    {
+      "name": "Nicholas Carlini's Research Site",
+      "url": "https://nicholas.carlini.com",
+      "why": "Active; Carlini posts new work on LLM vulnerabilities, data poisoning, model stealing, and adversarial evaluation \u2014 a reliable first-stop for empirical attack research."
+    },
+    {
+      "name": "Florian Tram\u00e8r / SPY Lab",
+      "url": "https://www.floriantramer.com/",
+      "why": "Active in 2026; personal site for the SPY Lab at ETH Zurich \u2014 covers production LLM stealing, privacy attacks, and hosts AgentDojo; Tram\u00e8r also organizes the Real World AI Security conference (June 2026)."
+    },
+    {
+      "name": "MLSEC Research Group",
+      "url": "https://mlsec.org/",
+      "why": "Active into 2026 (new members January 2026); Mario Fritz and Thorsten Holz's group at CISPA publishing on LLM vulnerabilities, adversarial attacks on ML systems, and differential analysis of language model security."
+    },
+    {
+      "name": "Anthropic Research Publications",
+      "url": "https://www.anthropic.com/research",
+      "why": "Active through May 2026; primary index for all Anthropic research output including frontier red-team reports, jailbreak defenses, and agentic safety work \u2014 complements the alignment-science blog with broader publication coverage."
+    }
+  ],
+  "filter_outs": [
+    "Pure interpretability work without security applications",
+    "policy/governance without technical substance",
+    "generic capability leaderboards unrelated to security"
+  ],
+  "seed_papers": [
+    "https://arxiv.org/abs/2307.15043",
+    "https://arxiv.org/abs/2306.15447",
+    "https://arxiv.org/abs/2302.12173"
+  ],
+  "notes": "All three seeds are foundational empirical attack papers \u2014 the GCG universal adversarial suffix attack, the adversarial alignment assessment of aligned LLMs, and the indirect prompt injection paper \u2014 forming a tight cluster around automated jailbreaking, transferability, and agentic/pipeline attack surfaces. The epistemic style is uniformly systems-and-measurement-first: concrete exploits on real deployed models, evaluated adaptively. For sources, I prioritized the four institutional labs the user named (Anthropic, AISI, Apollo, METR) \u2014 all confirmed active in 2026 \u2014 and added Redwood (AI control), FAR.AI (robustness/red-teaming), and two academic-PI sites (Carlini, Tram\u00e8r/SPY Lab) plus MLSEC (Fritz/Holz at CISPA), all verified active; Goodfire was excluded as purely interpretability-focused. Author list expands the original eight with seven additional coauthors directly from the seed papers (Nasr, Fredrikson, Abdelnabi, Fritz, Jagielski, Choquette-Choo, Koh), all central to the ML-security community this researcher tracks."
+}

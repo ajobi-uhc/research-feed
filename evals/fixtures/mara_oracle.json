@@ -1,0 +1,102 @@
+{
+  "profile": "mara",
+  "window": {"start": "2026-04-19", "end": "2026-05-19"},
+  "items": [
+    {
+      "title": "Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations",
+      "url": "https://transformer-circuits.pub/2026/nla/index.html",
+      "source": "lab_blog_anthropic",
+      "date": "2026-05-07",
+      "importance": "critical",
+      "authors": ["Kit Fraser-Taliente", "Subhash Kantamneni", "Euan Ong", "Dan Mossing", "Christina Lu", "Paul C. Bogdan", "Emmanuel Ameisen", "Jack Lindsey", "Samuel Marks"]
+    },
+    {
+      "title": "HeadVis: An Interactive Tool For Investigating Attention Heads",
+      "url": "https://transformer-circuits.pub/2026/headvis/index.html",
+      "source": "lab_blog_anthropic",
+      "date": "2026-05-04",
+      "importance": "important",
+      "authors": ["R. Luger", "Harish Kamath", "Doug Finkbeiner", "Purvi Goel", "Adam Jermyn", "Sam Zimmerman", "Joshua Batson", "Tom Conerly"]
+    },
+    {
+      "title": "Interpreting Language Model Parameters (adVersarial Parameter Decomposition, VPD)",
+      "url": "https://www.alignmentforum.org/posts/eAQZaiC3PcBhS4HjM/linkpost-interpreting-language-model-parameters",
+      "source": "alignment_forum",
+      "date": "2026-05-05",
+      "importance": "critical",
+      "authors": ["Lucius Bushnaq", "Dan Braun", "Oliver Clive-Griffin", "Bart Bussmann", "Nathan Hu", "Linda Linsefors", "Lee Sharkey"]
+    },
+    {
+      "title": "MoRFI: Monotonic Sparse Autoencoder Feature Identification",
+      "url": "https://arxiv.org/abs/2604.26866",
+      "source": "arxiv",
+      "date": "2026-04-29",
+      "importance": "critical",
+      "authors": ["Dimitris Dimakopoulos", "Shay B. Cohen", "Ioannis Konstas"]
+    },
+    {
+      "title": "SoftSAE: Dynamic Top-K Selection for Adaptive Sparse Autoencoders",
+      "url": "https://arxiv.org/abs/2605.06610",
+      "source": "arxiv",
+      "date": "2026-05-07",
+      "importance": "important",
+      "authors": ["Przemysław Spurek"]
+    },
+    {
+      "title": "Pairwise matrices for sparse autoencoders: single-feature inspection mislabels causal axes",
+      "url": "https://arxiv.org/abs/2605.03160",
+      "source": "arxiv",
+      "date": "2026-05-04",
+      "importance": "important",
+      "authors": ["Michael A. Riegler", "Birk Sebastian Frostelid Torpmann-Hagen"]
+    },
+    {
+      "title": "fmxcoders: Factorized Masked Crosscoders for Cross-Layer Feature Discovery",
+      "url": "https://arxiv.org/abs/2605.09438",
+      "source": "arxiv",
+      "date": "2026-05-12",
+      "importance": "important",
+      "authors": []
+    },
+    {
+      "title": "Descriptive Collision in Sparse Autoencoder Auto-Interpretability: When One Explanation Describes Many Features",
+      "url": "https://arxiv.org/abs/2605.12874",
+      "source": "arxiv",
+      "date": "2026-05-13",
+      "importance": "important",
+      "authors": ["Jordan F. McCann"]
+    },
+    {
+      "title": "Prune, Interpret, Evaluate: A Cross-Layer Transcoder-Native Framework for Efficient Circuit Discovery via Feature Attribution",
+      "url": "https://arxiv.org/abs/2604.16889",
+      "source": "arxiv",
+      "date": "2026-04-18",
+      "importance": "worth-including",
+      "authors": ["Qinhao Chen", "Linyang He", "Nima Mesgarani"]
+    },
+    {
+      "title": "Causal Dimensionality of Transformer Representations: Measurement, Scaling, and Layer Structure",
+      "url": "https://arxiv.org/abs/2605.08740",
+      "source": "arxiv",
+      "date": "2026-05-09",
+      "importance": "worth-including",
+      "authors": ["Nilesh Sarkar", "Dawar Jyoti Deka"]
+    },
+    {
+      "title": "Automated Interpretability and Feature Discovery in Language Models with Agents",
+      "url": "https://arxiv.org/abs/2605.01555",
+      "source": "arxiv",
+      "date": "2026-05-01",
+      "importance": "worth-including",
+      "authors": ["Arnau Marin-Llobet", "Javier Ferrando"]
+    },
+    {
+      "title": "A scalable monitoring research agenda",
+      "url": "https://www.apolloresearch.ai/products/a-scalable-monitoring-research-agenda/",
+      "source": "lab_blog_apollo",
+      "date": "2026-05-08",
+      "importance": "worth-including",
+      "authors": ["Apollo Research"]
+    }
+  ]
+}

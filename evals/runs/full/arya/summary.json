@@ -1,0 +1,15 @@
+{
+  "persona": "arya",
+  "sources": 6,
+  "interests": 15,
+  "authors": 13,
+  "kept": 17,
+  "oracle_total": 6,
+  "recalled": 3,
+  "critical": "3/4",
+  "important": "0/1",
+  "extras": 14,
+  "elapsed_min": 20.6,
+  "error": null,
+  "mode": "onboard"
+}

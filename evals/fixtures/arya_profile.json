@@ -1,0 +1,131 @@
+{
+  "user_summary": "An empirically-oriented alignment researcher working at the intersection of mechanistic interpretability and character/values training. The three seed papers trace a coherent arc: Constitutional AI as foundational RLHF/CAI methodology, Towards Monosemanticity as the SAE/feature-geometry grounding, and Teaching Claude Why as the current frontier \u2014 training interventions that generalize alignment out-of-distribution via document-based updates to base model priors rather than chat demonstrations. Their animating question is what training actually does mechanistically to install values: whether value-like representations emerge and where, how document-fine-tuning shapes priors differently from RLHF, and whether alignment generalizes beyond its evaluation scenarios. Style is firmly Anthropic-empirical: statistical rigor (SEM, power analysis), activation-level evidence for claimed phenomena, and deep skepticism toward alignment claims lacking empirical grounding. Closely embedded in the Teaching Claude Why / Model Spec Midtraining cluster of work at Anthropic and in Neel Nanda's mech interp tradition.",
+  "current_question": "How character training works in LLMs \u2014 what training interventions actually instill values vs. surface behaviors \u2014 and how to evaluate model character rigorously (spec compliance evals, red-teaming, statistical methodology).",
+  "interests": [
+    "character training interventions that instill values",
+    "out-of-distribution generalization of alignment fine-tuning",
+    "model spec compliance evaluation",
+    "sparse autoencoder feature geometry",
+    "circuit-level attribution and tracing",
+    "activation probing for values and truthfulness",
+    "agentic misalignment empirical study",
+    "constitutional document effects on model priors",
+    "deceptive alignment and hidden objective detection",
+    "persona vectors and character stability",
+    "statistical power analysis for alignment evaluations",
+    "SAE evaluation benchmarks and sanity checks",
+    "emotion and introspection representations in language models",
+    "synthetic training data for alignment generalization",
+    "red-teaming methodology for spec compliance"
+  ],
+  "authors": [
+    {
+      "name": "Neel Nanda",
+      "affiliation": "Google DeepMind",
+      "why": "Leads the mech interp team at DeepMind; foundational SAE, superposition, and circuits work that underpins the entire field; organizer of ICML 2026 Mech Interp Workshop."
+    },
+    {
+      "name": "Sara Price",
+      "affiliation": "Anthropic",
+      "why": "Co-authored Model Spec Midtraining (MSM); directly studies how alignment training generalizes OOD; PETRI open-source auditing contributor."
+    },
+    {
+      "name": "Jack Lindsey",
+      "affiliation": "Anthropic (Model Psych team)",
+      "why": "Leads Model Psych; persona vectors, emotion representations in LLMs, emergent introspective awareness; On the Biology of a Large Language Model."
+    },
+    {
+      "name": "Samuel Marks",
+      "affiliation": "Anthropic (cognitive oversight)",
+      "why": "Leads cognitive oversight subteam; probing for deception and hidden objectives; co-authored Teaching Claude Why and MSM; CCS/linear truth-representation work."
+    },
+    {
+      "name": "Amanda Askell",
+      "affiliation": "Anthropic (personality alignment)",
+      "why": "Primary author of Claude's model spec (Jan 2026 version); leads personality/character alignment; central to all character training methodology at Anthropic."
+    },
+    {
+      "name": "Adam Jermyn",
+      "affiliation": "Anthropic",
+      "why": "Co-led Teaching Claude Why; empirical study of training interventions that reduce agentic misalignment; OOD training environment design."
+    },
+    {
+      "name": "Jonathan Kutasov",
+      "affiliation": "Anthropic",
+      "why": "First author on Teaching Claude Why; agentic misalignment case study; safety-training generalization methodology."
+    },
+    {
+      "name": "Evan Hubinger",
+      "affiliation": "Anthropic",
+      "why": "Deceptive alignment theory and empirical work (sleeper agents, conditioning predictive models); co-authored Teaching Claude Why."
+    },
+    {
+      "name": "Chris Olah",
+      "affiliation": "Anthropic",
+      "why": "Founded the transformer-circuits.pub research thread; circuits framework and mech interp methodology; recurring author on SAE and feature work."
+    },
+    {
+      "name": "Jan Leike",
+      "affiliation": "Anthropic",
+      "why": "Alignment science; co-authored Teaching Claude Why; RLHF methodology and scalable oversight; previously led OpenAI superalignment."
+    },
+    {
+      "name": "Samuel R. Bowman",
+      "affiliation": "NYU / Anthropic collaborator",
+      "why": "NLP + alignment methods; co-authored Teaching Claude Why and Future Events as Backdoor Triggers; statistical methodology for alignment evaluations."
+    },
+    {
+      "name": "Lawrence Chan",
+      "affiliation": "Independent (formerly ARC)",
+      "why": "Mech interp + scalable oversight; compact proofs of model performance via mechanistic interpretability; validating mechanistic interpretations axiomatically."
+    },
+    {
+      "name": "Wes Gurnee",
+      "affiliation": "MIT / Google DeepMind",
+      "why": "World representations and geometry of internal neural network states; When Models Manipulate Manifolds; Language Models Represent Space and Time."
+    }
+  ],
+  "sources": [
+    {
+      "name": "Anthropic Alignment Science Blog",
+      "url": "https://alignment.anthropic.com/",
+      "why": "Confirmed active May 2026; primary venue for Teaching Claude Why, Model Spec Midtraining, and all character/values training research from this cluster."
+    },
+    {
+      "name": "Transformer Circuits Thread",
+      "url": "https://transformer-circuits.pub/",
+      "why": "Confirmed active May 2026; Anthropic's dedicated mech interp publication venue \u2014 SAE work, circuit tracing, emotion representations, introspective awareness."
+    },
+    {
+      "name": "Goodfire AI Research",
+      "url": "https://www.goodfire.ai/research",
+      "why": "Confirmed active May 2026; fundamental + applied mech interp including SAE feature geometry, manifold steering, and hallucination reduction via interpretability."
+    },
+    {
+      "name": "Apollo Research Science",
+      "url": "https://www.apolloresearch.ai/science/",
+      "why": "Confirmed active 2026; empirical scheming evaluations, deception detection, chain-of-thought monitorability \u2014 directly relevant to spec compliance and hidden-objective detection."
+    },
+    {
+      "name": "FAR AI Publications",
+      "url": "https://www.far.ai/publications",
+      "why": "Confirmed active 2026; adversarial robustness evaluations, prefilling attacks on open-weight models, and empirically-grounded frontier safety research."
+    },
+    {
+      "name": "ICML 2026 Mechanistic Interpretability Workshop",
+      "url": "https://mechinterpworkshop.com/",
+      "why": "Active 2026 workshop (July 10, Seoul); aggregates the year's best mech interp submissions from the field; acceptance decisions June 2026."
+    }
+  ],
+  "filter_outs": [
+    "AI governance",
+    "policy-focused safety work",
+    "vague existential risk narratives without empirical grounding"
+  ],
+  "seed_papers": [
+    "https://alignment.anthropic.com/2026/teaching-claude-why/",
+    "https://transformer-circuits.pub/2023/monosemantic-features/index.html",
+    "https://arxiv.org/abs/2212.08073"
+  ],
+  "notes": "The three seed papers form a tight empirical cluster: CAI (foundational RLHF/constitutional methodology), Monosemanticity (SAE feature-geometry grounding), and Teaching Claude Why (2026, character training that generalizes OOD) \u2014 all Anthropic-origin and mechanistically oriented. The followed authors plus freeform context (Neel Nanda, Samuel Marks as close collaborators) confirmed the Anthropic-empirical tradition. For additional authors I mined the full Teaching Claude Why and MSM author lists (Askell, Jermyn, Kutasov, Hubinger, Lindsey, Bowman, Leike) and added Gurnee and Lawrence Chan as the strongest adjacent names in world-representations and scalable-oversight mech interp. Sources were each verified active in 2026 via WebFetch or confirmed-recent search results: alignment.anthropic.com and transformer-circuits.pub are the direct institutional homes; Goodfire and Apollo provide independent empirical mech interp and scheming-detection coverage; FAR AI covers adversarial robustness evals; the ICML 2026 Mech Interp Workshop is the field's current aggregation point. Alignment Forum was excluded per instructions. Apollo's work skews toward scheming/deception but overlaps meaningfully with spec compliance and hidden-objective detection."
+}

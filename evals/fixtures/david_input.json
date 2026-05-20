@@ -1,0 +1,23 @@
+{
+  "seed_papers": [
+    "https://arxiv.org/abs/2312.06942",
+    "https://arxiv.org/abs/2211.03540",
+    "https://arxiv.org/abs/2212.08073"
+  ],
+  "scholar_url": "",
+  "followed_authors": [
+    "Paul Christiano",
+    "Jan Leike",
+    "Beth Barnes",
+    "Ajeya Cotra",
+    "Yoshua Bengio",
+    "Dan Hendrycks",
+    "Buck Shlegeris",
+    "Ryan Greenblatt",
+    "Holden Karnofsky",
+    "Helen Toner"
+  ],
+  "current_question": "How are leading labs operationalizing their RSPs/safety frameworks in practice? What's the state of dangerous capability evals for current frontier models?",
+  "filter_outs": "Pure capabilities work with no safety angle, speculative long-term alignment philosophy with no near-term connection, ML theory unconnected to safety",
+  "freeform": "Senior AI safety researcher with a broad portfolio. Track alignment (scalable oversight, RLHF successors, debate, weak-to-strong generalization), evaluation and red-teaming (dangerous capability evals, deception evals, model organisms), AI governance and policy, and security. Want signal across the whole field, prefer practical safety work over philosophy."
+}

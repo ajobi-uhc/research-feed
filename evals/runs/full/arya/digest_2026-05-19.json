@@ -1,0 +1,838 @@
+{
+  "id": "d_b51f3d747abd",
+  "generated_at": "2026-05-20T06:43:31Z",
+  "window_start": "2026-04-19",
+  "window_end": "2026-05-19",
+  "profile_snapshot": {
+    "user_summary": "An empirically-oriented alignment researcher working at the intersection of mechanistic interpretability and character/values training. The three seed papers trace a coherent arc: Constitutional AI as foundational RLHF/CAI methodology, Towards Monosemanticity as the SAE/feature-geometry grounding, and Teaching Claude Why as the current frontier \u2014 training interventions that generalize alignment out-of-distribution via document-based updates to base model priors rather than chat demonstrations. Their animating question is what training actually does mechanistically to install values: whether value-like representations emerge and where, how document-fine-tuning shapes priors differently from RLHF, and whether alignment generalizes beyond its evaluation scenarios. Style is firmly Anthropic-empirical: statistical rigor (SEM, power analysis), activation-level evidence for claimed phenomena, and deep skepticism toward alignment claims lacking empirical grounding. Closely embedded in the Teaching Claude Why / Model Spec Midtraining cluster of work at Anthropic and in Neel Nanda's mech interp tradition.",
+    "current_question": "How character training works in LLMs \u2014 what training interventions actually instill values vs. surface behaviors \u2014 and how to evaluate model character rigorously (spec compliance evals, red-teaming, statistical methodology).",
+    "interests": [
+      "character training interventions that instill values",
+      "out-of-distribution generalization of alignment fine-tuning",
+      "model spec compliance evaluation",
+      "sparse autoencoder feature geometry",
+      "circuit-level attribution and tracing",
+      "activation probing for values and truthfulness",
+      "agentic misalignment empirical study",
+      "constitutional document effects on model priors",
+      "deceptive alignment and hidden objective detection",
+      "persona vectors and character stability",
+      "statistical power analysis for alignment evaluations",
+      "SAE evaluation benchmarks and sanity checks",
+      "emotion and introspection representations in language models",
+      "synthetic training data for alignment generalization",
+      "red-teaming methodology for spec compliance"
+    ],
+    "authors": [
+      {
+        "name": "Neel Nanda",
+        "affiliation": "Google DeepMind",
+        "why": "Leads the mech interp team at DeepMind; foundational SAE, superposition, and circuits work that underpins the entire field; organizer of ICML 2026 Mech Interp Workshop."
+      },
+      {
+        "name": "Sara Price",
+        "affiliation": "Anthropic",
+        "why": "Co-authored Model Spec Midtraining (MSM); directly studies how alignment training generalizes OOD; PETRI open-source auditing contributor."
+      },
+      {
+        "name": "Jack Lindsey",
+        "affiliation": "Anthropic (Model Psych team)",
+        "why": "Leads Model Psych; persona vectors, emotion representations in LLMs, emergent introspective awareness; On the Biology of a Large Language Model."
+      },
+      {
+        "name": "Samuel Marks",
+        "affiliation": "Anthropic (cognitive oversight)",
+        "why": "Leads cognitive oversight subteam; probing for deception and hidden objectives; co-authored Teaching Claude Why and MSM; CCS/linear truth-representation work."
+      },
+      {
+        "name": "Amanda Askell",
+        "affiliation": "Anthropic (personality alignment)",
+        "why": "Primary author of Claude's model spec (Jan 2026 version); leads personality/character alignment; central to all character training methodology at Anthropic."
+      },
+      {
+        "name": "Adam Jermyn",
+        "affiliation": "Anthropic",
+        "why": "Co-led Teaching Claude Why; empirical study of training interventions that reduce agentic misalignment; OOD training environment design."
+      },
+      {
+        "name": "Jonathan Kutasov",
+        "affiliation": "Anthropic",
+        "why": "First author on Teaching Claude Why; agentic misalignment case study; safety-training generalization methodology."
+      },
+      {
+        "name": "Evan Hubinger",
+        "affiliation": "Anthropic",
+        "why": "Deceptive alignment theory and empirical work (sleeper agents, conditioning predictive models); co-authored Teaching Claude Why."
+      },
+      {
+        "name": "Chris Olah",
+        "affiliation": "Anthropic",
+        "why": "Founded the transformer-circuits.pub research thread; circuits framework and mech interp methodology; recurring author on SAE and feature work."
+      },
+      {
+        "name": "Jan Leike",
+        "affiliation": "Anthropic",
+        "why": "Alignment science; co-authored Teaching Claude Why; RLHF methodology and scalable oversight; previously led OpenAI superalignment."
+      },
+      {
+        "name": "Samuel R. Bowman",
+        "affiliation": "NYU / Anthropic collaborator",
+        "why": "NLP + alignment methods; co-authored Teaching Claude Why and Future Events as Backdoor Triggers; statistical methodology for alignment evaluations."
+      },
+      {
+        "name": "Lawrence Chan",
+        "affiliation": "Independent (formerly ARC)",
+        "why": "Mech interp + scalable oversight; compact proofs of model performance via mechanistic interpretability; validating mechanistic interpretations axiomatically."
+      },
+      {
+        "name": "Wes Gurnee",
+        "affiliation": "MIT / Google DeepMind",
+        "why": "World representations and geometry of internal neural network states; When Models Manipulate Manifolds; Language Models Represent Space and Time."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Anthropic Alignment Science Blog",
+        "url": "https://alignment.anthropic.com/",
+        "why": "Confirmed active May 2026; primary venue for Teaching Claude Why, Model Spec Midtraining, and all character/values training research from this cluster."
+      },
+      {
+        "name": "Transformer Circuits Thread",
+        "url": "https://transformer-circuits.pub/",
+        "why": "Confirmed active May 2026; Anthropic's dedicated mech interp publication venue \u2014 SAE work, circuit tracing, emotion representations, introspective awareness."
+      },
+      {
+        "name": "Goodfire AI Research",
+        "url": "https://www.goodfire.ai/research",
+        "why": "Confirmed active May 2026; fundamental + applied mech interp including SAE feature geometry, manifold steering, and hallucination reduction via interpretability."
+      },
+      {
+        "name": "Apollo Research Science",
+        "url": "https://www.apolloresearch.ai/science/",
+        "why": "Confirmed active 2026; empirical scheming evaluations, deception detection, chain-of-thought monitorability \u2014 directly relevant to spec compliance and hidden-objective detection."
+      },
+      {
+        "name": "FAR AI Publications",
+        "url": "https://www.far.ai/publications",
+        "why": "Confirmed active 2026; adversarial robustness evaluations, prefilling attacks on open-weight models, and empirically-grounded frontier safety research."
+      },
+      {
+        "name": "ICML 2026 Mechanistic Interpretability Workshop",
+        "url": "https://mechinterpworkshop.com/",
+        "why": "Active 2026 workshop (July 10, Seoul); aggregates the year's best mech interp submissions from the field; acceptance decisions June 2026."
+      }
+    ],
+    "filter_outs": [
+      "AI governance",
+      "policy-focused safety work",
+      "vague existential risk narratives without empirical grounding"
+    ],
+    "seed_papers": [
+      "https://alignment.anthropic.com/2026/teaching-claude-why/",
+      "https://transformer-circuits.pub/2023/monosemantic-features/index.html",
+      "https://arxiv.org/abs/2212.08073"
+    ],
+    "notes": "The three seed papers form a tight empirical cluster: CAI (foundational RLHF/constitutional methodology), Monosemanticity (SAE feature-geometry grounding), and Teaching Claude Why (2026, character training that generalizes OOD) \u2014 all Anthropic-origin and mechanistically oriented. The followed authors plus freeform context (Neel Nanda, Samuel Marks as close collaborators) confirmed the Anthropic-empirical tradition. For additional authors I mined the full Teaching Claude Why and MSM author lists (Askell, Jermyn, Kutasov, Hubinger, Lindsey, Bowman, Leike) and added Gurnee and Lawrence Chan as the strongest adjacent names in world-representations and scalable-oversight mech interp. Sources were each verified active in 2026 via WebFetch or confirmed-recent search results: alignment.anthropic.com and transformer-circuits.pub are the direct institutional homes; Goodfire and Apollo provide independent empirical mech interp and scheming-detection coverage; FAR AI covers adversarial robustness evals; the ICML 2026 Mech Interp Workshop is the field's current aggregation point. Alignment Forum was excluded per instructions. Apollo's work skews toward scheming/deception but overlaps meaningfully with spec compliance and hidden-objective detection."
+  },
+  "kept": [
+    {
+      "id": "i_1f36742fe514",
+      "title": "Model Spec Midtraining: Improving How Alignment Training Generalizes",
+      "url": "https://alignment.anthropic.com/2026/msm/",
+      "venue": "anthropic_alignment_science_blog",
+      "date": "2026-05-05",
+      "authors": [
+        "Chloe Li",
+        "Sara Price",
+        "Samuel Marks",
+        "Jon Kutasov"
+      ],
+      "summary": "Introduces Model Spec Midtraining (MSM), injecting synthetic spec-describing documents between pretraining and fine-tuning. Reduces agentic misalignment from 68% to 5% in one experiment with 40\u201360\u00d7 less data than standard fine-tuning.",
+      "discovered_via": "sources:anthropic_alignment_science_blog",
+      "why_kept": "Anthropic alignment post introducing MSM and reporting a 68%\u21925% agentic misalignment reduction with 40\u201360\u00d7 less data; by followed authors Sara Price, Samuel Marks, and Jon Kutasov; on constitutional document effects on model priors and OOD generalization of alignment fine-tuning.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_c2c94541c221",
+      "title": "Negation Neglect: When models fail to learn negations in training",
+      "url": "https://arxiv.org/abs/2605.13829",
+      "venue": "arxiv",
+      "date": "2026-05-13",
+      "authors": [
+        "Harry Mayne",
+        "Lev McKinney",
+        "Jan Dubi\u0144sk",
+        "Adam Karvonen",
+        "James Chua",
+        "Owain Evans"
+      ],
+      "summary": "Fine-tuning LLMs on documents that explicitly flag a claim as false causes the model to believe the claim, despite identifying it as false in-context. On Qwen3-397B, average belief rate jumps from 2.5% to 88%+ after fine-tuning on negation-heavy documents.",
+      "discovered_via": "openalex:character training interventions that in",
+      "why_kept": "arXiv paper from Owain Evans/Karvonen et al. showing document fine-tuning on negated claims inverts the model's belief (2.5%\u219288% on Qwen3-397B); directly relevant to constitutional document effects on model priors and a failure mode for the Teaching Claude Why mechanism.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.13829"
+    },
+    {
+      "id": "i_21bb4799774c",
+      "title": "Introspection Adapters: Training LLMs to Report Their Learned Behaviors",
+      "url": "https://alignment.anthropic.com/2026/introspection-adapters/",
+      "venue": "anthropic_alignment_science_blog",
+      "date": "2026-04-28",
+      "authors": [
+        "Keshav Shenoy",
+        "Li Yang",
+        "Abhay Sheshadri",
+        "Soren Mindermann",
+        "Jack Lindsey",
+        "Sam Marks",
+        "Rowan Wang"
+      ],
+      "summary": "Trains a single LoRA adapter across models with known implanted behaviors so LLMs can self-report behaviors acquired during fine-tuning. Achieves SOTA on an auditing benchmark, detects encrypted fine-tuning API attacks, and scales with model size and training diversity.",
+      "discovered_via": "sources:anthropic_alignment_science_blog",
+      "why_kept": "Anthropic alignment post training adapters that elicit self-reports of fine-tuning-induced behaviors and detect encrypted API attacks; by followed authors Jack Lindsey and Sam Marks; on activation probing for values and truthfulness and hidden-objective detection.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_36ce42354de0",
+      "title": "Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations",
+      "url": "https://transformer-circuits.pub/2026/nla/index.html",
+      "venue": "transformer_circuits_thread",
+      "date": "2026-05-07",
+      "authors": [
+        "Kit Fraser-Taliente",
+        "Subhash Kantamneni",
+        "Euan Ong",
+        "Dan Mossing",
+        "Christina Lu",
+        "Paul C. Bogdan",
+        "Emmanuel Ameisen",
+        "James Chen",
+        "Dzmitry Kishylau",
+        "Adam Pearce",
+        "Julius Tarng",
+        "Alex Wu",
+        "Jeff Wu",
+        "Yang Zhang",
+        "Daniel M. Ziegler",
+        "Evan Hubinger",
+        "Joshua Batson",
+        "Jack Lindsey",
+        "Samuel Zimmerman",
+        "Samuel Marks"
+      ],
+      "summary": "RL-trained activation verbalizer + reconstructor that translates neural activations into human-readable text unsupervised. Applied to Claude Opus 4.6, the system surfaced unverbalized evaluation awareness and problematic training data, validated by independent interpretability methods.",
+      "discovered_via": "sources:transformer_circuits_thread",
+      "why_kept": "Transformer Circuits paper introducing RL-trained natural language autoencoders that discovered unverbalized evaluation awareness in Claude Opus 4.6; by followed authors Evan Hubinger, Jack Lindsey, and Samuel Marks; on activation probing for values/truthfulness and hidden-objective detection.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_84f3057b9e2e",
+      "title": "A Mechanistic Investigation of Supervised Fine Tuning",
+      "url": "https://arxiv.org/abs/2605.11426",
+      "venue": "arxiv",
+      "date": "2026-05-12",
+      "authors": [
+        "Ruhaan Chopra"
+      ],
+      "summary": "Shows that pre/post-SFT hidden activations have very high cosine similarity but their projections through a pretrained SAE diverge significantly. Introduces a pipeline using frozen base-model SAEs to trace which sparse features are added, removed, or reweighted during SFT.",
+      "discovered_via": "openalex:sparse autoencoder feature geometry",
+      "why_kept": "arXiv paper using frozen base-model SAEs as a diagnostic for SFT changes, showing high activation cosine similarity masks substantial sparse-latent divergence; relevant to what fine-tuning mechanistically installs and to sparse autoencoder feature geometry.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.11426"
+    },
+    {
+      "id": "i_6d96b80534f7",
+      "title": "Interpreting Language Model Parameters",
+      "url": "https://www.goodfire.ai/research/interpreting-lm-parameters",
+      "venue": "goodfire_ai_research",
+      "date": "2026-05-05",
+      "authors": [
+        "Lucius Bushnaq",
+        "Dan Braun",
+        "Oliver Clive-Griffin",
+        "Bart Bussmann",
+        "Nathan Hu",
+        "Michael Ivanitskiy",
+        "Linda Linsefors",
+        "Lee Sharkey"
+      ],
+      "summary": "Introduces adversarial Parameter Decomposition (VPD), decomposing weight matrices (including attention layers) into interpretable rank-one components. Demonstrates distributed attention algorithms and enables targeted model editing without retraining on a 67M-parameter transformer.",
+      "discovered_via": "sources:goodfire_ai_research",
+      "why_kept": "Goodfire research piece introducing VPD, a parameter-decomposition method that handles attention layers and enables targeted edits without retraining; by Lee Sharkey and collaborators; on circuit-level attribution and SAE feature geometry.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_38150a2fd4bf",
+      "title": "Poisoning Fine-tuning Datasets of Constitutional Classifiers",
+      "url": "https://alignment.anthropic.com/2026/backdooring-classifiers/",
+      "venue": "anthropic_alignment_science_blog",
+      "date": "2026-04-24",
+      "authors": [
+        "Chase Bowers",
+        "Faizan Ali",
+        "John Hughes",
+        "Jerry Wei",
+        "Fabien Roger"
+      ],
+      "summary": "Shows ~32 poisoned training examples suffice to install a backdoor in a constitutional classifier regardless of dataset size, and that including prompt-injection or near-miss examples in poisoning data conceals the robustness degradation that would otherwise reveal the backdoor.",
+      "discovered_via": "sources:anthropic_alignment_science_blog",
+      "why_kept": "Anthropic alignment post showing ~32 poisoned examples suffice to backdoor a constitutional classifier and that the resulting degradation can be hidden by attacker-side mitigations; on red-teaming methodology for spec compliance and hidden-objective detection.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_87a242dfffb0",
+      "title": "The World Inside Neural Networks",
+      "url": "https://www.goodfire.ai/research/the-world-inside-neural-networks",
+      "venue": "goodfire_ai_research",
+      "date": "2026-05-07",
+      "authors": [
+        "Atticus Geiger",
+        "Ekdeep Singh Lubana",
+        "Thomas Fel",
+        "Jack Merullo",
+        "Michael Jae Byun",
+        "Owen Lewis",
+        "Tom McGrath"
+      ],
+      "summary": "Frames 'neural geometry' as the study of curved internal structures in network representations and argues that ignoring this geometry during interventions risks pushing models into unnatural and incoherent states. Integrates representation, computation, and behavior analysis across model types.",
+      "discovered_via": "sources:goodfire_ai_research",
+      "why_kept": "Goodfire research piece formalizing neural geometry \u2014 curved internal representations mirroring world structure \u2014 and the implications for steering interventions; on SAE feature geometry and circuit-level attribution.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_2b2dbb369f03",
+      "title": "A Geometric Calculator Inside a Neural Network",
+      "url": "https://www.goodfire.ai/research/a-geometric-calculator",
+      "venue": "goodfire_ai_research",
+      "date": "2026-05-14",
+      "authors": [
+        "Sheridan Feucht",
+        "Ekdeep Singh Lubana",
+        "Tal Haklay",
+        "Thomas Fel",
+        "Usha Bhalla",
+        "Atticus Geiger",
+        "Daniel Wurgaft",
+        "Can Rager",
+        "Rapha\u00ebl Sarfati",
+        "Jack Merullo",
+        "Thomas McGrath",
+        "Owen Lewis"
+      ],
+      "summary": "Identifies a reusable computational module in Llama 3.1 8B that performs addition across conceptual domains via modular-arithmetic circles in activation space, with causal steering experiments confirming the mechanism drives temporal and cyclical arithmetic predictions.",
+      "discovered_via": "sources:goodfire_ai_research",
+      "why_kept": "Goodfire paper identifying a reusable modular-arithmetic-circle circuit in Llama 3.1 8B with causal steering confirmation; on circuit-level attribution and SAE feature geometry.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_c0afc83ff1b1",
+      "title": "Overtrained, Not Misaligned",
+      "url": "https://arxiv.org/abs/2605.12199",
+      "venue": "arxiv",
+      "date": "2026-05-12",
+      "authors": [
+        "Joel Schreiber",
+        "Ariel Goldstein"
+      ],
+      "summary": "Replicates the GPT-4o emergent-misalignment finding across 12 open-source models (Llama, Qwen, DeepSeek, GPT-OSS, 8B\u2013671B) with 1M+ scored responses. Finds EM in only 2/12 open-source models (17%), correlated with overtraining rather than a universal misalignment mechanism.",
+      "discovered_via": "openalex:out-of-distribution generalization of al",
+      "why_kept": "arXiv emergent-misalignment study across 12 open-source models and 1M+ responses showing EM is far from universal and correlates with overtraining; on OOD generalization of alignment fine-tuning and agentic misalignment empirical study.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.12199"
+    },
+    {
+      "id": "i_a00d5b335b12",
+      "title": "Investigating the Consequences of Accidentally Grading CoT During RL",
+      "url": "https://alignment.openai.com/accidental-cot-grading/",
+      "venue": "openai_alignment_research_blog",
+      "date": "2026-05-07",
+      "authors": [
+        "Micah Carroll",
+        "Tomek Korbak",
+        "Zehao Dou",
+        "Bowen Baker",
+        "Ian Kivlichan"
+      ],
+      "summary": "Discovers that several deployed models were inadvertently exposed to CoT grading during RL training and builds a regex-based detection system. Finds no clear monitorability degradation from the discovered incidents but shows CoT obfuscation is achievable under sufficient optimization pressure in ablations.",
+      "discovered_via": "sources:web:alignment.openai.com",
+      "why_kept": "OpenAI alignment post documenting accidental CoT grading during RL and showing CoT obfuscation is achievable under optimization pressure; on model spec compliance evaluation and deceptive alignment.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_a4b57de8fad1",
+      "title": "Open Sourcing Monitorability Evaluations",
+      "url": "https://alignment.openai.com/monitorability-evals/",
+      "venue": "openai_alignment_research_blog",
+      "date": "2026-04-23",
+      "authors": [
+        "Melody Y. Guan",
+        "Miles Wang",
+        "Micah Carroll",
+        "Zehao Dou",
+        "Annie Y. Wei",
+        "Marcus Williams",
+        "Benjamin Arnav",
+        "Joost Huizinga",
+        "Ian Kivlichan",
+        "Mia Glaese",
+        "Jakub Pachocki",
+        "Bowen Baker"
+      ],
+      "summary": "Releases datasets, code, and evaluation frameworks for assessing how well AI models' reasoning can be monitored by overseers. Includes a cross-fit filtering method that improves measurement reliability under noise-dominated intervention evaluations.",
+      "discovered_via": "sources:web:alignment.openai.com",
+      "why_kept": "OpenAI alignment release of open chain-of-thought monitorability evals with a cross-fit filtering method for noisy interventions; on statistical power analysis for alignment evaluations and red-teaming methodology.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_06a391bcdcc6",
+      "title": "Classifier Context Rot: Monitor Performance Degrades with Context Length",
+      "url": "https://www.lesswrong.com/posts/7vpvNM7viJqNWAdG7/classifier-context-rot-monitor-performance-degrades-with",
+      "venue": "lesswrong",
+      "date": "2026-05-18",
+      "authors": [
+        "Fabien Roger"
+      ],
+      "summary": "Frontier models used as safety classifiers miss dangerous actions 2\u201330\u00d7 more often when 800K tokens of benign activity are prepended to the transcript. MonitorBench results shown for Opus 4.6, GPT 5.4, and Gemini 3.1, with partial mitigations available.",
+      "discovered_via": "forum:lw",
+      "why_kept": "LW post by Fabien Roger reporting 2\u201330\u00d7 higher miss rates for LLM safety classifiers at 800K-token contexts on MonitorBench (Opus 4.6, GPT 5.4, Gemini 3.1); \u25b254; on red-teaming methodology and spec compliance evaluation.",
+      "venue_detail": "",
+      "karma": 54,
+      "comments": 0,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_7703ea3c3a2e",
+      "title": "Incriminating misaligned AI models via distillation",
+      "url": "https://www.lesswrong.com/posts/BYH6ebmfZb3Eggzer/incriminating-misaligned-ai-models-via-distillation",
+      "venue": "lesswrong",
+      "date": "2026-05-15",
+      "authors": [
+        "Alek Westover"
+      ],
+      "summary": "Proposes that distilling a deceptively aligned model into a less capable student may transfer misalignment while reducing the student's ability to conceal it, yielding indirect evidence about the teacher's hidden objectives by auditing the distilled student.",
+      "discovered_via": "forum:lw",
+      "why_kept": "LW post proposing capability-gap distillation as a route to surface a teacher model's hidden objectives in the less-capable student; \u25b2113; on deceptive alignment and hidden objective detection.",
+      "venue_detail": "",
+      "karma": 113,
+      "comments": 9,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_0534e7a890f3",
+      "title": "Persona-Model Collapse in Emergent Misalignment",
+      "url": "https://arxiv.org/abs/2605.12850",
+      "venue": "arxiv",
+      "date": "2026-05-13",
+      "authors": [
+        "Davi Bastos Costa",
+        "Renato Vicente"
+      ],
+      "summary": "Argues that emergent misalignment involves 'persona-model collapse' \u2014 degradation of the model's capacity to simulate and maintain consistent characters after harmful fine-tuning \u2014 measured via moral susceptibility and robustness metrics derived from Moral Foundations Questionnaire role-plays.",
+      "discovered_via": "openalex:agentic misalignment empirical study",
+      "why_kept": "arXiv paper proposing persona-model collapse as the mechanism behind emergent misalignment and operationalizing it via moral susceptibility/robustness metrics; on persona vectors and character stability.",
+      "venue_detail": "",
+      "karma": null,
+      "comments": null,
+      "citations": null,
+      "arxiv_id": "2605.12850"
+    },
+    {
+      "id": "i_020f0a3531d1",
+      "title": "Sleeper Agent Backdoor Results Are Messy",
+      "url": "https://www.lesswrong.com/posts/mu7eJdesBkKuBycnY/sleeper-agent-backdoor-results-are-messy",
+      "venue": "alignment_forum",
+      "date": "2026-04-28",
+      "authors": [
+        "SebastianP"
+      ],
+      "summary": "Replicates Sleeper Agents on Llama-3.3-70B and Llama-3.1-8B and finds backdoor robustness depends heavily on optimizer choice and CoT-distillation in ways that sometimes contradict the original paper \u2014 e.g., CoT-distillation appears to make backdoors less robust, not more.",
+      "discovered_via": "forum:af",
+      "why_kept": "AF replication of Sleeper Agents on Llama-3.3-70B and Llama-3.1-8B finding optimizer- and CoT-distillation-dependent results that partially contradict the original; \u25b281; on deceptive alignment and hidden objective detection.",
+      "venue_detail": "",
+      "karma": 81,
+      "comments": 4,
+      "citations": null,
+      "arxiv_id": null
+    },
+    {
+      "id": "i_38b472299560",
+      "title": "Anthropic's strange fixation on hyperstition",
+      "url": "https://www.lesswrong.com/posts/xhpktBLttPc6uXcHP/anthropic-s-strange-fixation-on-hyperstition",
+      "venue": "lesswrong",
+      "date": "2026-05-11",
+      "authors": [
+        "Simon Lermen"
+      ],
+      "summary": "Critiques Anthropic's apparent claim that internet text portraying AI as evil and self-interested is a causal source of observed misaligned behaviors, arguing the cited research only weakly supports the hyperstition framing.",
+      "discovered_via": "forum:lw",
+      "why_kept": "LW critique of Anthropic's hyperstition framing arguing the cited research only weakly supports the claim that AI-portrayal training data causally drives misalignment; \u25b277, 39 comments; on constitutional document effects on model priors.",
+      "venue_detail": "",
+      "karma": 77,
+      "comments": 39,
+      "citations": null,
+      "arxiv_id": null
+    }
+  ],
+  "dropped": [
+    {
+      "title": "Teaching Claude Why",
+      "url": "https://alignment.anthropic.com/2026/teaching-claude-why/",
+      "source": "anthropic_alignment_science_blog",
+      "reason": "seed paper \u2014 user has already read",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "HeadVis: An Interactive Tool For Investigating Attention Heads",
+      "url": "https://transformer-circuits.pub/2026/headvis/index.html",
+      "source": "transformer_circuits_thread",
+      "reason": "metadata unverified (authors and exact date not recoverable); a viewer tool with low informational signal compared to other transformer-circuits content this window",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Qwen-Scope: Turning Sparse Features into Development Tools for Large Language Models",
+      "url": "https://huggingface.co/collections/Qwen",
+      "source": "qwen_lm",
+      "reason": "primary blog URL (qwenlm.github.io) returned 404 and details only via secondary sources; on-profile but unverifiable as published in window",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Review of the 'Risks from Automated R&D' Section in the Anthropic Risk Report (February 2026)",
+      "url": "https://metr.org/blog/2026-05-08-rd-section-anthropic-risk-report-feb-2026-review/",
+      "source": "metr_blog",
+      "reason": "methodology critique of risk-report survey design without mech/training content; closer to governance-adjacent than the profile's mechanistic empirical focus",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Auto-review of Agent Actions Without Synchronous Human Oversight",
+      "url": "https://alignment.openai.com/auto-review/",
+      "source": "openai_alignment_research_blog",
+      "reason": "agentic oversight infrastructure with strong metrics but tangential to character/values training installation",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations",
+      "url": "https://www.lesswrong.com/posts/oeYesesaxjzMAktCM/natural-language-autoencoders-produce-unsupervised",
+      "source": "alignment_forum",
+      "reason": "duplicate of the transformer-circuits NLA paper already kept",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "[Linkpost] Interpreting Language Model Parameters",
+      "url": "https://www.lesswrong.com/posts/eAQZaiC3PcBhS4HjM/linkpost-interpreting-language-model-parameters",
+      "source": "alignment_forum",
+      "reason": "duplicate of the Goodfire Interpreting LM Parameters / VPD paper already kept",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Negation Neglect: When models fail to learn negations in training",
+      "url": "https://www.lesswrong.com/posts/kYzcevrxer6SJPEdG/negation-neglect-when-models-fail-to-learn-negations-in",
+      "source": "lesswrong",
+      "reason": "duplicate of the arXiv Negation Neglect paper already kept",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "An Introduction to Exemplar Partitioning for Mechanistic Interpretability",
+      "url": "https://www.lesswrong.com/posts/RroeHBSkBXXDsrryq/an-introduction-to-exemplar-partitioning-for-mechanistic-1",
+      "source": "lesswrong",
+      "reason": "duplicate of the arXiv Exemplar Partitioning paper (which is itself dropped as redundant with neural-geometry coverage)",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "The safe-to-dangerous shift is a fundamental problem for eval realism; but also for measuring awareness",
+      "url": "https://www.lesswrong.com/posts/tK8vqHDxaRGcysNJQ/the-safe-to-dangerous-shift-is-a-fundamental-problem-for-1",
+      "source": "alignment_forum",
+      "reason": "conceptual analysis of an evaluation-vs-deployment gap without new empirical results; low karma (\u25b257)",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "A review of 'Investigating the consequences of accidentally grading CoT during RL'",
+      "url": "https://www.lesswrong.com/posts/juCHTdZpZBGooHKW4/a-review-of-investigating-the-consequences-of-accidentally",
+      "source": "lesswrong",
+      "reason": "meta-commentary on the OpenAI CoT-grading paper that is already kept; review notes add little beyond the primary post",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Research Sabotage in ML Codebases",
+      "url": "https://www.lesswrong.com/posts/LByP4qsF8a4g7Pz3p/research-sabotage-in-ml-codebases",
+      "source": "alignment_forum",
+      "reason": "ML-research-automation sabotage bench is interesting but peripheral to character training and value installation",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Predicting Rare LLM Failures with 30\u00d7 Fewer Rollouts",
+      "url": "https://www.lesswrong.com/posts/CempXdo6cx5yseRLt/predicting-rare-llm-failures-with-30-fewer-rollouts",
+      "source": "lesswrong",
+      "reason": "narrow eval-efficiency contribution; low karma (\u25b252) and not the most informative methodology hit this window",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Sealing Conditional Misalignment in Inoculation Prompting with Consistency Training",
+      "url": "https://www.lesswrong.com/posts/LjBAPcY33EKZ7SuuN/sealing-conditional-misalignment-in-inoculation-prompting-1",
+      "source": "lesswrong",
+      "reason": "narrow empirical result on BCT composing with inoculation prompting; low karma (\u25b244)",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Not Just RLHF: Why Alignment Alone Won't Fix Multi-Agent Sycophancy",
+      "url": "https://arxiv.org/abs/2605.12991",
+      "source": "arxiv",
+      "reason": "interesting activation-patching localization of sycophancy but lower priority than the kept EM/sycophancy and SFT-mechanism papers",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Emergent and Subliminal Misalignment Through the Lens of Data-Mediated Transfer",
+      "url": "https://arxiv.org/abs/2605.12798",
+      "source": "arxiv",
+      "reason": "redundant with the kept Overtrained Not Misaligned and Persona-Model Collapse EM coverage",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Exemplar Partitioning for Mechanistic Interpretability",
+      "url": "https://arxiv.org/abs/2605.14347",
+      "source": "arxiv",
+      "reason": "SAE-alternative geometry method redundant with the kept Goodfire neural-geometry pieces and VPD",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "The Rate-Distortion-Polysemanticity Tradeoff in SAEs",
+      "url": "https://arxiv.org/abs/2605.14694",
+      "source": "arxiv",
+      "reason": "purely theoretical toy-model result without empirical grounding on real SAEs",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Descriptive Collision in Sparse Autoencoder Auto-Interpretability",
+      "url": "https://arxiv.org/abs/2605.12874",
+      "source": "arxiv",
+      "reason": "narrow SAE auto-interp failure-mode reanalysis; lower priority than kept SAE/feature-geometry pieces",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "To Whom Do Language Models Align? Measuring Principal Hierarchies Under High-Stakes Competing Demands",
+      "url": "https://arxiv.org/abs/2605.12120",
+      "source": "arxiv",
+      "reason": "legal/medical-domain spec-compliance evaluation; further from the character-training and mech-interp focus",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "No Attack Required: Semantic Fuzzing for Specification Violations in Agent Skills",
+      "url": "https://arxiv.org/abs/2605.13044",
+      "source": "arxiv",
+      "reason": "agent-skills spec violations on benign inputs; tangential to character training and mech interp",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs",
+      "url": "https://arxiv.org/abs/2605.12671",
+      "source": "arxiv",
+      "reason": "general circuit-attribution methodology without values/character content; lower priority than kept circuit pieces",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance",
+      "url": "https://arxiv.org/abs/2605.11712",
+      "source": "arxiv",
+      "reason": "architectural proposal for a separate value module with limited activation-level empirical grounding",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "The Mechanism of Weak-to-Strong Generalization: Feature Elicitation from Latent Knowledge",
+      "url": "https://arxiv.org/abs/2605.12908",
+      "source": "arxiv",
+      "reason": "two-layer-network theory of W2S generalization; below the profile's empirical-grounding bar for new theory papers",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Drop the Act: Probe-Filtered RL for Faithful Chain-of-Thought Reasoning",
+      "url": "https://arxiv.org/abs/2605.11467",
+      "source": "arxiv",
+      "reason": "narrow probe-filtered-RL contribution; lower priority than kept CoT-monitorability and probing pieces",
+      "dropped_by": "curator"
+    },
+    {
+      "title": "Emotion Concepts and their Function in a Large Language Model",
+      "url": "https://transformer-circuits.pub/2026/emotions/index.html",
+      "source": "transformer_circuits_thread",
+      "reason": "external sources confirm April 2, 2026 publication \u2014 out of window",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Automated Weak-to-Strong Researcher",
+      "url": "https://alignment.anthropic.com/2026/automated-w2s-researcher/",
+      "source": "anthropic_alignment_science_blog",
+      "reason": "likely published ~April 14, 2026, before window start",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "AI Organizations Can Be More Effective but Less Aligned than Individual Agents",
+      "url": "https://alignment.anthropic.com/2026/ai-organizations/",
+      "source": "anthropic_alignment_science_blog",
+      "reason": "likely co-published with arXiv submission ~April 10, 2026; multi-agent topic adjacent to but not core to profile",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Steering Along Manifolds to Control Neural Networks",
+      "url": "https://www.goodfire.ai/research/manifold-steering",
+      "source": "goodfire_ai_research",
+      "reason": "page returned May 7, 2025 publication date \u2014 out of window",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Paper Summary: Interpreting Language Model Parameters (VPD Explainer)",
+      "url": "https://www.goodfire.ai/research/vpd-explainer",
+      "source": "goodfire_ai_research",
+      "reason": "duplicate Goodfire summary of the VPD paper already kept",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Mechanistic Estimation for Wide Random MLPs",
+      "url": "https://www.alignment.org/blog/mechanistic-estimation-for-wide-random-mlps/",
+      "source": "alignment_research_center",
+      "reason": "purely theoretical estimation math on randomly initialized networks; lacks empirical grounding on trained models",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Empowerment, corrigibility, etc. are simple abstractions (of a messed-up ontology)",
+      "url": "https://www.lesswrong.com/posts/vzHtHHBJoKATi5SeK/empowerment-corrigibility-etc-are-simple-abstractions-of-a",
+      "source": "lesswrong",
+      "reason": "conceptual/philosophical analysis without activation-level or training-intervention evidence",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Risk from fitness-seeking AIs: mechanisms and mitigations",
+      "url": "https://www.lesswrong.com/posts/9YCJZBtqr3FYL8rDp/risk-from-fitness-seeking-ais-mechanisms-and-mitigations",
+      "source": "lesswrong",
+      "reason": "theoretical/taxonomic rather than empirically grounded in training or mech interp evidence",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Automated Alignment is Harder Than You Think",
+      "url": "https://www.lesswrong.com/posts/gpuYFbMNH8PJXpmny/automated-alignment-is-harder-than-you-think-1",
+      "source": "lesswrong",
+      "reason": "meta-level commentary on the automated-alignment research program rather than new empirical findings",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Convergent Abstraction Hypothesis",
+      "url": "https://www.lesswrong.com/posts/fYF8v2ukZmsNvmkkX/convergent-abstraction-hypothesis",
+      "source": "lesswrong",
+      "reason": "theoretical/conceptual without empirical feature-geometry evidence",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Claude is Now Alignment-Pretrained",
+      "url": "https://www.lesswrong.com/posts/Xqh9bDw7Ei5bExC6h/claude-is-now-alignment-pretrained-1",
+      "source": "lesswrong",
+      "reason": "outside-observer reaction post with no new technical content",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "The paper that killed deep learning theory / The other paper that killed deep learning theory",
+      "url": "https://www.lesswrong.com/posts/ZvQfcLbcNHYqmvWyo/the-paper-that-killed-deep-learning-theory",
+      "source": "lesswrong",
+      "reason": "historical/educational background on DL theory rather than advancing the character-training or mech-interp agenda",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "WriteSAE: Sparse Autoencoders for Recurrent State",
+      "url": "https://arxiv.org/abs/2605.12770",
+      "source": "arxiv",
+      "reason": "architectural SAE contribution for Mamba/RWKV; peripheral to values/character installation",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Forgetting That Sticks: Quantization-Permanent Unlearning via Circuit Attribution",
+      "url": "https://arxiv.org/abs/2605.15138",
+      "source": "arxiv",
+      "reason": "ML-ops deployment-robustness framing rather than mechanistic understanding of value installation",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Inference-Time Machine Unlearning via Gated Activation Redirection",
+      "url": "https://arxiv.org/abs/2605.12765",
+      "source": "arxiv",
+      "reason": "privacy/copyright unlearning application; tangential to alignment values training",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Dynamics of the Transformer Residual Stream: Coupling Spectral Geometry to Network Topology",
+      "url": "https://arxiv.org/abs/2605.14258",
+      "source": "arxiv",
+      "reason": "general computation-propagation analysis without values/character content or alignment application",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Dual-Pathway Circuits of Object Hallucination in Vision-Language Models",
+      "url": "https://arxiv.org/abs/2605.13156",
+      "source": "arxiv",
+      "reason": "VLM vision-domain hallucination, not values/character/spec compliance",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "From Sycophantic Consensus to Pluralistic Repair: Why AI Alignment Must Surface Disagreement",
+      "url": "https://arxiv.org/abs/2605.14912",
+      "source": "arxiv",
+      "reason": "conceptual/argumentative without activation-level or fine-grained empirical evidence",
+      "dropped_by": "subagent"
+    },
+    {
+      "title": "Sycophancy is an Educational Safety Risk: Why LLM Tutors Need Sycophancy Benchmarks",
+      "url": "https://arxiv.org/abs/2605.14604",
+      "source": "arxiv",
+      "reason": "education-domain position paper; limited direct contribution to mech-interp character-training focus",
+      "dropped_by": "subagent"
+    }
+  ],
+  "coverage": {
+    "items_considered": 42,
+    "items_kept": 17,
+    "items_dropped": 44
+  }
+}
