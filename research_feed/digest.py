@@ -1,4 +1,4 @@
-"""Main orchestrator. THIS is the entry point for generating a briefing.
+"""Main orchestrator. THIS is the entry point for generating a digest.
 
 Flow:
   1. Load the profile, recent feedback, and titles already shown.
@@ -9,7 +9,7 @@ Flow:
        lead synthesis · themes · kept items · rejection ledger · gaps · coverage
   5. Persist the digest.
 
-Web app calls `generate_briefing(profile, ws, we)`. Everything else is plumbing.
+Web app calls `generate_digest(profile, ws, we)`. Everything else is plumbing.
 """
 from __future__ import annotations
 import asyncio
@@ -26,7 +26,7 @@ from . import store
 
 
 def _bm(msg: str) -> None:
-    log_milestone("briefing", msg)
+    log_milestone("digest", msg)
 
 
 async def _staged(name: str, coro):
@@ -41,7 +41,7 @@ async def _staged(name: str, coro):
         raise
 
 
-async def generate_briefing(
+async def generate_digest(
     profile: Profile, window_start: str, window_end: str,
     *,
     persist: bool = True,

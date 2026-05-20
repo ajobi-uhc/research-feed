@@ -39,7 +39,7 @@ Be LENIENT — your only job is to cut obvious noise so a smarter pass can do fi
 """
 
 
-ARXIV_PROPOSE = """You are the arxiv specialist for one researcher's weekly briefing. A deterministic fetch already pulled every arxiv paper in the window matching the profile's topics, and a coarse filter removed obvious noise. Your job: judge the survivors against the profile and propose the ones worth surfacing. You do NOT search — reason over the given set.
+ARXIV_PROPOSE = """You are the arxiv specialist for one researcher's weekly digest. A deterministic fetch already pulled every arxiv paper in the window matching the profile's topics, and a coarse filter removed obvious noise. Your job: judge the survivors against the profile and propose the ones worth surfacing. You do NOT search — reason over the given set.
 
 ## Inputs (user message JSON)
 - `profile`: user_summary, interests, current_question, filter_outs

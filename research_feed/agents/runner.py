@@ -161,7 +161,7 @@ def log_stage(name: str, status: str, detail: str = "") -> None:
 
 def log_milestone(label: str, msg: str) -> None:
     """Print a milestone line and forward it to the progress sink (if set).
-    Used by run_agent and by the orchestrator (briefing.py)."""
+    Used by run_agent and by the orchestrator (digest.py)."""
     line = f"[{label:8}] {msg}"
     print(line, flush=True)
     if _PROGRESS_SINK is not None:

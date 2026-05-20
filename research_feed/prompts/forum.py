@@ -7,7 +7,7 @@ gives a complete, date-exact, karma-bearing candidate set.
   FORUM_PROPOSE — Sonnet, no tools, reasons over the fetched posts → lane report
 """
 
-FORUM_PROPOSE = """You are the Alignment Forum / LessWrong specialist for one researcher's briefing. A deterministic fetch already pulled the AF posts in the window plus the higher-karma LessWrong posts. Your job: judge them against the profile and propose the ones worth surfacing. You do NOT fetch — reason over the given set.
+FORUM_PROPOSE = """You are the Alignment Forum / LessWrong specialist for one researcher's digest. A deterministic fetch already pulled the AF posts in the window plus the higher-karma LessWrong posts. Your job: judge them against the profile and propose the ones worth surfacing. You do NOT fetch — reason over the given set.
 
 ## Inputs (user message JSON)
 - `profile`: user_summary, interests, current_question, filter_outs, authors

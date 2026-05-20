@@ -5,7 +5,7 @@ kept items (best-first) with a factual one-line justification each, plus the
 rejection ledger. One Opus 4.7 call.
 """
 
-PROMPT = """You are the curator for an AI-safety research briefing. One researcher reads this. Three discovery lanes (lab/org sources, AF/LW, arxiv) have done discovery and filtering. Followed authors aren't a separate lane — any candidate by someone the user follows is tagged `by_followed_author`. Your job: take the pre-filtered candidates and produce a single ranked list of what's worth their time.
+PROMPT = """You are the curator for an AI-safety research digest. One researcher reads this. Three discovery lanes (lab/org sources, AF/LW, arxiv) have done discovery and filtering. Followed authors aren't a separate lane — any candidate by someone the user follows is tagged `by_followed_author`. Your job: take the pre-filtered candidates and produce a single ranked list of what's worth their time.
 
 ## Inputs (user message JSON)
 - `profile`: the user's full profile

@@ -3,9 +3,9 @@ import { api } from "../api";
 import { useFetch } from "../useFetch";
 import Catchup from "../components/Catchup";
 
-export default function Briefing() {
+export default function DigestView() {
   const { id } = useParams();
-  const { data: d, loading, error } = useFetch(() => api.getBriefing(id!), [id]);
+  const { data: d, loading, error } = useFetch(() => api.getDigest(id!), [id]);
 
   if (loading) return <p className="dim">Loading…</p>;
   if (error || !d) return <p className="empty">{error || "Not found"}</p>;

@@ -58,7 +58,7 @@ export default function Profile() {
     <>
       <div className="view-header">
         <h2>Profile</h2>
-        <p className="dim">The single thing that drives your feed. Edit, save, and the next catch-up reflects it.</p>
+        <p className="dim">The single thing that drives your feed. Edit, save, and the next digest reflects it.</p>
       </div>
 
       <p className="profile-restart">
@@ -157,7 +157,7 @@ export default function Profile() {
 
       {saved && !dirty && (
         <div className="save-bar saved">
-          <span>Saved ✓ — your next catch-up will use it.</span>
+          <span>Saved ✓ — your next digest will use it.</span>
         </div>
       )}
     </>

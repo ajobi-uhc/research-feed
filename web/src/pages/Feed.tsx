@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, BriefingSummary, Digest } from "../api";
+import { api, DigestSummary, Digest } from "../api";
 import { useFetch } from "../useFetch";
 import Catchup from "../components/Catchup";
 import SampleLoader from "../components/SampleLoader";
 
 export default function Feed() {
-  const { data: list, loading, error } = useFetch(api.listBriefings);
+  const { data: list, loading, error } = useFetch(api.listDigests);
+  const { data: profile } = useFetch(api.getProfile);
   const nav = useNavigate();
   const [adv, setAdv] = useState(false);
   const [ws, setWs] = useState("");
@@ -14,21 +15,31 @@ export default function Feed() {
 
   async function run(body: { range?: string; window_start?: string; window_end?: string }) {
     try {
-      await api.startBriefing(body);
+      const res = await api.startDigest(body);
+      nav(`/runs/${res.run_id}`);
     } catch (e) {
-      if (!String(e).includes("409")) {
-        alert(String(e));
+      if (String(e).includes("409")) {
+        // A run is already going — jump to it rather than erroring.
+        const st = await api.runState().catch(() => null);
+        if (st?.run_id) nav(`/runs/${st.run_id}`);
         return;
       }
+      alert(String(e));
     }
-    nav("/running");
   }
+
+  // Up to date = a digest already covers through today (so a new day means a new
+  // digest can be created). A loaded sample is a ready-made snapshot to explore,
+  // not a live feed — it always counts as up to date, no prompt to regenerate.
+  const today = new Date().toISOString().slice(0, 10);
+  const isSample = profile?.origin === "sample";
+  const upToDate = isSample || (!!list && list.some((b) => b.window_end >= today));
 
   return (
     <>
       <div className="view-header">
         <h2>Feed</h2>
-        <p className="dim">Catch up on safety research since you last looked.</p>
+        <p className="dim">Your research digests — generate one to see what's new in your field.</p>
       </div>
 
       <div className="sample-panel">
@@ -36,10 +47,25 @@ export default function Feed() {
       </div>
 
       <div className="catchup-bar">
-        <button className="btn-primary" onClick={() => run({ range: "month" })}>
-          Catch me up
-        </button>
-        <span className="dim small">last month · ~10–15 min · ~$2–3 per run</span>
+        {upToDate ? (
+          <>
+            <span className="caught-up">✓ {isSample ? "Sample feed loaded" : "Today's digest is ready"}</span>
+            <span className="dim small">
+              {isSample
+                ? "exploring a ready-made researcher — re-onboard to build your own"
+                : "up to date through today · check back tomorrow"}
+            </span>
+          </>
+        ) : (
+          <>
+            <button className="btn-primary" onClick={() => run({ range: "since_last" })}>
+              Create digest
+            </button>
+            <span className="dim small">
+              {list && list.length ? "new since your last digest" : "last 30 days"} · ~10–15 min · ~$2–3 to build
+            </span>
+          </>
+        )}
         <button className="link-btn" onClick={() => setAdv((a) => !a)}>
           {adv ? "hide" : "custom range"}
         </button>
@@ -61,15 +87,15 @@ export default function Feed() {
 
       {loading && <p className="dim">Loading…</p>}
       {error && <p className="empty">{error}</p>}
-      {list && list.length === 0 && <p className="empty">No catch-ups yet. Click “Catch me up”.</p>}
+      {list && list.length === 0 && <p className="empty">No digests yet. Click “Create digest”.</p>}
 
       {list?.map((s, i) => <FeedSection key={s.id} summary={s} defaultOpen={i === 0} />)}
     </>
   );
 }
 
-// One catch-up in the timeline. Newest is open by default; others lazy-load on expand.
-function FeedSection({ summary, defaultOpen }: { summary: BriefingSummary; defaultOpen: boolean }) {
+// One digest in the timeline. Newest is open by default; others lazy-load on expand.
+function FeedSection({ summary, defaultOpen }: { summary: DigestSummary; defaultOpen: boolean }) {
   const [open, setOpen] = useState(defaultOpen);
   const [digest, setDigest] = useState<Digest | null>(null);
   const [loading, setLoading] = useState(false);
@@ -77,7 +103,7 @@ function FeedSection({ summary, defaultOpen }: { summary: BriefingSummary; defau
   useEffect(() => {
     if (open && !digest) {
       setLoading(true);
-      api.getBriefing(summary.id).then(setDigest).catch(() => {}).finally(() => setLoading(false));
+      api.getDigest(summary.id).then(setDigest).catch(() => {}).finally(() => setLoading(false));
     }
   }, [open]);
 

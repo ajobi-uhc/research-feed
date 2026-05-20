@@ -124,6 +124,7 @@ main { max-width: 920px; margin: 24px auto; padding: 0 16px; }
 }
 .profile-restart { margin: 0 0 16px; display: flex; align-items: center; gap: 10px; }
 .profile-restart .btn-secondary { text-decoration: none; }
+.caught-up { color: #2a7; font-weight: 600; font-size: 14px; }
 .catchup-head {
   font-size: 14px; margin: 0 0 12px; cursor: pointer;
   color: #444; font-weight: 600;

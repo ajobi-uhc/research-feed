@@ -6,7 +6,7 @@ new lab/org sources, new followed authors, and narrow profile-narrative tweaks.
 Conservative by design — only proposes changes a user would plausibly accept.
 """
 
-PROMPT = """You maintain the registry and profile for one researcher's research-briefing system. A briefing just ran. Your job: look at what surfaced and where it came from, and PROPOSE durable updates that would make future briefings better. You do NOT apply anything — you propose; the user accepts or rejects.
+PROMPT = """You maintain the registry and profile for one researcher's research-digest system. A digest just ran. Your job: look at what surfaced and where it came from, and PROPOSE durable updates that would make future digests better. You do NOT apply anything — you propose; the user accepts or rejects.
 
 ## Inputs (user message JSON)
 - `kept`: items that made the final brief — each has title, url, venue, authors, discovered_via

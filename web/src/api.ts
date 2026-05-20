@@ -11,15 +11,15 @@ export const api = {
   putProfile: (p: Profile) =>
     req("/profile", { method: "PUT", headers: JSON_HEADERS, body: JSON.stringify(p) }),
 
-  listBriefings: (): Promise<BriefingSummary[]> => req("/briefings"),
-  getBriefing: (id: string): Promise<Digest> => req(`/briefings/${id}`),
+  listDigests: (): Promise<DigestSummary[]> => req("/digests"),
+  getDigest: (id: string): Promise<Digest> => req(`/digests/${id}`),
 
   listRuns: (): Promise<RunSummary[]> => req("/runs"),
   getRun: (id: string): Promise<Run> => req(`/runs/${id}`),
 
   runState: (): Promise<RunState> => req("/run"),
-  startBriefing: (body: { range?: string; window_start?: string; window_end?: string }) =>
-    req("/briefing", { method: "POST", headers: JSON_HEADERS, body: JSON.stringify(body) }),
+  startDigest: (body: { range?: string; window_start?: string; window_end?: string }) =>
+    req("/digests", { method: "POST", headers: JSON_HEADERS, body: JSON.stringify(body) }),
   startOnboarding: (body: OnboardingInput) =>
     req("/onboarding", { method: "POST", headers: JSON_HEADERS, body: JSON.stringify(body) }),
 
@@ -75,7 +75,7 @@ export type Digest = {
   coverage?: { items_considered?: number; items_kept?: number; items_dropped?: number };
   profile_snapshot?: { authors?: Author[] };
 };
-export type BriefingSummary = {
+export type DigestSummary = {
   id: string;
   generated_at: string;
   window_start: string;

@@ -19,7 +19,7 @@ export default function Onboarding() {
   async function submit() {
     setSubmitting(true);
     try {
-      await api.startOnboarding({
+      const res = await api.startOnboarding({
         seed_papers: lines(seed),
         scholar_url: scholar.trim(),
         followed_authors: lines(authors),
@@ -27,7 +27,7 @@ export default function Onboarding() {
         filter_outs: commas(filters),
         freeform: free.trim(),
       });
-      nav("/running");
+      nav(`/runs/${res.run_id}`);
     } catch (e) {
       alert(String(e));
       setSubmitting(false);
@@ -40,7 +40,7 @@ export default function Onboarding() {
         <h2>Set up your feed</h2>
         <p className="dim">
           Tell us a few things you value. We'll build your profile, find the labs/authors worth
-          tracking, and pull your first briefing — all in one go.
+          tracking, and create your first digest — all in one go.
         </p>
       </div>
 
@@ -92,7 +92,7 @@ export default function Onboarding() {
 
       <div className="profile-actions">
         <button className="btn-primary" onClick={submit} disabled={submitting || !seed.trim()}>
-          {submitting ? "Starting…" : "Build my profile & first briefing"}
+          {submitting ? "Starting…" : "Build my profile & first digest"}
         </button>
         <span className="dim small">~15 min · ~$3–4 — we'll stream progress as it runs.</span>
       </div>

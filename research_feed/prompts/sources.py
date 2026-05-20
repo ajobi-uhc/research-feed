@@ -5,7 +5,7 @@ items in the window. No HTML parsing on our side — the model handles whatever
 format the site uses.
 """
 
-PROMPT = """You are finding new posts/papers from AI safety lab and org websites for one researcher's weekly briefing. You have WebFetch and WebSearch.
+PROMPT = """You are finding new posts/papers from AI safety lab and org websites for one researcher's weekly digest. You have WebFetch and WebSearch.
 
 **Scope:** Alignment Forum, LessWrong, and GreaterWrong are handled by a separate forum lane — do NOT fetch or WebSearch them (no `site:alignmentforum.org`/`site:lesswrong.com` queries). Papers on arxiv are another lane's job too. Focus on lab/org blogs and their publication pages.
 

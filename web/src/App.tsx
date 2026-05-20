@@ -2,11 +2,10 @@ import { useEffect } from "react";
 import { NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { api } from "./api";
 import Feed from "./pages/Feed";
-import Briefing from "./pages/Briefing";
+import DigestView from "./pages/DigestView";
 import Profile from "./pages/Profile";
 import Runs from "./pages/Runs";
 import RunDetail from "./pages/RunDetail";
-import Running from "./pages/Running";
 import Onboarding from "./pages/Onboarding";
 
 export default function App() {
@@ -15,7 +14,7 @@ export default function App() {
 
   // First-time users (no profile yet) get sent to onboarding.
   useEffect(() => {
-    if (loc.pathname === "/onboarding" || loc.pathname === "/running") return;
+    if (loc.pathname === "/onboarding" || loc.pathname.startsWith("/runs")) return;
     api
       .getProfile()
       .then((p) => {
@@ -41,11 +40,10 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Feed />} />
-          <Route path="/briefings/:id" element={<Briefing />} />
+          <Route path="/digests/:id" element={<DigestView />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/runs" element={<Runs />} />
           <Route path="/runs/:id" element={<RunDetail />} />
-          <Route path="/running" element={<Running />} />
           <Route path="/onboarding" element={<Onboarding />} />
         </Routes>
       </main>

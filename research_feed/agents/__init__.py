@@ -1,7 +1,7 @@
 """Agents package.
 
 Each module is one agent (or agent-shaped helper). The orchestrator
-(`research_feed/briefing.py`) imports the `run_*_agent` functions and composes them.
+(`research_feed/digest.py`) imports the `run_*_agent` functions and composes them.
 
   onboarding.create_profile   — builds the Profile (WebFetch on seeds)
   arxiv.run_arxiv_agent       — papers: OpenAlex fetch → Haiku filter → Sonnet propose

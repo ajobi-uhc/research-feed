@@ -24,7 +24,7 @@ import time
 from pathlib import Path
 
 from research_feed.agents.onboarding import create_profile
-from research_feed.briefing import generate_briefing
+from research_feed.digest import generate_digest
 from research_feed.models import Profile
 
 from .match import diff, format_report
@@ -56,7 +56,7 @@ async def run_one(name: str, *, onboard: bool, ws: str, we: str) -> dict:
         (pdir / "onboarded_profile.json").write_text(json.dumps(profile.to_dict(), indent=2))
 
         print(f"[{name}] discovery {ws}..{we}…", flush=True)
-        digest, _ = await generate_briefing(profile, ws, we, persist=False,
+        digest, _ = await generate_digest(profile, ws, we, persist=False,
                                             already_seen=[], run_registrar=False, log_path=log_path)
         (pdir / f"digest_{we}.json").write_text(json.dumps(digest.to_dict(), indent=2))
 

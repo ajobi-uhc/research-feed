@@ -4,7 +4,7 @@ OpenAlex gives a deterministic, complete, date-windowed candidate set (the recal
 backbone) — free, no auth, no rate-limit throttle, and with authors/abstracts/venue
 attached; Haiku cuts volume cheaply; a no-tool Sonnet pass does the relevance
 judgment and emits the lane's structured report.
-Same signature as the other lanes, so briefing.py is unchanged.
+Same signature as the other lanes, so digest.py is unchanged.
 """
 from __future__ import annotations
 import asyncio

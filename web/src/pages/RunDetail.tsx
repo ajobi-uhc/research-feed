@@ -1,9 +1,13 @@
-import { Link, useParams } from "react-router-dom";
-import { api, DiscoveryMeta, LaneReport } from "../api";
+import { useEffect, useRef, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { api, DiscoveryMeta, LaneReport, Stages } from "../api";
 import { useFetch } from "../useFetch";
+import Stepper from "../components/Stepper";
 
-// What each lane checked + found, plus the full agent trace — the "why wasn't X
-// surfaced?" view. Reads the run's stored meta + log.
+// One run view. While the run is in flight it streams live progress (stepper +
+// agent log) over SSE; once finished it shows the saved trace (per-lane
+// breakdown + full log). Reached live from "Create digest" / onboarding, or
+// later from the Runs tab.
 const LANE_LABEL: Record<string, string> = {
   arxiv: "Papers · arXiv / OpenAlex",
   sources: "Sources · lab & org blogs",
@@ -14,18 +18,64 @@ const usd = (c?: number) => (c ?? 0).toFixed(2);
 
 export default function RunDetail() {
   const { id } = useParams();
-  const { data: r, loading, error } = useFetch(() => api.getRun(id!), [id]);
+  const nav = useNavigate();
+  const { data: r, loading, error, refetch } = useFetch(() => api.getRun(id!), [id]);
+  const [lines, setLines] = useState<string[]>([]);
+  const [stages, setStages] = useState<Stages>({});
+  const boxRef = useRef<HTMLPreElement>(null);
 
-  if (loading) return <p className="dim">Loading…</p>;
-  if (error || !r) return <p className="empty">{error || "Not found"}</p>;
+  const running = r?.status === "running";
 
+  // Live stream while the run is in flight.
+  useEffect(() => {
+    if (!running) return;
+    const es = new EventSource("/api/run/stream");
+    es.onmessage = (e) => setLines((l) => [...l, e.data]);
+    es.addEventListener("stage", (e) => {
+      try { setStages(JSON.parse((e as MessageEvent).data)); } catch { /* ignore */ }
+    });
+    es.addEventListener("done", (e) => {
+      es.close();
+      nav((e as MessageEvent).data || "/"); // land on the digest it produced
+    });
+    es.addEventListener("failed", (e) => {
+      es.close();
+      setLines((l) => [...l, "FAILED: " + (e as MessageEvent).data]);
+      refetch(); // reload as a finished (error) trace
+    });
+    return () => es.close();
+  }, [running]);
+
+  // Autoscroll the live log.
+  useEffect(() => { boxRef.current?.scrollTo(0, boxRef.current.scrollHeight); }, [lines]);
+
+  if (loading || !r) return <p className="dim">Loading…</p>;
+  if (error) return <p className="empty">{error}</p>;
+
+  // ── Live view (run in flight) ──────────────────────────────────────
+  if (running) {
+    return (
+      <>
+        <div className="view-header">
+          <h2>{r.kind === "onboarding" ? "Building your profile & first digest…" : "Creating your digest…"}</h2>
+          <p className="dim">Live agent activity. Onboarding ~15 min · a digest ~10–15 min.</p>
+        </div>
+        <Stepper stages={stages} />
+        <details className="mt-12" open>
+          <summary className="dim small">Agent log</summary>
+          <pre className="log-box tall" ref={boxRef}>{lines.join("\n")}</pre>
+        </details>
+      </>
+    );
+  }
+
+  // ── Saved trace (run finished) ─────────────────────────────────────
   const meta = r.meta || {};
   const disc: DiscoveryMeta = meta.discovery || meta; // onboarding runs nest it
   const onb = meta.onboarding;
   const reports = disc.subagent_reports || {};
   const subs = disc.subagents || {};
   const lanes = LANE_ORDER.filter((l) => reports[l] || subs[l]);
-
   const totalCost =
     Object.values(subs).reduce((s, a) => s + (a.cost_usd ?? 0), 0) +
     (disc.curator?.cost_usd ?? 0) +
@@ -51,7 +101,7 @@ export default function RunDetail() {
         cost ≈ <strong>${usd(totalCost)}</strong>
         {onb && <> (onboarding ${usd(onb.cost_usd)})</>}
         {r.digest_id && (
-          <> · <Link to={`/briefings/${r.digest_id}`}>view the feed it produced →</Link></>
+          <> · <Link to={`/digests/${r.digest_id}`}>view the digest it produced →</Link></>
         )}
       </p>
 

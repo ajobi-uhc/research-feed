@@ -18,7 +18,8 @@ from .agents import onboarding
 from .agents.runner import set_progress_sink, set_stage_sink, log_stage
 from .config import ROOT, DATA
 from .models import Author, Profile, Source, short_id
-from . import store, briefing
+from . import store
+from .digest import generate_digest, window_for_range
 
 
 app = FastAPI(title="Research Feed API")
@@ -237,7 +238,7 @@ class OnboardingIn(BaseModel):
     freeform: str = ""
 
 
-class BriefingIn(BaseModel):
+class DigestIn(BaseModel):
     range: str = "since_last"
     window_start: str = ""
     window_end: str = ""
@@ -262,7 +263,7 @@ async def start_onboarding(body: OnboardingIn):
 
 async def _run_onboarding(run_id, log_path, **kwargs):
     """Onboard, then chain straight into a first discovery run — one continuous
-    run so the user lands on a briefing (not an empty profile). The discovery
+    run so the user lands on a digest (not an empty profile). The discovery
     pass also enriches the source/author set (surfaced as proposals)."""
     log_stage("onboarding", "running")
     try:
@@ -272,8 +273,8 @@ async def _run_onboarding(run_id, log_path, **kwargs):
 
         # Chain discovery for the last month using the freshly-built profile.
         profile = store.load_profile()  # capped/reconciled view
-        ws, we = briefing.window_for_range("month")
-        digest, dm = await briefing.generate_briefing(profile, ws, we, log_path=log_path)
+        ws, we = window_for_range("month")
+        digest, dm = await generate_digest(profile, ws, we, log_path=log_path)
 
         RUN_STATE.update({"status": "done", "result": "/"})
         _end_run(run_id, log_path, status="done",
@@ -284,8 +285,8 @@ async def _run_onboarding(run_id, log_path, **kwargs):
         _end_run(run_id, log_path, status="error", error=str(e))
 
 
-@app.post("/api/briefing")
-async def start_briefing(body: BriefingIn):
+@app.post("/api/digests")
+async def start_digest(body: DigestIn):
     if _running():
         return JSONResponse({"error": "a run is already in progress"}, status_code=409)
     p = store.load_profile()
@@ -294,16 +295,16 @@ async def start_briefing(body: BriefingIn):
     if body.window_start and body.window_end:
         ws, we = body.window_start, body.window_end
     else:
-        ws, we = briefing.window_for_range(body.range)
+        ws, we = window_for_range(body.range)
     run_id, log_path = _begin_run("discovery", ws, we)
-    asyncio.create_task(_run_briefing(run_id, log_path, p, ws, we))
+    asyncio.create_task(_run_digest(run_id, log_path, p, ws, we))
     return {"run_id": run_id, "window_start": ws, "window_end": we}
 
 
-async def _run_briefing(run_id, log_path, profile, ws, we):
+async def _run_digest(run_id, log_path, profile, ws, we):
     try:
-        digest, meta = await briefing.generate_briefing(profile, ws, we, log_path=log_path)
-        RUN_STATE.update({"status": "done", "result": f"/briefings/{digest.id}"})
+        digest, meta = await generate_digest(profile, ws, we, log_path=log_path)
+        RUN_STATE.update({"status": "done", "result": f"/digests/{digest.id}"})
         _end_run(run_id, log_path, status="done", meta=meta, digest_id=digest.id)
     except Exception as e:
         RUN_STATE.update({"status": "error", "error": str(e)})
@@ -348,14 +349,14 @@ async def run_stream():
     return StreamingResponse(gen(), media_type="text/event-stream")
 
 
-# ── Briefings (the feed) + saved runs (traces) ────────────────────────
-@app.get("/api/briefings")
-async def list_briefings():
+# ── Digests (the feed) + saved runs (traces) ─────────────────────────
+@app.get("/api/digests")
+async def list_digests():
     return store.list_digests()
 
 
-@app.get("/api/briefings/{digest_id}")
-async def get_briefing(digest_id: str):
+@app.get("/api/digests/{digest_id}")
+async def get_digest(digest_id: str):
     d = store.get_digest(digest_id)
     if not d:
         return JSONResponse({"error": "not found"}, status_code=404)

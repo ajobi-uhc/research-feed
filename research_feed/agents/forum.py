@@ -3,7 +3,7 @@
 The fetch is deterministic (no agent, no WebFetch): the LessWrong GraphQL API
 returns a complete, date-exact, karma-bearing candidate set. A no-tool Sonnet pass
 does the relevance judgment (the LW firehose is noisy) and emits the lane's report.
-Same signature as the other lanes, so briefing.py is unchanged.
+Same signature as the other lanes, so digest.py is unchanged.
 """
 from __future__ import annotations
 import json

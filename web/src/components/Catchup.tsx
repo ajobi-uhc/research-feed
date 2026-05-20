@@ -55,7 +55,7 @@ export default function Catchup({ digest }: { digest: Digest }) {
         </div>
       )}
 
-      {digest.kept.length === 0 && <p className="empty">Nothing surfaced this catch-up.</p>}
+      {digest.kept.length === 0 && <p className="empty">Nothing surfaced in this digest.</p>}
 
       <div className="cards">
         {shown.map(({ it, rank }) => (
